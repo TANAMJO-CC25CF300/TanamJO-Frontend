@@ -1,14 +1,11 @@
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-        fontFamily: {
-            sans: ['Quicksand', 'sans-serif'],
-        },
-    },
+    extend: {},
+  },
+  variants: {
+    extend: {},
   },
   plugins: [],
 }
