@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
       </Routes>
-      <Card1 />
+      {/* <Card1/> */}
     </BrowserRouter>
   );
 }
