@@ -6,19 +6,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 const HomePage = () => {
-    return (
-        <section className="px-4 py-8">
-            <BigButton></BigButton>
-            <div className="h-30"></div>
-            <LittleButton></LittleButton>
-            <div className="h-30"></div>
-            <Card1></Card1>
-            <div className="h-30"></div>
-            <Header></Header>
-            <div className="h-30"></div>
-            <Footer></Footer>
-        </section>
-    )
-}
+  return <section className="px-4 py-8"></section>;
+};
 
 export default HomePage;
