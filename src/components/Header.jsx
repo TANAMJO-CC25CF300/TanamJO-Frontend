@@ -12,7 +12,7 @@ import {
 import LittleButton from "./LittleButton";
 import logo from "../assets/logo.png";
 
-export default function Header() {
+export default function Header({ bgColor = "#EDDD5E" }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef(null);
@@ -24,7 +24,7 @@ export default function Header() {
   }, [showSearch]);
 
   return (
-    <header className="bg-[#EDDD5E]">
+    <header style={{ backgroundColor: bgColor}}>
       <nav
         aria-label="Global"
         className="flex w-full items-center justify-between py-4 pr-4 lg:pr-12 pl-0 relative"

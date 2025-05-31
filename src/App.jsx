@@ -10,7 +10,8 @@ function App() {
       {/* <Routes>
         <Route path="/" element={<HomePage />} />
       </Routes> */}
-      <IdentifyPlant />
+      {/* <IdentifyPlant /> */}
+      <HomePage />
     </BrowserRouter>
   );
 }
