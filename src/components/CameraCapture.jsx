@@ -54,6 +54,7 @@ const CameraCapture = ({ onIdentified }) => {
     const dataUrl = canvas.toDataURL("image/png");
     setImageData(dataUrl);
     if (onIdentified) onIdentified(dataUrl);
+    setShowCamera(false);
   };
 
   // Upload Handlers
@@ -99,6 +100,7 @@ const CameraCapture = ({ onIdentified }) => {
       setShowCamera(false);
       setUploadError("");
       if (onIdentified) onIdentified(uploadPreview);
+      setUploadPreview(null);
     }
   };
 
@@ -160,7 +162,7 @@ const CameraCapture = ({ onIdentified }) => {
             {uploadError}
           </div>
         )}
-        {uploadPreview && (
+        {uploadPreview && !imageData && (
           <div className="flex flex-col items-center mb-2">
             <img
               src={uploadPreview}
@@ -231,6 +233,7 @@ const CameraCapture = ({ onIdentified }) => {
                   ref={cameraVideoRef}
                   className="w-full max-w-xs md:max-w-md lg:max-w-2xl rounded-lg border border-gray-200"
                 />
+                <canvas ref={cameraCanvasRef} style={{ display: "none" }} />
               </div>
               <div className="flex justify-center mt-4">
                 <button
@@ -243,17 +246,6 @@ const CameraCapture = ({ onIdentified }) => {
             </>
           )}
         </div>
-        {/* Preview hasil akhir (dari upload/camera) */}
-        {imageData && (
-          <div className="mt-6 text-center">
-            <img
-              src={imageData}
-              alt="Captured or Uploaded"
-              className="w-full max-w-xs md:max-w-md lg:max-w-2xl rounded-lg mx-auto border border-gray-200"
-            />
-          </div>
-        )}
-        <canvas ref={cameraCanvasRef} className="hidden"></canvas>
       </div>
     </div>
   );
