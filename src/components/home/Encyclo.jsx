@@ -170,7 +170,7 @@ function PlantGuide() {
                             <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-green-800/45 to-transparent pointer-events-none"></div>
                         </div>
                         
-                        {/* New card section */}
+                        {/* New card sectionn */}
                         <div className="w-full md:w-full lg:w-full xl:max-w-lg -mt-18 relative xl:ml-8">
                             <div className="bg-white rounded-3xl shadow-md p-5 sm:p-5 md:max-w-full lg:max-w-full xl:max-w-md">
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 space-y-3 sm:space-y-0">
