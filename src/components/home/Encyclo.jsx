@@ -204,9 +204,9 @@ function PlantGuide() {
                             </div>
                         </div>
 
-                        {/* Right Column - Artikel 1 */}
-                        <div className="flex-1 min-h-[48px] p-0 rounded-3xl tj-text-gray font-semibold flex flex-col lg:flex-row items-start gap-4">                                
-                            <div className="relative w-full lg:w-60 xl:w-60 h-40 flex-shrink-0">
+                        {/* Artikel 3 */}
+                        <div className="flex-1 min-h-[48px] p-0 rounded-3xl tj-text-gray font-semibold flex flex-col lg:flex-row items-start gap-3.5">                                
+                            <div className="relative w-full lg:w-62 xl:w-62 h-40 flex-shrink-0">
                                 <img className="h-full w-full object-cover rounded-3xl" src="src/assets/Banner/banner-1.png" alt="Smart Planting Needs"/>
                                 <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-10 flex items-center justify-center">
                                     <span className="custom-banner rounded-full w-7 h-7 flex items-center justify-center shadow-sm">
@@ -217,9 +217,9 @@ function PlantGuide() {
                                 </div>
                             </div>
 
-                            <div className="relative flex flex-col items-start text-left w-full lg:ml-2 ml-1 pt-2 min-h-[190px]">
+                            <div className="relative flex flex-col items-start text-left w-full lg:ml-2 ml-1 pt-0 min-h-[190px]">
                                 <div className="w-full lg:max-w-7xl space-y-3 md:space-y-2 pr-2 lg:pr-4 xl:pr-8 2xl:pr-20">
-                                    <h2 className="text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight steel-haze">
+                                    <h2 className="text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight steel-haze truncate">
                                         Smart Watering System
                                     </h2>
                                     
@@ -236,7 +236,7 @@ function PlantGuide() {
                                     </div>
                                 </div>
                             </div>
-                        </div>  
+                        </div>                          
                     </div>
                 
                 </div>  
