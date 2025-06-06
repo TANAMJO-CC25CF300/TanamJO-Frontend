@@ -5,7 +5,6 @@ function HarverstCardUtama({ image, title }) {
     return (
 
         <main>
-
             <div className="relative flex flex-col justify-end items-center h-[240px] sm:h-[260px] md:h-[300px] min-h-[220px] sm:min-h-[240px] md:min-h-[280px] w-full">
                 {image && (
                     <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover rounded-3xl" style={{ zIndex: 1 }}/>
@@ -22,8 +21,7 @@ function HarverstCardUtama({ image, title }) {
                 <div className="text-sm/6 md:text-md/6 text-white font-bold tracking-wider mb-3 z-20 relative">
                     {title}
                 </div>
-            </div>
-            
+            </div>            
         </main>
 
 
