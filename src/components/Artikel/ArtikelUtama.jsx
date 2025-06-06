@@ -1,6 +1,6 @@
 import React from "react";
 import card1 from '../../assets/Profile/profile-1.jpg';
-import banner1 from '../../assets/Banner/banner-1.png';
+import banner1 from '../../assets/Banner/card-6.png';
 
 const ArtikelUtama = () => (
 
