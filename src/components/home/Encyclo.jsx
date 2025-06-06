@@ -165,7 +165,7 @@ function PlantGuide() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col xl:flex-row items-stretch gap-6 mt-8">
+                    <div className="flex flex-col xl:flex-row items-stretch gap-6 mt-8 gap-x-10">
                         <ArtikelUtama />
                         <Artikelsection />
                     </div>
