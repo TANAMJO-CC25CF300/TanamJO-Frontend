@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import PlantGuide from './components/home/PlantGuide';
 import Encyclo from './components/home/Encyclo';
-import ChatBot from './components/ChatBot';
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
         <Route path="/plant-guide" element={<PlantGuide />} />
         <Route path="/encyclopedia" element={<Encyclo />} />
       </Routes>
-      <ChatBot />
     </>
   );
 }
