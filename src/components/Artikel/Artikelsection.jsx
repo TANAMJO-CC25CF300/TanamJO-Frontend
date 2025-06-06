@@ -1,6 +1,6 @@
 import React from "react";
 import smartWateringImage from "../../assets/Banner/banner-1.png";
-import urbanFarmingImage from "../../assets/Banner/banner-1.png";
+import urbanFarmingImage from "../../assets/Banner/card-1.png";
 
 const articles = [
     {
