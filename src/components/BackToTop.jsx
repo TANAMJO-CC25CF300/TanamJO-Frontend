@@ -21,8 +21,8 @@ const BackToTop = () => {
 
     return (
         visible && (
-            <button className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-green-600 text-white shadow-lg transition-all back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
+            <button className="fixed bottom-8 right-8 z-50 p-3 rounded-full custom-banner text-white shadow-lg transition-all back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
                 </svg>
             </button>
