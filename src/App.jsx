@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import PlantGuide from './components/home/PlantGuide';
 import Encyclo from './components/home/Encyclo';
 import Dashboard from './components/dashboard/Index';
-import Houseplants from './components/home/Housplants';
+import Chery_tomato from './components/home/Chery_tomato';
 
 function App() {
   return (
