@@ -1,7 +1,7 @@
 import React from "react";
 import smartWateringImage from "../../assets/Banner/card-5.png";
 import urbanFarmingImage from "../../assets/Banner/card-1.png";
-import sustainableGardeningImage from "../../assets/Banner/card-2.png";
+import sustainableGardeningImage from "../../assets/Banner/card-7.png";
 
 const articles = [
     {
