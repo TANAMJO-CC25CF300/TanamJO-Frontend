@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import HarvestLanding from '../plantlis/HarvestLandingHome';
 import HarvestSection from '../plantlis/HarvestCardSection';
 import ArtikelGuide from '../Artikel/ArtikelGuide';
 import bannerImage from '../../assets/Banner/banner-1.png';
 
 function PlantGuide() {
+    const navigate = useNavigate();
+
     return (
 
         <main>            
@@ -34,7 +37,10 @@ function PlantGuide() {
                 </div>
 
                 <div className="mx-5 md:mx-15 mt-3 md:mt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription">
+                    <div 
+                        onClick={() => navigate('/houseplants')}
+                        className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription hover:bg-gray-50 transition-colors"
+                    >
                         Houseplants
                     </div>
 
