@@ -37,23 +37,20 @@ function PlantGuide() {
                 </div>
 
                 <div className="mx-5 md:mx-15 mt-3 md:mt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div 
-                        onClick={() => navigate('/houseplants')}
-                        className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription hover:bg-gray-50 transition-colors"
-                    >
-                        Houseplants
+                    <div onClick={() => navigate('/chery_tomato')} className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription hover:bg-gray-50 transition-colors">
+                        Cherry Tomatoes
                     </div>
 
                     <div className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription">
-                        Garden Plants
+                        Beefsteak Tomatoes
                     </div>
 
                     <div className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription">
-                        Flowers
+                        Roma Tomatoes
                     </div>
 
                     <div className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription">
-                        Fruits & Vegetables
+                        Heirloom Tomatoes
                     </div>
                 </div>
 

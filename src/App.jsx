@@ -13,7 +13,7 @@ function App() {
         <Route path="/plant-guide" element={<PlantGuide />} />
         <Route path="/encyclopedia" element={<Encyclo />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/houseplants" element={<Houseplants />} />
+        <Route path="/Chery_tomato" element={<Chery_tomato />} />
       </Routes>
     </>
   );
