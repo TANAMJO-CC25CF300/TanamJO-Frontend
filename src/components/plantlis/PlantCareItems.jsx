@@ -10,7 +10,7 @@ function PlantCareItems({ items }) {
                     </div>
 
                     <div className="mt-4 sm:mt-5 md:mt-6">
-                        <h3 className="text-lg font-semibold tracking-wide border-b border-white pb-1.5 sm:pb-2 text-left">
+                        <h3 className="text-lg font-bold tracking-wide border-b border-white pb-1.5 sm:pb-2 text-left">
                             {item.title}
                         </h3>
                         <p className="text-sm/6 sm:text-sm/6 leading-normal mt-2 sm:mt-2.5 text-left font-semibold tracking-wider max-w-[95%] sm:max-w-sm lg:line-clamp-3 xl:line-clamp-3">
