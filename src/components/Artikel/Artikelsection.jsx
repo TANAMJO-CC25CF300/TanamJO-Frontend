@@ -1,6 +1,7 @@
 import React from "react";
 import smartWateringImage from "../../assets/Banner/banner-1.png";
 import urbanFarmingImage from "../../assets/Banner/card-1.png";
+import sustainableGardeningImage from "../../assets/Banner/card-2.png";
 
 const articles = [
     {
@@ -22,8 +23,8 @@ const articles = [
     {
         id: 3,
         title: "Sustainable Gardening",
-        image: urbanFarmingImage,
-        alt: "Urban Farming",
+        image: sustainableGardeningImage,
+        alt: "Sustainable Gardening",
         description: "Sustainable gardening practices focus on creating eco-friendly gardens that work in harmony with nature. This includes using organic methods, composting, water conservation, and choosing native plants to support local biodiversity while reducing environmental impact.",
         date: "25 February, 2024"
     },
