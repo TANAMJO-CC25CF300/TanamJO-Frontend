@@ -2,7 +2,7 @@ import React from "react";
 
 function PlantCareItems({ items }) {
     return (
-        <>
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {items.map((item) => (
                 <div key={item.id} className="p-4 sm:p-5 rounded-3xl text-white space-y-2 relative h-[170px] md:h-[200px] custom-banner">
                     <div className="absolute top-2 sm:top-3 right-3 bg-white text-green-700 rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-bold text-sm sm:text-base">
@@ -19,7 +19,7 @@ function PlantCareItems({ items }) {
                     </div>
                 </div>
             ))}
-        </>
+        </main>
     );
 }
 
