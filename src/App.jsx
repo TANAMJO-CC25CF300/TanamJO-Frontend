@@ -2,8 +2,6 @@ import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import PlantGuide from './components/home/PlantGuide';
 import Encyclo from './components/home/Encyclo';
-
-// Tambahkan komponen BackToTop
 import BackToTop from './components/BackToTop';
 
 function App() {
