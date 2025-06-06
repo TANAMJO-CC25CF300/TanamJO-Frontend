@@ -21,56 +21,56 @@ function PlantGuide() {
                                 Cherry tomatoes (Solanum lycopersicum var. cerasiforme) are a delightful variety of tomatoes known for their sweet, bite-sized fruits. These compact plants typically grow 3-4 feet tall and produce clusters of 10-20 fruits each. Through our comprehensive care approach, we'll guide you through every aspect of growing cherry tomatoes, from seed selection to harvest. Our expert guidance covers optimal growing conditions, precise planting techniques, detailed care routines, and effective solutions for common challenges. Whether you're a beginner or experienced gardener, this guide will help you achieve bountiful harvests of delicious cherry tomatoes.
                             </p>
 
-                            <div className="mt-6 rounded-xl border border-gray-100 p-4">
-                                <div className="flex items-center space-x-3 mb-4">
-                                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-                                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="mt-6 rounded-xl border border-gray-100 p-2 sm:p-4">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4">
+                                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-50 flex items-center justify-center">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                         </svg>
                                     </div>
-                                    <h3 className="font-nunito tracking-wider leading-tight steel-haze font-bold">Scientific References & Research</h3>
+                                    <h3 className="text-lg sm:text-xl font-nunito tracking-wider leading-tight steel-haze font-bold">Scientific References & Research</h3>
                                 </div>
                                 
-                                <div className="space-y-4">
-                                    <div className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors">
-                                        <div className="flex items-start space-x-3">
-                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[120px]">Primary Research:</span>
-                                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">"Optimizing Cherry Tomato Cultivation in Urban Settings" (2023)</p>
+                                <div className="space-y-3 sm:space-y-4">
+                                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3 hover:bg-gray-100 transition-colors">
+                                        <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
+                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[100px] sm:min-w-[120px]">Primary Research:</span>
+                                            <p className="text-xs sm:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">"Optimizing Cherry Tomato Cultivation in Urban Settings" (2023)</p>
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors">
-                                        <div className="flex items-start space-x-3">
-                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[120px]">Authors:</span>
-                                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">Dr. Sarah Johnson, Dr. Michael Chen, Dr. Emily Rodriguez</p>
+                                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3 hover:bg-gray-100 transition-colors">
+                                        <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
+                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[100px] sm:min-w-[120px]">Authors:</span>
+                                            <p className="text-xs sm:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">Dr. Sarah Johnson, Dr. Michael Chen, Dr. Emily Rodriguez</p>
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors">
-                                        <div className="flex items-start space-x-3">
-                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[120px]">Journal:</span>
-                                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">Journal of Horticultural Science, Vol. 45, Issue 3</p>
+                                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3 hover:bg-gray-100 transition-colors">
+                                        <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
+                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[100px] sm:min-w-[120px]">Journal:</span>
+                                            <p className="text-xs sm:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">Journal of Horticultural Science, Vol. 45, Issue 3</p>
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors">
-                                        <div className="flex items-start space-x-3">
-                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[120px]">Institution:</span>
-                                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">University of Agricultural Sciences, Department of Plant Sciences</p>
+                                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3 hover:bg-gray-100 transition-colors">
+                                        <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
+                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[100px] sm:min-w-[120px]">Institution:</span>
+                                            <p className="text-xs sm:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">University of Agricultural Sciences, Department of Plant Sciences</p>
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors">
-                                        <div className="flex items-start space-x-3">
-                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[120px]">Key Findings:</span>
-                                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">Study demonstrates 40% higher yield using recommended growing techniques</p>
+                                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3 hover:bg-gray-100 transition-colors">
+                                        <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
+                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[100px] sm:min-w-[120px]">Key Findings:</span>
+                                            <p className="text-xs sm:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">Study demonstrates 40% higher yield using recommended growing techniques</p>
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors">
-                                        <div className="flex items-start space-x-3">
-                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[120px]">DOI:</span>
-                                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">10.1234/jhs.2023.45.3.123</p>
+                                    <div className="bg-gray-50 rounded-lg p-2 sm:p-3 hover:bg-gray-100 transition-colors">
+                                        <div className="flex flex-col sm:flex-row sm:items-start space-y-1 sm:space-y-0 sm:space-x-3">
+                                            <span className="font-semibold text-blue-600 font-nunito tracking-wider leading-tight min-w-[100px] sm:min-w-[120px]">DOI:</span>
+                                            <p className="text-xs sm:text-sm/6 font-medium leading-normal tracking-wider custome-deskription italic">10.1234/jhs.2023.45.3.123</p>
                                         </div>
                                     </div>
                                 </div>
