@@ -1,5 +1,5 @@
 import React from "react";
-import bannerPlantProblems from "../../assets/Banner/banner-1.png";
+import bannerPlantProblems from "../../assets/Banner/card-8.png";
 import bannerWatering from "../../assets/Banner/card-7.png";
 
 function ArtikelGuide() {
