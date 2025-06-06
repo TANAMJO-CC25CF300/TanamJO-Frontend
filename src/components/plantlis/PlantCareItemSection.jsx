@@ -26,7 +26,7 @@ const plantCareItemsData = [
 
 function PlantCareItemSection() {
     return (
-        <div className="w-full lg:w-[48%] flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 lg:mt-0">
+        <div className="w-full lg:w-[48%] flex-shrink-0 mt-8 lg:mt-0">
             <PlantCareItems items={plantCareItemsData} />
         </div>
     );
