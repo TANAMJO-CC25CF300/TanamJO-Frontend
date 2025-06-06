@@ -66,7 +66,7 @@ function Artikelsection() {
                                         <span className="text-sm/6 custome-deskription font-medium leading-normal tracking-wider">{article.date}</span>
                                     </div>
 
-                                    <a href="/" className="inline-flex items-center gap-1 text-sm font-semibold custome-deskription">
+                                    <a href="/" className="inline-flex items-center gap-1 text-sm font-semibold custome-deskription underline">
                                         <span>Read More</span>
                                     </a>
                                 </div>
