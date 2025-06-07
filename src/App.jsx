@@ -5,6 +5,7 @@ import Encyclo from './components/home/Encyclo';
 import Dashboard from './components/dashboard/Index';
 import Chery_tomato from './components/home/Chery_tomato';
 import Beefsetak_tomato from './components/home/Beefsetak_tomato';
+import Roma_tomato from './components/home/Roma_tomato';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/Chery_tomato" element={<Chery_tomato />} />
         <Route path="/Beefsetak_tomato" element={<Beefsetak_tomato />} />
+        <Route path="/roma_tomato" element={<Roma_tomato />} />
       </Routes>
     </>
   );
