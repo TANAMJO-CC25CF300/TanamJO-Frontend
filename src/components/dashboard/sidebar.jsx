@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+function Sidebar() {
+
   return (
 
     <div className="layout-wrapper layout-content-navbar">
