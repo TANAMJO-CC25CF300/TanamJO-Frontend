@@ -390,6 +390,282 @@ function PlantGuide() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="text-left space-y-6 mt-12">
+                        <div className="flex items-center space-x-3 mb-6">
+                            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold font-nunito tracking-wider leading-tight steel-haze">Nutritional Information</h3>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Key Nutrients</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Vitamin C: 21% of daily value per cup</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Vitamin A: 15% of daily value per cup</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Potassium: 8% of daily value per cup</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Lycopene: Powerful antioxidant</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Health Benefits</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-purple-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Supports heart health</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-purple-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Boosts immune system</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-purple-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Promotes skin health</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-purple-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Supports eye health</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-left space-y-6 mt-12">
+                        <div className="flex items-center space-x-3 mb-6">
+                            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold font-nunito tracking-wider leading-tight steel-haze">Culinary Uses</h3>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Fresh Uses</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Salads and Caprese</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Snacking and appetizers</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Garnishes and toppings</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Cooking Uses</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Pasta sauces and pizzas</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Soups and stews</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Roasted and grilled dishes</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-left space-y-6 mt-12">
+                        <div className="flex items-center space-x-3 mb-6">
+                            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold font-nunito tracking-wider leading-tight steel-haze">Companion Planting</h3>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Good Companions</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Basil: Repels pests and improves flavor</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Marigolds: Deters nematodes</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Garlic: Repels spider mites</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Nasturtiums: Attract beneficial insects</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Avoid Planting With</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Corn: Attracts same pests</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Potatoes: Share diseases</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Fennel: Inhibits growth</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Walnuts: Release growth inhibitors</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-left space-y-6 mt-12 mb-12">
+                        <div className="flex items-center space-x-3 mb-6">
+                            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-lg md:text-xl font-bold font-nunito tracking-wider leading-tight steel-haze">Seasonal Care Calendar</h3>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Spring (March-May)</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Start seeds indoors</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Prepare garden beds</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Transplant seedlings</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Install support structures</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">Summer (June-August)</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Regular watering and fertilizing</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Monitor for pests and diseases</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Prune and train plants</p>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
+                                        <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">Begin harvesting</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
