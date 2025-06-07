@@ -6,6 +6,10 @@ import CherryTomato from './components/frontend/home/CherryTomato';
 import BeefsteakTomato from './components/frontend/home/BeefsteakTomato';
 import RomaTomato from './components/frontend/home/RomaTomato';
 import HeirloomTomato from './components/frontend/home/HeirloomTomato';
+// import Header from './components/users/Layouts/Header';
+// import LeftSidebar from './components/users/Layouts/LeftSidebar';
+// import MasterUsers from './components/users/Layouts/MasterUsers';
+import Dashboard from './components/users/Dashboard';
 
 
 // import Card1 from "./components/Card1";
@@ -20,16 +24,17 @@ import HeirloomTomato from './components/frontend/home/HeirloomTomato';
 function App() {
   return (
     <>
-    <Routes>  
-      <Route path="/" element={<PlantGuide/>} />
-      <Route path="/plant-guide" element={<PlantGuide />} />
-      <Route path="/encyclopedia" element={<Encyclo />} />
-      <Route path="/CherryTomato" element={<CherryTomato />} />
-      <Route path="/BeefsteakTomato" element={<BeefsteakTomato />} />
-      <Route path="/RomaTomato" element={<RomaTomato />} />
-      <Route path="/HeirloomTomato" element={<HeirloomTomato />} />
-    </Routes>
-    {/* <LogIn /> */}
+      <Routes>  
+        <Route path="/" element={<PlantGuide/>} />
+        <Route path="/plant-guide" element={<PlantGuide />} />
+        <Route path="/encyclopedia" element={<Encyclo />} />
+        <Route path="/CherryTomato" element={<CherryTomato />} />
+        <Route path="/BeefsteakTomato" element={<BeefsteakTomato />} />
+        <Route path="/RomaTomato" element={<RomaTomato />} />
+        <Route path="/HeirloomTomato" element={<HeirloomTomato />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+      {/* <LogIn /> */}
     </>
   );
 }
