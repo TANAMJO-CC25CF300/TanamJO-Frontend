@@ -13,7 +13,7 @@ import HeirloomTomato from './components/frontend/home/Heirloom_tomato';
 // import HomePage from "./pages/landingPages/homePage";
 // import IdentifyPlant from "./pages/landingPages/IdentifyPlant";
 // import SignUp from "./pages/loginPages/signUp";
-import LogIn from "./pages/loginPages/logIn";
+// import LogIn from "./pages/loginPages/logIn";
 // import ForgotPassword from "./pages/loginPages/forgotPassword";
 // import ResetPassword from "./pages/loginPages/resetPassword";
 
@@ -29,7 +29,7 @@ function App() {
       <Route path="/roma-tomato" element={<RomaTomato />} />
       <Route path="/heirloom-tomato" element={<HeirloomTomato />} />
     </Routes>
-    <LogIn />
+    {/* <LogIn /> */}
     </>
   );
 }
