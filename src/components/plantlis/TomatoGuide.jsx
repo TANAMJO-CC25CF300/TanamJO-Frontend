@@ -1,6 +1,6 @@
 import React from "react";
 
-function TomatoGuide({ title, description, varieties, growingConditions, plantingGuide, careTips, problems, harvesting, propagation, nutrition, culinary, companion, seasonal }) {
+function TomatoGuide({ title, description, varieties, growingConditions, plantingGuide, careTips, problems, harvesting, propagation, nutrition, culinary, companion, seasonal, references }) {
     return (
         <div className="lg:mx-0 xl:mx-10 -mt-6 w-auto rounded-4xl text-center relative z-20 mb-5 shadow-md pattern-background">
             {/* Expert Care Section */}
@@ -359,6 +359,41 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {season.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className={`w-2 h-2 mt-2 rounded-full ${season.bulletColor} flex-shrink-0`}></div>
+                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* References Section */}
+                <div className="text-left space-y-6 mt-12 mb-12">
+                    <div className="flex items-center space-x-3 mb-6">
+                        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 className="text-lg md:text-xl font-bold font-nunito tracking-wider leading-tight steel-haze">References</h3>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {references?.map((section, index) => (
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center space-x-3 mb-4">
+                                    <div className={`w-8 h-8 rounded-full ${section.iconBg} flex items-center justify-center`}>
+                                        <svg className={`w-5 h-5 ${section.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={section.iconPath} />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">{section.title}</h4>
+                                </div>
+                                <ul className="space-y-3">
+                                    {section.items?.map((item, itemIndex) => (
+                                        <li key={itemIndex} className="flex items-start space-x-3">
+                                            <div className={`w-2 h-2 mt-2 rounded-full ${section.bulletColor} flex-shrink-0`}></div>
                                             <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
                                         </li>
                                     ))}

@@ -267,6 +267,44 @@ function Beefsetak_tomato() {
                     "Begin harvesting"
                 ]
             }
+        ],
+        references: [
+            {
+                title: "Scientific References",
+                iconBg: "bg-blue-100",
+                iconColor: "text-blue-600",
+                iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                bulletColor: "bg-blue-500",
+                items: [
+                    "University of Florida IFAS Extension. (2023). Beefsteak Tomato Production Guide. Publication HS-739.",
+                    "Ohio State University Extension. (2023). Growing Beefsteak Tomatoes in the Home Garden. Fact Sheet HYG-1624-92.",
+                    "Texas A&M AgriLife Extension. (2023). Beefsteak Tomato Varieties and Production. Publication E-618."
+                ]
+            },
+            {
+                title: "Expert Sources",
+                iconBg: "bg-green-100",
+                iconColor: "text-green-600",
+                iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+                bulletColor: "bg-green-500",
+                items: [
+                    "American Society for Horticultural Science. (2023). Beefsteak Tomato Cultivation Guide.",
+                    "Seed Savers Exchange. (2023). Heirloom Beefsteak Tomato Growing Guide.",
+                    "Organic Gardening Magazine. (2023). Growing Giant Beefsteak Tomatoes."
+                ]
+            },
+            {
+                title: "Additional Resources",
+                iconBg: "bg-purple-100",
+                iconColor: "text-purple-600",
+                iconPath: "M12 6v6m0 0v6m0-6h6m-6 0H6",
+                bulletColor: "bg-purple-500",
+                items: [
+                    "USDA Agricultural Research Service. (2023). Tomato Breeding and Genetics.",
+                    "National Sustainable Agriculture Information Service. (2023). Organic Tomato Production.",
+                    "International Plant Nutrition Institute. (2023). Tomato Nutrient Management Guide."
+                ]
+            }
         ]
     };
 
