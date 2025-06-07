@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import PlantGuide from './components/frontend/home/PlantGuide';
 import Encyclo from './components/frontend/home/Encyclo';
 import CherryTomato from './components/frontend/home/CherryTomato';
-import BeefsteakTomato from './components/frontend/home/Beefsetak_tomato';
+import BeefsteakTomato from './components/frontend/home/BeefsteakTomato';
 import RomaTomato from './components/frontend/home/RomaTomato';
 import HeirloomTomato from './components/frontend/home/HeirloomTomato';
 
@@ -25,7 +25,7 @@ function App() {
       <Route path="/plant-guide" element={<PlantGuide />} />
       <Route path="/encyclopedia" element={<Encyclo />} />
       <Route path="/CherryTomato" element={<CherryTomato />} />
-      <Route path="/beefsteak-tomato" element={<BeefsteakTomato />} />
+      <Route path="/BeefsteakTomato" element={<BeefsteakTomato />} />
       <Route path="/RomaTomato" element={<RomaTomato />} />
       <Route path="/HeirloomTomato" element={<HeirloomTomato />} />
     </Routes>
