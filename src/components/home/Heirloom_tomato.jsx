@@ -186,14 +186,64 @@ function Heirloom_tomato() {
                 ]
             }
         ],
-        culinary: {
-            uses: "Excellent for fresh eating, salads, and preserving",
-            tips: "Best enjoyed at room temperature to appreciate full flavor"
-        },
-        companion: {
-            good: ["Basil", "Marigolds", "Garlic"],
-            avoid: ["Potatoes", "Corn", "Fennel"]
-        },
+        culinary: [
+            {
+                title: "Culinary Uses",
+                description: "Excellent for fresh eating, salads, and preserving",
+                iconBg: "bg-red-100",
+                iconColor: "text-red-600",
+                iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                items: [
+                    "Fresh eating in salads",
+                    "Sandwiches and burgers",
+                    "Sauces and salsas",
+                    "Canning and preserving"
+                ]
+            },
+            {
+                title: "Cooking Tips",
+                description: "Best enjoyed at room temperature to appreciate full flavor",
+                iconBg: "bg-orange-100",
+                iconColor: "text-orange-600",
+                iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                items: [
+                    "Serve at room temperature",
+                    "Slice just before serving",
+                    "Store cut tomatoes in airtight container",
+                    "Use within 2-3 days of cutting"
+                ]
+            }
+        ],
+        companion: [
+            {
+                title: "Good Companions",
+                description: "Plants that benefit tomato growth",
+                iconBg: "bg-green-100",
+                iconColor: "text-green-600",
+                iconPath: "M5 13l4 4L19 7",
+                bulletColor: "bg-green-500",
+                items: [
+                    "Basil: Repels pests and improves flavor",
+                    "Marigolds: Deters nematodes and other pests",
+                    "Garlic: Natural pest repellent",
+                    "Onions: Deter pests and improve growth"
+                ]
+            },
+            {
+                title: "Avoid Planting With",
+                description: "Plants that can harm tomato growth",
+                iconBg: "bg-red-100",
+                iconColor: "text-red-600",
+                iconPath: "M6 18L18 6M6 6l12 12",
+                bulletColor: "bg-red-500",
+                items: [
+                    "Potatoes: Share similar pests and diseases",
+                    "Corn: Attracts similar pests",
+                    "Fennel: Inhibits tomato growth",
+                    "Walnuts: Release growth-inhibiting chemicals"
+                ]
+            }
+        ],
         seasonal: {
             spring: "Start seeds indoors 6-8 weeks before last frost",
             summer: "Monitor for pests and diseases, maintain consistent watering",
