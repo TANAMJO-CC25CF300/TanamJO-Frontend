@@ -244,12 +244,64 @@ function Heirloom_tomato() {
                 ]
             }
         ],
-        seasonal: {
-            spring: "Start seeds indoors 6-8 weeks before last frost",
-            summer: "Monitor for pests and diseases, maintain consistent watering",
-            fall: "Harvest remaining fruits before first frost",
-            winter: "Save seeds and plan for next season"
-        },
+        seasonal: [
+            {
+                title: "Spring",
+                description: "Start seeds indoors 6-8 weeks before last frost",
+                iconBg: "bg-green-100",
+                iconColor: "text-green-600",
+                iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                bulletColor: "bg-green-500",
+                items: [
+                    "Start seeds indoors 6-8 weeks before last frost",
+                    "Prepare garden beds with compost",
+                    "Harden off seedlings before transplanting",
+                    "Plant after danger of frost has passed"
+                ]
+            },
+            {
+                title: "Summer",
+                description: "Monitor for pests and diseases, maintain consistent watering",
+                iconBg: "bg-yellow-100",
+                iconColor: "text-yellow-600",
+                iconPath: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z",
+                bulletColor: "bg-yellow-500",
+                items: [
+                    "Monitor for pests and diseases",
+                    "Maintain consistent watering",
+                    "Apply mulch to retain moisture",
+                    "Prune suckers and maintain plant shape"
+                ]
+            },
+            {
+                title: "Fall",
+                description: "Harvest remaining fruits before first frost",
+                iconBg: "bg-orange-100",
+                iconColor: "text-orange-600",
+                iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                bulletColor: "bg-orange-500",
+                items: [
+                    "Harvest remaining fruits before first frost",
+                    "Collect seeds from best fruits",
+                    "Clean up garden beds",
+                    "Prepare soil for next season"
+                ]
+            },
+            {
+                title: "Winter",
+                description: "Save seeds and plan for next season",
+                iconBg: "bg-blue-100",
+                iconColor: "text-blue-600",
+                iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+                bulletColor: "bg-blue-500",
+                items: [
+                    "Save seeds and plan for next season",
+                    "Review garden journal",
+                    "Order seeds for next year",
+                    "Maintain garden tools"
+                ]
+            }
+        ],
         references: [
             {
                 title: "Scientific References",
