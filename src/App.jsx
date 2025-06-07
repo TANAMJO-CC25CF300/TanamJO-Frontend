@@ -6,12 +6,14 @@ import Chery_tomato from './components/home/Chery_tomato';
 import Beefsetak_tomato from './components/home/Beefsetak_tomato';
 import Roma_tomato from './components/home/Roma_tomato';
 import Heirloom_tomato from './components/home/Heirloom_tomato';
+import Dashboard from './components/dashboard';
 
 function App() {
   return (
     <>
       <Routes>  
         <Route path="/" element={<PlantGuide/>} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/plant-guide" element={<PlantGuide />} />
         <Route path="/encyclopedia" element={<Encyclo />} />
         <Route path="/Chery_tomato" element={<Chery_tomato />} />
