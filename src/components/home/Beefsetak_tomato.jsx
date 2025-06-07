@@ -10,3 +10,5 @@ function Beefsetak_tomato() {
         </main>
     )
 }
+
+export default Beefsetak_tomato;
