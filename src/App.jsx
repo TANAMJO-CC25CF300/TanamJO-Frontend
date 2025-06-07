@@ -4,6 +4,7 @@ import PlantGuide from './components/home/PlantGuide';
 import Encyclo from './components/home/Encyclo';
 import Dashboard from './components/dashboard/Index';
 import Chery_tomato from './components/home/Chery_tomato';
+import Beefsetak_tomato from './components/home/Beefsetak_tomato';
 
 function App() {
   return (
