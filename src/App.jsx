@@ -7,8 +7,19 @@ import BeefsteakTomato from './components/frontend/home/Beefsetak_tomato';
 import RomaTomato from './components/frontend/home/Roma_tomato';
 import HeirloomTomato from './components/frontend/home/Heirloom_tomato';
 
+
+// import Card1 from "./components/Card1";
+// import image1 from "./assets/tomato1.png";
+// import HomePage from "./pages/landingPages/homePage";
+// import IdentifyPlant from "./pages/landingPages/IdentifyPlant";
+// import SignUp from "./pages/loginPages/signUp";
+import LogIn from "./pages/loginPages/logIn";
+// import ForgotPassword from "./pages/loginPages/forgotPassword";
+// import ResetPassword from "./pages/loginPages/resetPassword";
+
 function App() {
   return (
+    <>
     <Routes>  
       <Route path="/" element={<PlantGuide/>} />
       <Route path="/plant-guide" element={<PlantGuide />} />
@@ -18,6 +29,8 @@ function App() {
       <Route path="/roma-tomato" element={<RomaTomato />} />
       <Route path="/heirloom-tomato" element={<HeirloomTomato />} />
     </Routes>
+    <LogIn />
+    </>
   );
 }
 
