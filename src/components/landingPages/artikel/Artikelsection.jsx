@@ -1,7 +1,7 @@
 import React from "react";
-import smartWateringImage from "@/assets/banner/card-5.png";
-import urbanFarmingImage from "@/assets/banner/card-1.png";
-import sustainableGardeningImage from "@/assets/banner/card-7.png";
+import smartWateringImage from "@/assets/Banner/card-5.png";
+import urbanFarmingImage from "@/assets/Banner/card-1.png";
+import sustainableGardeningImage from "@/assets/Banner/card-7.png";
 
 const articles = [
     {
@@ -34,7 +34,7 @@ function Artikelsection() {
     return (
 
         <main>            
-            <div className="flex-1 flex flex-col gap-8 md:gap-0 mt-8 md:mt-8 xl:mt-0">
+            <div className="flex-1 flex flex-col gap-5 md:gap-0 mt-8 md:mt-8 xl:mt-0">
                 {articles.map((article) => (
                     <div key={article.id} className="min-h-[48px] p-0 rounded-3xl tj-text-gray font-semibold flex flex-col lg:flex-row items-start gap-3.5">
                         <div className="relative w-full lg:w-57 xl:w-57 h-37 flex-shrink-0">
@@ -48,9 +48,9 @@ function Artikelsection() {
                             </div>
                         </div>
 
-                        <div className="relative flex flex-col items-start text-left w-full lg:ml-2 ml-1 pt-0 min-h-[190px]">
+                        <div className="relative flex flex-col items-start text-left w-full lg:ml-2 ml-1 pt-0 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                             <div className="w-full lg:max-w-7xl space-y-3 md:space-y-2 pr-2 lg:pr-4 xl:pr-8 2xl:pr-20">
-                                <h2 className="text-xl md:text-xl font-bold font-nunito tracking-wider leading-tight steel-haze truncate">
+                                <h2 className="text-xl md:text-xl font-semibold font-nunito tracking-wider leading-tight steel-haze truncate">
                                     {article.title}
                                 </h2>
 

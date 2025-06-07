@@ -1,6 +1,6 @@
 import React from "react";
-import bannerPlantProblems from '@/assets/banner/card-8.png';
-import bannerWatering from '@/assets/banner/card-7.png';
+import bannerPlantProblems from '@/assets/Banner/card-8.png';
+import bannerWatering from '@/assets/Banner/card-7.png';
 
 function ArtikelGuide() {
     return (

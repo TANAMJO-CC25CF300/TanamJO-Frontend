@@ -120,7 +120,7 @@ function Encyclopedia() {
 
                     <div className="flex-1 md:flex-[1.2] aspect-[4/3] md:aspect-auto md:min-h-[250px] xl:min-h-[300px] rounded-t-4xl md:rounded-tl-4xl md:rounded-bl-4xl md:rounded-tr-none md:rounded-br-none md:mr-0 mb-0 md:mb-0 overflow-hidden relative">
                             
-                        <img src="src/assets/banner/banner-1.png" className="absolute inset-0 w-full h-full object-cover" alt="Banner Image"/>
+                        <img src="src/assets/Banner/banner-1.png" className="absolute inset-0 w-full h-full object-cover" alt="Banner Image"/>
                         <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-green-800/45 to-transparent lg:rounded-t-4xl"></div>
 
                     </div>
