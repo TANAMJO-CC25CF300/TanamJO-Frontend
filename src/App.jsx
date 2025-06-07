@@ -5,7 +5,7 @@ import Encyclo from './components/frontend/home/Encyclo';
 import CherryTomato from './components/frontend/home/CherryTomato';
 import BeefsteakTomato from './components/frontend/home/Beefsetak_tomato';
 import RomaTomato from './components/frontend/home/RomaTomato';
-import HeirloomTomato from './components/frontend/home/Heirloom_tomato';
+import HeirloomTomato from './components/frontend/home/HeirloomTomato';
 
 
 // import Card1 from "./components/Card1";
