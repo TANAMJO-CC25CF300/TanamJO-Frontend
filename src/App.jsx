@@ -15,6 +15,7 @@ function App() {
         <Route path="/encyclopedia" element={<Encyclo />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/Chery_tomato" element={<Chery_tomato />} />
+        <Route path="/Beefsetak_tomato" element={<Beefsetak_tomato />} />
       </Routes>
     </>
   );
