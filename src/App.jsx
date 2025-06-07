@@ -19,6 +19,7 @@ function App() {
         <Route path="/Chery_tomato" element={<Chery_tomato />} />
         <Route path="/Beefsetak_tomato" element={<Beefsetak_tomato />} />
         <Route path="/roma_tomato" element={<Roma_tomato />} />
+        <Route path="/heirloom_tomato" element={<Heirloom_tomato />} />
       </Routes>
     </>
   );
