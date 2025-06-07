@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+
 import Sidebar from './sidebar';
 
 const LayoutDashboard = ({ children }) => {
@@ -9,7 +9,6 @@ const LayoutDashboard = ({ children }) => {
         <Sidebar />
 
         <div className="flex-1 flex flex-col overflow-hidden">
-            <Header />
 
             <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
                 {children}
