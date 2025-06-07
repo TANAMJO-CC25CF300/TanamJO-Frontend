@@ -27,7 +27,7 @@ function App() {
       <Route path="/CherryTomato" element={<CherryTomato />} />
       <Route path="/beefsteak-tomato" element={<BeefsteakTomato />} />
       <Route path="/RomaTomato" element={<RomaTomato />} />
-      <Route path="/heirloom-tomato" element={<HeirloomTomato />} />
+      <Route path="/HeirloomTomato" element={<HeirloomTomato />} />
     </Routes>
     {/* <LogIn /> */}
     </>
