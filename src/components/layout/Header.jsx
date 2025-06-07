@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import ButtonLogin from '../button/ButtonLogin';
-import LittenButton from '../button/LittenButton';
+import ButtonLogin from '../Button/ButtonLogin';
+import LittenButton from '../Button/LittenButton';
 import logo from '../../assets/Logo/logo.svg';
 
 function Header() {
