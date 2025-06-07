@@ -24,7 +24,7 @@ function App() {
       <Route path="/" element={<PlantGuide/>} />
       <Route path="/plant-guide" element={<PlantGuide />} />
       <Route path="/encyclopedia" element={<Encyclo />} />
-      <Route path="/cherry-tomato" element={<CherryTomato />} />
+      <Route path="/CherryTomato" element={<CherryTomato />} />
       <Route path="/beefsteak-tomato" element={<BeefsteakTomato />} />
       <Route path="/roma-tomato" element={<RomaTomato />} />
       <Route path="/heirloom-tomato" element={<HeirloomTomato />} />
