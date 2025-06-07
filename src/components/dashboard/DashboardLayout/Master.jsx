@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Master = () => {
+function Master() {
   useEffect(() => {
     // Add fonts
     const fontLinks = [
@@ -69,6 +69,6 @@ const Master = () => {
       
     </div>  
   );
-};
+}
 
 export default Master;
