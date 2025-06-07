@@ -1,9 +1,9 @@
 import React from "react";
-import logoTanamjo1 from "../../public/logoTanamjo1.png"
+import logoTanamjo1 from "../assets/logoTanamjo1.png"
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-white py-6 px-6 lg:px-20 text-gray-600 ">
+        <footer className="w-full py-6 px-6 lg:px-20 text-gray-600 ">
             <div className="w-[1070px] border-t border-gray-300 pt-10"></div>
             {/* Konten Footer */}
             <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-10">
