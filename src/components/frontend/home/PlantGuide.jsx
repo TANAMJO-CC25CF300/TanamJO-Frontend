@@ -45,11 +45,11 @@ function PlantGuide() {
                         Beefsteak Tomatoes
                     </div>
 
-                    <div onClick={() => navigate('/roma_tomato')} className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription hover:bg-gray-50 transition-colors">
+                    <div onClick={() => navigate('/RomaTomato')} className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription hover:bg-gray-50 transition-colors">
                         Roma Tomatoes
                     </div>
 
-                    <div onClick={() => navigate('/Heirloom_tomato')} className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription hover:bg-gray-50 transition-colors">
+                    <div onClick={() => navigate('/HeirloomTomato')} className="w-full min-h-[48px] p-3.5 border border-gray-200 rounded-full font-medium text-sm/6 md:text-md tracking-wider flex items-center justify-center truncate cursor-pointer custome-deskription hover:bg-gray-50 transition-colors">
                         Heirloom Tomatoes
                     </div>
                 </div>
