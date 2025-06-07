@@ -6,9 +6,9 @@ import CherryTomato from './components/frontend/home/CherryTomato';
 import BeefsteakTomato from './components/frontend/home/BeefsteakTomato';
 import RomaTomato from './components/frontend/home/RomaTomato';
 import HeirloomTomato from './components/frontend/home/HeirloomTomato';
-// import Header from './components/users/Layouts/Header';
-// import LeftSidebar from './components/users/Layouts/LeftSidebar';
-// import MasterUsers from './components/users/Layouts/MasterUsers';
+import Header from './components/users/Layouts/Header';
+import LeftSidebar from './components/users/Layouts/LeftSidebar';
+import MasterUsers from './components/users/Layouts/MasterUsers';
 import Dashboard from './components/users/Dashboard';
 
 
@@ -33,6 +33,9 @@ function App() {
         <Route path="/RomaTomato" element={<RomaTomato />} />
         <Route path="/HeirloomTomato" element={<HeirloomTomato />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/header" element={<Header />} />
+        <Route path="/leftsidebar" element={<LeftSidebar />} />
+        <Route path="/masterusers" element={<MasterUsers />} />
       </Routes>
       {/* <LogIn /> */}
     </>
