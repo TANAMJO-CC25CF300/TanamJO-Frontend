@@ -14,12 +14,8 @@ const Dashboard = () => {
       <HeaderDashboard />
       <div style={{ display: 'flex', flex: 1 }}>
         <LeftSidebar />
-        <main className="p-4">
-          <div className="container">
-            <h2 className="text-primary">Welcome to Dashboard</h2>
-            <p>This is your main dashboard content area.</p>
-            <button className="btn btn-success mt-3">Contoh Tombol Bootstrap</button>
-          </div>
+        <main>
+          
         </main>
       </div>
     </div>
