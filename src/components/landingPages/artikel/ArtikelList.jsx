@@ -2,7 +2,7 @@ import React from "react";
 import card1 from '@/assets/profile/profile-1.jpg';
 import banner1 from '@/assets/Banner/card-7.png';
 
-const ArtikelUtama = () => (
+const ArtikelList = () => (
 
     <main>
         <div className="flex-1 flex flex-col">
@@ -64,4 +64,4 @@ const ArtikelUtama = () => (
 
 );
 
-export default ArtikelUtama;
+export default ArtikelList;

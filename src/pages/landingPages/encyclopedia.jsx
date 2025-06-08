@@ -2,7 +2,7 @@ import React from "react";
 import HarvestLanding from '@components/landingPages/plantlis/HarvestLandingHome';
 import HarvestSection from '@components/landingPages/plantlis/HarvestCardSection';
 import PlantCareItemSection from '@components/landingPages/plantlis/PlantCareItemSection';
-import ArtikelUtama from '@components/landingPages/Artikel/ArtikelUtama';
+import ArtikelList from '@components/landingPages/artikel/ArtikelList';
 import Artikelsection from '@components/landingPages/Artikel/Artikelsection';
 
 function Encyclopedia() {
@@ -166,7 +166,7 @@ function Encyclopedia() {
                     </div>
 
                     <div className="flex flex-col xl:flex-row items-stretch gap-8 mt-8 gap-x-10">
-                        <ArtikelUtama />
+                        <ArtikelList />
                         <Artikelsection />
                     </div>
                 </div>
