@@ -1,22 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
   PhoneIcon,
   PlayCircleIcon,
+  MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import LittleButton from "./LittleButton";
 import logo from "../assets/logo.png";
-import { Routes, Route } from "react-router";
 
-export default function Header() {
+export default function Header({ bgColor = "#EDDD5E" }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const searchRef = useRef(null);
+
+  useEffect(() => {
+    if (showSearch && searchRef.current) {
+      searchRef.current.focus();
+    }
+  }, [showSearch]);
 
   return (
-    <header className="bg-[#EDDD5E]">
+    <header style={{ backgroundColor: bgColor}}>
       <nav
         aria-label="Global"
         className="flex w-full items-center justify-between py-4 pr-4 lg:pr-12 pl-0 relative"
@@ -30,7 +38,7 @@ export default function Header() {
         </div>
 
         {/* Navigation - Center */}
-        <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-8">
+        <div className="hidden lg:flex flex-1 justify-center gap-x-8">
           <a href="#" className="text-sm font-semibold text-gray-900">
             HOME
           </a>
@@ -46,14 +54,29 @@ export default function Header() {
         </div>
 
         {/* Right-aligned Search Bar and Button */}
-        <div className="hidden lg:flex items-center space-x-8 ml-auto">
-          <input
-            type="text"
-            placeholder="Search"
-            className="p-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-indigo-500"
-          />
-          <LittleButton />
-        </div>
+        <div className="hidden lg:flex items-center gap-4 ml-auto relative">
+        {/* Search Icon */}
+        <button
+          onClick={() => setShowSearch(!showSearch)}
+          className="bg-[#5B8C51] text-white p-3 rounded-full hover:bg-[#5B8C51] transition duration-300"
+        >
+        <MagnifyingGlassIcon className="h-5 w-5" />
+        </button>
+
+        {/* Conditional Search Input */}
+        {showSearch && (
+        <input
+          ref={searchRef}
+          type="text"
+          placeholder="Search"
+          className="w-48 p-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-indigo-500 transition duration-300"
+        />
+  )}
+
+  {/* Sign Up Button */}
+  <LittleButton />
+</div>
+
 
         <div className="flex lg:hidden">
           <button
