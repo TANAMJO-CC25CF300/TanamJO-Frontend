@@ -1,13 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import bannerPlantProblems from '@/assets/Banner/card-8.png';
 import bannerWatering from '@/assets/Banner/card-7.png';
 
 function ArtikelGuide() {
+    const navigate = useNavigate();
+    
     return (
         
         <main>
             <div className="mt-7 flex flex-col space-y-8">
-                <div className="w-full min-h-[48px] p-3 border border-gray-200 rounded-3xl tj-text-gray font-semibold flex flex-col lg:flex-row items-start gap-4">                                
+                <div onClick={() => navigate('/plant-guide/artikel-detail')}className="w-full min-h-[48px] p-3 border border-gray-200 rounded-3xl tj-text-gray font-semibold flex flex-col lg:flex-row items-start gap-4 cursor-pointer hover:bg-gray-50 transition-colors">                                
                     <div className="relative w-full lg:w-64 xl:w-48 h-48 flex-shrink-0">
                         <img className="h-full w-full object-cover rounded-3xl" src={bannerPlantProblems} alt="Plant Problems Detection"/>
                         <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-10 flex items-center justify-center">

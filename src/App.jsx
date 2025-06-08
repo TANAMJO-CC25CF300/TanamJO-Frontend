@@ -8,6 +8,7 @@ import CherryTomato from '@/pages/landingPages/cherryTomato';
 import BeefsteakTomato from '@/pages/landingPages/beefsteakTomato';
 import RomaTomato from '@/pages/landingPages/romaTomato';
 import HeirloomTomato from '@/pages/landingPages/heirloomTomato';
+import ArtikelDetail from '@/pages/landingPages/artikelDetail';
 import HomePage from '@/pages/landingPages/homePage';
 
 //pages dashboard
@@ -33,6 +34,7 @@ function App() {
           <Route path="/plant-guide/beefsteak-tomato" element={<BeefsteakTomato />} />
           <Route path="/plant-guide/roma-tomato" element={<RomaTomato />} />
           <Route path="/plant-guide/heirloom-tomato" element={<HeirloomTomato />} />
+          <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

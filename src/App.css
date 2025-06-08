@@ -57,6 +57,11 @@
         background-color: #51a72c;
     }
 
+    .custom-banner-artikel {
+        position: relative;
+        background-color: #f3eefb;
+    }
+
     .custom-text {
         color: #51a72c;
     }
