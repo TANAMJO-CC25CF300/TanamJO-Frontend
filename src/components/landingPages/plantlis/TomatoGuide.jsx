@@ -11,7 +11,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                             {title}
                         </h2>
                         
-                        <p className="text-sm/6 md:text-sm/6 font-normal leading-normal tracking-wider custome-deskription italic">
+                        <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic">
                             {description}
                         </p>                            
                     </div>
@@ -24,12 +24,12 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {varieties?.map((variety, index) => (
-                            <div key={index} className="p-5 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                            <div key={index} className="p-5 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-green-50">
                                     <span className="text-xl font-bold text-green-600">{variety.initial}</span>
                                 </div>
                                 <h4 className="text-lg font-bold mb-3 font-nunito tracking-wider leading-tight steel-haze">{variety.name}</h4>
-                                <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">
+                                <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 line-clamp-4">
                                     {variety.description}
                                 </p>
                             </div>
@@ -50,7 +50,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {growingConditions?.map((condition, index) => (
-                            <div key={index} className="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-5 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${condition.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${condition.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,9 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     </div>
                                     <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">{condition.title}</h4>
                                 </div>
-                                <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription line-clamp-4">{condition.description}</p>
+                                <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 line-clamp-4">
+                                    {condition.description}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -78,7 +80,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {plantingGuide?.map((guide, index) => (
-                            <div key={index} className="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-5 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${guide.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${guide.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +89,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     </div>
                                     <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">{guide.title}</h4>
                                 </div>
-                                <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription line-clamp-4">
+                                <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 line-clamp-4">
                                     {guide.description}
                                 </p>
                             </div>
@@ -108,7 +110,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {careTips?.map((tip, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${tip.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${tip.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,7 +119,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     </div>
                                     <h4 className="text-lg font-semibold text-gray-800 font-nunito tracking-wider leading-tight steel-haze">{tip.title}</h4>
                                 </div>
-                                <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription line-clamp-4">{tip.description}</p>
+                                <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 line-clamp-4">{tip.description}</p>
                             </div>
                         ))}
                     </div>
@@ -136,7 +138,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="flex flex-col lg:flex-row gap-6">
                         {problems?.map((problem, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm flex-1">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200 flex-1">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${problem.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${problem.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +152,9 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {problem.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0"></div>
-                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                            <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 line-clamp-4">
+                                                {item}
+                                            </p>
                                         </li>
                                     ))}
                                 </ul>
@@ -172,7 +176,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="flex flex-col lg:flex-row gap-6">
                         {harvesting?.map((section, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm flex-1">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200 flex-1">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${section.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${section.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,7 +189,9 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {section.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className={`w-2 h-2 mt-2 rounded-full ${section.bulletColor} flex-shrink-0`}></div>
-                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                            <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500">
+                                                {item}
+                                            </p>
                                         </li>
                                     ))}
                                 </ul>
@@ -207,7 +213,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="flex flex-col lg:flex-row gap-6">
                         {propagation?.map((section, index) => (
-                            <div key={index} className="p-6 bg-white rounded-xl border border-gray-100 shadow-sm flex-1">
+                            <div key={index} className="p-6 bg-white rounded-xl border border-gray-200 flex-1">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${section.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${section.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -218,7 +224,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                 </div>
                                 <div className="space-y-3">
                                     {section.paragraphs?.map((paragraph, pIndex) => (
-                                        <p key={pIndex} className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription line-clamp-4 md:line-clamp-none">
+                                        <p key={pIndex} className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 line-clamp-4 md:line-clamp-none">
                                             {paragraph}
                                         </p>
                                     ))}
@@ -241,7 +247,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {nutrition?.map((section, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${section.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${section.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,7 +260,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {section.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className={`w-2 h-2 mt-2 rounded-full ${section.bulletColor} flex-shrink-0`}></div>
-                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                            <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500">{item}</p>
                                         </li>
                                     ))}
                                 </ul>
@@ -276,7 +282,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {culinary?.map((section, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${section.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${section.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -289,7 +295,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {section.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className={`w-2 h-2 mt-2 rounded-full ${section.bulletColor} flex-shrink-0`}></div>
-                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                            <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500">{item}</p>
                                         </li>
                                     ))}
                                 </ul>
@@ -311,7 +317,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {companion?.map((section, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${section.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${section.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -324,7 +330,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {section.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className={`w-2 h-2 mt-2 rounded-full ${section.bulletColor} flex-shrink-0`}></div>
-                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                            <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500">{item}</p>
                                         </li>
                                     ))}
                                 </ul>
@@ -346,7 +352,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {seasonal?.map((season, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${season.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${season.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -359,7 +365,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {season.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className={`w-2 h-2 mt-2 rounded-full ${season.bulletColor} flex-shrink-0`}></div>
-                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                            <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500">{item}</p>
                                         </li>
                                     ))}
                                 </ul>
@@ -381,7 +387,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {references?.map((section, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                            <div key={index} className="p-6 bg-white rounded-2xl border border-gray-200">
                                 <div className="flex items-center space-x-3 mb-4">
                                     <div className={`w-8 h-8 rounded-full ${section.iconBg} flex items-center justify-center`}>
                                         <svg className={`w-5 h-5 ${section.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -394,7 +400,7 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                                     {section.items?.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex items-start space-x-3">
                                             <div className={`w-2 h-2 mt-2 rounded-full ${section.bulletColor} flex-shrink-0`}></div>
-                                            <p className="text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription">{item}</p>
+                                            <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic">{item}</p>
                                         </li>
                                     ))}
                                 </ul>

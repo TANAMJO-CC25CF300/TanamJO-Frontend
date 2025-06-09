@@ -12,35 +12,35 @@ import card8 from '../../../assets/banner/card-8.png';
 const harvestData = [
     {
         image: card1,
-        title: "Fresh Tomatoes"
+        title: "Cherry Tomatoes"
     },
     {
         image: card2,
-        title: "Organic Lettuce"
+        title: "Beefsteak Tomatoes"
     },
     {
         image: card3,
-        title: "Green Spinach"
+        title: "Roma Tomatoes"
     },
     {
         image: card4,
-        title: "Fresh Carrots"
+        title: "Heirloom Tomatoes"
     },
     {
         image: card5,
-        title: "Red Bell Peppers"
+        title: "Green Tomatoes"
     },
     {
         image: card6,
-        title: "Fresh Cucumbers"
+        title: "Yellow Tomatoes"
     },
     {
         image: card7,
-        title: "Green Broccoli"
+        title: "Campari Tomatoes"
     },
     {
         image: card8,
-        title: "Sweet Potatoes"
+        title: "Grape Tomatoes"
     }
 ];
 

@@ -48,7 +48,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                                     </div>
                                 </div>
                                 
-                                <p className="text-sm/6 md:text-sm/6 font-normal leading-normal tracking-wider custome-deskription italic">
+                                <p className="text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic">
                                     {description}
                                 </p>                            
                             </div>
@@ -62,7 +62,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                             </svg>
 
                             <div className="pl-8 sm:pl-12 pt-2">
-                                <p className="text-left text-sm/6 md:text-base font-normal leading-relaxed tracking-wide custome-deskription italic mt-4">
+                                <p className="text-left text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic mt-4">
                                     {quote}
                                 </p>
                             </div>
@@ -74,31 +74,43 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
 
                         <div className="max-w-[850px] mx-auto mt-8">
                             {mainContent.map((paragraph, index) => (
-                                <p key={index} className="text-left text-sm/6 md:text-base font-normal leading-relaxed tracking-wide custome-deskription italic mt-3">
+                                <p key={index} className="text-left text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic mt-3">
                                     {paragraph}
                                 </p>
                             ))}
                         </div>
 
-                        <div className="relative rounded-2xl custom-banner-artikel px-5 sm:px-8 py-7 md:py-8" style={{ marginTop: '32px', marginBottom: '32px', maxWidth: '850px', marginLeft: 'auto', marginRight: 'auto',}}>
+                        <div
+                            className="relative rounded-2xl custom-banner-artikel px-5 sm:px-8 py-7 md:py-8"
+                            style={{
+                                marginTop: '32px',
+                                marginBottom: '32px',
+                                maxWidth: '850px',
+                                marginLeft: 'auto',
+                                marginRight: 'auto',
+                            }}
+                        >
                             <div className="space-y-3 sm:space-y-2.5">
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 text-left">                             
-                                    <h3 className="text-xl sm:text-2xl md:text-2xl font-bold font-nunito tracking-wider leading-tight steel-haze">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 text-left">
+                                    <h3 className="text-xl sm:text-2xl md:text-2xl font-bold font-nunito tracking-wider leading-tight steel-haze text-left w-full">
                                         {features.title}
                                     </h3>
                                 </div>
 
-                                <p className="text-left text-sm/6 md:text-sm/6 font-medium leading-relaxed tracking-wide custome-deskription pl-0 sm:pl-0 italic">
+                                <p className="text-left text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic pl-0 sm:pl-0 w-full">
                                     {features.description}
                                 </p>
 
                                 <div className="space-y-4 sm:space-y-5 pl-0 sm:pl-0">
                                     {features.items.map((feature, index) => (
-                                        <div key={index} className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 p-4 sm:p-5 bg-white/35 rounded-2xl border border-gray-300">
+                                        <div
+                                            key={index}
+                                            className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 p-4 sm:p-5 bg-white/35 rounded-2xl border border-gray-300 text-left"
+                                        >
                                             <div className="w-10 h-10 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center shadow-sm flex-shrink-0">
                                                 {feature.icon}
                                             </div>
-                                            <p className="text-sm/6 md:text-sm/6 font-medium leading-relaxed tracking-wider custome-deskription text-left italic">
+                                            <p className="text-left text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic w-full">
                                                 {feature.text}
                                             </p>
                                         </div>
@@ -126,7 +138,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                                             {benefit.subtitle}
                                         </h3>
                                         {benefit.paragraphs.map((paragraph, pIndex) => (
-                                            <p key={pIndex} className="text-left text-sm/6 md:text-base font-normal leading-relaxed tracking-wide custome-deskription custome-deskription italic mt-3">
+                                            <p key={pIndex} className="text-left text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic mt-3">
                                                 {paragraph}
                                             </p>
                                         ))}
