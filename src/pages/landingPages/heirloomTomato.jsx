@@ -37,8 +37,8 @@ function Heirloom_tomato() {
             {
                 title: "Smart Soil Management",
                 description: "AI-powered soil analysis system recommends optimal conditions: pH 6.0-6.8, well-draining soil with 40% garden soil, 30% compost, 20% perlite, and 10% vermiculite. Continuous soil health monitoring prevents disease.",
-                iconBg: "bg-brown-100",
-                iconColor: "text-brown-600",
+                iconBg: "bg-amber-100",
+                iconColor: "text-amber-600",
                 iconPath: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
             }
         ],
