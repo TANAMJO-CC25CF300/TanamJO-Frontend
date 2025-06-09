@@ -41,7 +41,7 @@ function Header() {
                             <Link to="/home-page" className={`font-semibold tracking-wide ${location.pathname === '/home-page' ? 'text-white' : 'text-gray-300'}`}>Home</Link>
                             <Link to="/plant-guide" className={`font-semibold tracking-wide ${location.pathname === '/plant-guide' ? 'text-white' : 'text-gray-300'}`}>Plant Care Guide</Link>
                             <Link to="/identify-plant" className={`font-semibold tracking-wide ${location.pathname === '/identify-plant' ? 'text-white' : 'text-gray-300'}`}>Identify Plant</Link>
-                            <Link to="/encyclopedia" className={`font-semibold tracking-wide ${location.pathname === '/encyclopedia' ? 'text-white' : 'text-gray-300'}`}>About Us</Link>
+                            <Link to="/about-us" className={`font-semibold tracking-wide ${location.pathname === '/about-us' ? 'text-white' : 'text-gray-300'}`}>About Us</Link>
                         </div>
 
                         <div className="hidden xl:flex xl:flex-1 xl:justify-end">        
@@ -82,10 +82,10 @@ function Header() {
                             <div className="mt-10 flow-root">
                                 <div className="-my-6">
                                     <div className="space-y-2 py-6 text-gray-700 font-semibold">
-                                        <Link to="/" className="-mx-3 block rounded-xl px-3 py-5 text-md/7 border-b border-dotted border-gray-300 tracking-wide">Home</Link>
+                                        <Link to="/home-page" className="-mx-3 block rounded-xl px-3 py-5 text-md/7 border-b border-dotted border-gray-300 tracking-wide">Home</Link>
                                         <Link to="/plant-guide" className="-mx-3 block rounded-xl px-3 py-5 text-md/7 border-b border-dotted border-gray-300 tracking-wide">Plant Care Guide</Link>
-                                        <Link to="/" className="-mx-3 block rounded-xl px-3 py-5 text-md/7 border-b border-dotted border-gray-300 tracking-wide">Identify Plant</Link>
-                                        <Link to="/encyclopedia" className="-mx-3 block rounded-xl px-3 py-5 text-md/7 border-b border-dotted border-gray-300 tracking-wide">Encyclopedia</Link>
+                                        <Link to="/identify-plant" className="-mx-3 block rounded-xl px-3 py-5 text-md/7 border-b border-dotted border-gray-300 tracking-wide">Identify Plant</Link>
+                                        <Link to="/about-us" className="-mx-3 block rounded-xl px-3 py-5 text-md/7 border-b border-dotted border-gray-300 tracking-wide">About Us</Link>
                                     </div>
 
                                     <div className="py-10">

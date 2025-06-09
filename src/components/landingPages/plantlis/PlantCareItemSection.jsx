@@ -4,25 +4,27 @@ import PlantCareItems from './PlantCareItems';
 const plantCareItemsData = [
     {
         id: 1,
-        title: "Soil Preparation",
-        description: "Learn the best soil mix and preparation techniques for optimal tomato growth."
+        title: "Smart Check",
+        description: "Monitor plant conditions automatically using sensor technology and AI."
     },
     {
         id: 2,
-        title: "Watering Guide",
-        description: "Master the art of proper watering schedules and techniques for healthy."
+        title: "Daily Tips",
+        description: "Get daily plant care recommendations tailored to your plant's specific needs."
     },
     {
         id: 3,
-        title: "Sunlight Needs",
-        description: "Understand the ideal sunlight requirements for different tomato varieties."
+        title: "Eco-Friendly",
+        description: "Promote sustainable farming practices with minimal negative environmental impact."
     },
     {
         id: 4,
-        title: "Pruning Tips",
-        description: "Essential pruning techniques to maximize your tomato plant's productivity."
+        title: "Quick Response",
+        description: "Detect disease symptoms or nutrient deficiencies early for timely treatment."
     }
 ];
+
+
 
 function PlantCareItemSection() {
     return (

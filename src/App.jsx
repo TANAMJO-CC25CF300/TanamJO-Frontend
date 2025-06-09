@@ -1,10 +1,10 @@
 import React from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Footer from '@/layout/landingPages/footer';
 
 //pages frontend
 import PlantGuide from '@/pages/landingPages/plantGuide';
-import Encyclopedia from '@/pages/landingPages/encyclopedia';
+import AboutUs from '@/pages/landingPages/aboutUs';
 import CherryTomato from '@/pages/landingPages/cherryTomato';
 import BeefsteakTomato from '@/pages/landingPages/beefsteakTomato';
 import RomaTomato from '@/pages/landingPages/romaTomato';
@@ -29,8 +29,8 @@ function App() {
     <>
       <Routes>
         {/* Routes with Tailwind Layout */}
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/home-page" element={<HomePage/>} />
+          <Route path="/" element={<Navigate to="/home-page" replace />} />
+          <Route path="/home-page" element={<HomePage />} />
           <Route path="/plant-guide" element={<PlantGuide />} />
           <Route path="/plant-guide/cherry-tomato" element={<CherryTomato />} />
           <Route path="/plant-guide/beefsteak-tomato" element={<BeefsteakTomato />} />
@@ -40,7 +40,7 @@ function App() {
           <Route path="/plant-guide/artikel-detail-watering" element={<ArtikelDetailWatering />} />
           <Route path="/plant-guide/artikel-detail-plant-problems" element={<ArtikelDetail />} />
           <Route path="/plantguide/artikelcardutama" element={<ArtikelCardUtama />} />
-          <Route path="/encyclopedia" element={<Encyclopedia />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/identify-plant" element={<IdentifyPlant />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
