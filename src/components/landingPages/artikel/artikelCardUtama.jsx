@@ -1,11 +1,12 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
 import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandingAbout';
+import defaultImage from '../../../assets/banner/card-1.png';
 
 function ArtikelCardUtama() {
   const location = useLocation();
   const cardData = location.state?.cardData || {
-    image: "/src/assets/banner/card-1.png",
+    image: defaultImage,
     title: "Fresh Tomatoes",
     details: {
       age: "Seasonal (±70 days)",
@@ -24,6 +25,11 @@ function ArtikelCardUtama() {
     }
   };
 
+  const handleImageError = (e) => {
+    e.target.onerror = null;
+    e.target.src = defaultImage;
+  };
+
   return (
     <main>            
       <div>
@@ -34,7 +40,12 @@ function ArtikelCardUtama() {
         <div className="flex flex-col lg:flex-row items-start mx-5 md:mx-15 py-6 md:py-8 gap-4 md:gap-8 rounded-3xl mt-14 md:mt-14">
           <div className="w-full lg:w-[320px] h-[280px] lg:h-[320px] relative overflow-hidden rounded-3xl group">
             <div className="absolute inset-0 bg-black opacity-20 z-10"></div>
-            <img src={cardData.image} alt={cardData.title} className="w-full h-full object-cover"/>
+            <img 
+              src={cardData.image} 
+              alt={cardData.title} 
+              className="w-full h-full object-cover"
+              onError={handleImageError}
+            />
           </div>
           
           <div className="flex-1 pl-0 pr-0 lg:pl-0 lg:pr-0 text-left">

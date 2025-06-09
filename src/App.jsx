@@ -14,16 +14,15 @@ import ArtikelDetailWatering from '@/components/landingPages/artikel/artikelDeta
 import ArtikelCardUtama from '@/components/landingPages/artikel/ArtikelCardUtama';
 import HomePage from '@/pages/landingPages/homePage';
 import IdentifyPlant from '@/pages/landingPages/IdentifyPlant';
-
-//pages dashboard
-import Dashboard from '@/pages/dashboard/dashboard'; 
 import ForgetPassword from '@/pages/auth/forgetPassword';
 import ResetPassword from '@/pages/auth/resetPassword';
 import Register from '@/pages/auth/register';
 import Login from '@/pages/auth/login';
-
 import CameraCapture from '@/components/landingPages/capture/cameraCapture';
 import NotificationModal from '@/components/landingPages/notifikasi/notificationModal';
+
+//pages dashboard
+import Dashboard from '@/pages/dashboard/dashboard'; 
 
 function App() {
   return (

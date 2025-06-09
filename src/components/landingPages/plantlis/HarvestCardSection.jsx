@@ -1,37 +1,45 @@
 import React, { useState, useEffect } from "react";
 import HarverstCardUtama from './HarverstCardUtama';
+import card1 from '../../../assets/banner/card-1.png';
+import card2 from '../../../assets/banner/card-2.png';
+import card3 from '../../../assets/banner/card-3.png';
+import card4 from '../../../assets/banner/card-4.png';
+import card5 from '../../../assets/banner/card-5.png';
+import card6 from '../../../assets/banner/card-6.png';
+import card7 from '../../../assets/banner/card-7.png';
+import card8 from '../../../assets/banner/card-8.png';
 
 const harvestData = [
     {
-        image: "src/assets/banner/card-1.png",
+        image: card1,
         title: "Fresh Tomatoes"
     },
     {
-        image: "src/assets/banner/card-2.png",
+        image: card2,
         title: "Organic Lettuce"
     },
     {
-        image: "src/assets/banner/card-3.png",
+        image: card3,
         title: "Green Spinach"
     },
     {
-        image: "src/assets/banner/card-4.png",
+        image: card4,
         title: "Fresh Carrots"
     },
     {
-        image: "src/assets/banner/card-5.png",
+        image: card5,
         title: "Red Bell Peppers"
     },
     {
-        image: "src/assets/banner/card-6.png",
+        image: card6,
         title: "Fresh Cucumbers"
     },
     {
-        image: "src/assets/banner/card-7.png",
+        image: card7,
         title: "Green Broccoli"
     },
     {
-        image: "src/assets/banner/card-8.png",
+        image: card8,
         title: "Sweet Potatoes"
     }
 ];
@@ -71,10 +79,7 @@ function HarvestCardSection() {
             </div>
 
             <div className="flex justify-center mt-8 xl:hidden">
-                <button
-                    onClick={handleShowMoreToggle}
-                    className="px-6 py-3 border border-gray-300 w-full rounded-full custome-deskription"
-                >
+                <button onClick={handleShowMoreToggle} className="px-6 py-3 border border-gray-300 w-full rounded-full custome-deskription">
                     {showAll ? 'Show Less' : 'Show More'}
                 </button>
             </div>                
