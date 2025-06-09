@@ -40,7 +40,7 @@ function App() {
           <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
           <Route path="/plant-guide/artikel-detail-watering" element={<ArtikelDetailWatering />} />
           <Route path="/plant-guide/artikel-detail-plant-problems" element={<ArtikelDetail />} />
-          <Route path="/artikelcardutama" element={<ArtikelCardUtama />} />
+          <Route path="/plantguide/artikelcardutama" element={<ArtikelCardUtama />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/identify-plant" element={<IdentifyPlant />} />
           <Route path="/dashboard" element={<Dashboard />} />
