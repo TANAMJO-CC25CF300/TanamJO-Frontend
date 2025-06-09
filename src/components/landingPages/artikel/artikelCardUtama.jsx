@@ -284,6 +284,7 @@ function ArtikelCardUtama() {
                   <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0">
                     Popular Tomato Varieties:
                   </p>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
                     <span className="border border-gray-200 rounded-full px-4 py-3 text-sm/6 custome-deskription text-left font-nunito tracking-wider leading-normal">
                       Beefsteak: Large, meaty fruits
@@ -315,6 +316,7 @@ function ArtikelCardUtama() {
                   <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0">
                     Variety Characteristics:
                   </p>
+                  
                   <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0 mt-2">
                     Each tomato variety offers unique characteristics that make them suitable for different uses. Beefsteak tomatoes are perfect for sandwiches and slicing, while Cherry tomatoes are ideal for salads and snacking. Roma tomatoes, with their meaty texture and low moisture content, are excellent for sauces and canning. Heirloom varieties provide diverse flavors and colors, adding visual appeal to dishes. Understanding these characteristics helps in selecting the right variety for your specific needs and growing conditions.
                   </p>
