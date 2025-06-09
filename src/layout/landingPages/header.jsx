@@ -36,12 +36,12 @@ function Header() {
                                 </svg>
                             </button>
                         </div>
-
+                        
                         <div className="hidden xl:flex xl:gap-x-15 text-sm/6 bg-white/20 backdrop-blur-sm rounded-full px-10 py-2.5 border-1 border-white">
-                            <Link to="/home-page" className="font-semibold text-white tracking-wide">Home</Link>
-                            <Link to="/plant-guide" className="font-semibold text-white tracking-wide">Plant Care Guide</Link>
-                            <Link to="/identify-plant" className="font-semibold text-white tracking-wide">Identify Plant</Link>
-                            <Link to="/encyclopedia" className="font-semibold text-white tracking-wide">About Us</Link>
+                            <Link to="/home-page" className={`font-semibold tracking-wide ${location.pathname === '/home-page' ? 'text-white' : 'text-gray-300'}`}>Home</Link>
+                            <Link to="/plant-guide" className={`font-semibold tracking-wide ${location.pathname === '/plant-guide' ? 'text-white' : 'text-gray-300'}`}>Plant Care Guide</Link>
+                            <Link to="/identify-plant" className={`font-semibold tracking-wide ${location.pathname === '/identify-plant' ? 'text-white' : 'text-gray-300'}`}>Identify Plant</Link>
+                            <Link to="/encyclopedia" className={`font-semibold tracking-wide ${location.pathname === '/encyclopedia' ? 'text-white' : 'text-gray-300'}`}>About Us</Link>
                         </div>
 
                         <div className="hidden xl:flex xl:flex-1 xl:justify-end">        
