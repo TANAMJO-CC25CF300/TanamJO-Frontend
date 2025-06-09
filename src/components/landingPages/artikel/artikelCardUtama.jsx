@@ -37,18 +37,13 @@ function ArtikelCardUtama() {
       </div>
 
       <div className="lg:mx-0 xl:mx-10 -mt-6 w-auto rounded-3xl text-center relative z-20 mb-5 shadow-md pattern-background">
-        <div className="flex flex-col lg:flex-row items-start mx-5 md:mx-15 py-6 md:py-8 gap-4 md:gap-8 rounded-3xl mt-14 md:mt-14">
+        <div className="flex flex-col lg:flex-row items-start mx-5 md:mx-15 py-6 md:py-8 gap-4 md:gap-8 rounded-3xl mt-13 md:mt-13">
           <div className="w-full lg:w-[320px] h-[280px] lg:h-[320px] relative overflow-hidden rounded-3xl group">
             <div className="absolute inset-0 bg-black opacity-20 z-10"></div>
-            <img 
-              src={cardData.image} 
-              alt={cardData.title} 
-              className="w-full h-full object-cover"
-              onError={handleImageError}
-            />
+            <img src={cardData.image} alt={cardData.title} className="w-full h-full object-cover" onError={handleImageError}/>
           </div>
           
-          <div className="flex-1 pl-0 pr-0 lg:pl-0 lg:pr-0 text-left">
+          <div className="flex-1 pl-0 pr-0 lg:pl-0 lg:pr-0 text-left mt-10">
             <h2 className="text-xl sm:text-2xl lg:text-2xl font-bold font-nunito tracking-wider leading-tight steel-haze mt-2.5 md:mt-0">
               {cardData.title} Details
             </h2>
@@ -150,7 +145,7 @@ function ArtikelCardUtama() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 mt-8">
+              <div className="flex flex-col gap-3 mt-6">
                 <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0">
                   {cardData.title} require special attention to the balance of micro-nutrients such as calcium, magnesium, and boron to prevent damage to fruits and leaves. Deficiency in any of these elements can cause problems such as blossom end rot, yellowing leaves, and poor fruit development. Regular soil testing and appropriate fertilization are crucial for maintaining optimal nutrient levels.
                 </p>
@@ -230,7 +225,7 @@ function ArtikelCardUtama() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 mt-8">
+              <div className="flex flex-col gap-3 mt-6">
                 <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0">
                   {cardData.title} are sensitive to excess water. Overwatering can cause root rot and trigger fungal diseases such as root rot or leaf spot.
                 </p>
@@ -251,7 +246,7 @@ function ArtikelCardUtama() {
                   {cardData.title} are nutritional powerhouses, rich in:
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
                   <span className="border border-gray-200 rounded-full px-4 py-3 text-sm/6 custome-deskription text-left font-nunito tracking-wider leading-normal">
                     Lycopene: Powerful antioxidant
                   </span>
@@ -277,7 +272,7 @@ function ArtikelCardUtama() {
                   </span>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-3">
                   <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0">
                     Detailed Nutritional Information:
                   </p>
@@ -286,12 +281,12 @@ function ArtikelCardUtama() {
                   </p>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-3">
                   <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0">
                     Popular {cardData.title} Varieties:
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-5">
                     <span className="border border-gray-200 rounded-full px-4 py-3 text-sm/6 custome-deskription text-left font-nunito tracking-wider leading-normal">
                       Beefsteak: Large, meaty fruits
                     </span>
@@ -318,7 +313,7 @@ function ArtikelCardUtama() {
                   </div>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-3">
                   <p className="text-sm/6 font-nunito font-medium custome-deskription text-left tracking-wider leading-normal w-full pl-0 sm:pl-0 ml-0">
                     Variety Characteristics:
                   </p>

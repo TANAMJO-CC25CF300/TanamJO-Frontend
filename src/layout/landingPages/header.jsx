@@ -41,7 +41,7 @@ function Header() {
                             <Link to="/home-page" className="font-semibold text-white tracking-wide">Home</Link>
                             <Link to="/plant-guide" className="font-semibold text-white tracking-wide">Plant Care Guide</Link>
                             <Link to="/identify-plant" className="font-semibold text-white tracking-wide">Identify Plant</Link>
-                            <Link to="/encyclopedia" className="font-semibold text-white tracking-wide">Encyclopedia</Link>
+                            <Link to="/encyclopedia" className="font-semibold text-white tracking-wide">About Us</Link>
                         </div>
 
                         <div className="hidden xl:flex xl:flex-1 xl:justify-end">        

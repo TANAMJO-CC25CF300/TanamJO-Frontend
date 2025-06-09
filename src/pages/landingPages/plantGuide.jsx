@@ -106,7 +106,7 @@ function PlantGuide() {
                                     Tomato Insights
                                 </span>      
 
-                                <h2 className="text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
                                     Identify Plant Problems <br/>Before They Spread
                                 </h2>                
                             </div>

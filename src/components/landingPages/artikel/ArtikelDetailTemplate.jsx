@@ -107,7 +107,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                             </div>
                         </div>
 
-                        <div className="max-w-[850px] mx-auto mt-10 mb-10">
+                        <div className="max-w-[850px] mx-auto mt-10 mb-8">
                             {benefits.map((benefit, index) => (
                                 <div key={index} className="space-y-4 text-left">
                                     <div className="flex items-center space-x-3">
