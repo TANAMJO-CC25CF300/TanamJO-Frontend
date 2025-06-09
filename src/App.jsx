@@ -11,6 +11,7 @@ import RomaTomato from '@/pages/landingPages/romaTomato';
 import HeirloomTomato from '@/pages/landingPages/heirloomTomato';
 import ArtikelDetail from '@/components/landingPages/artikel/artikelDetail';
 import ArtikelDetailWatering from '@/components/landingPages/artikel/artikelDetailWatering';
+import ArtikelCardUtama from '@/components/landingPages/artikel/ArtikelCardUtama';
 import HomePage from '@/pages/landingPages/homePage';
 import IdentifyPlant from '@/pages/landingPages/IdentifyPlant';
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
           <Route path="/plant-guide/artikel-detail-watering" element={<ArtikelDetailWatering />} />
           <Route path="/plant-guide/artikel-detail-plant-problems" element={<ArtikelDetail />} />
+          <Route path="/artikelcardutama" element={<ArtikelCardUtama />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/identify-plant" element={<IdentifyPlant />} />
           <Route path="/dashboard" element={<Dashboard />} />

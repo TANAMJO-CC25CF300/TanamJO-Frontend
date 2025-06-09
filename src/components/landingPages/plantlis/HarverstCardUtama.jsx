@@ -1,10 +1,8 @@
 import React from "react";
 
-function HarverstCardUtama({ image, title }) {
-
+function HarverstCardUtama({ image, title, onClick }) {
     return (
-
-        <main>
+        <main onClick={onClick} className="cursor-pointer">
             <div className="relative flex flex-col justify-end items-center h-[240px] sm:h-[260px] md:h-[300px] min-h-[220px] sm:min-h-[240px] md:min-h-[280px] w-full">
                 {image && (
                     <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover rounded-3xl" style={{ zIndex: 1 }}/>
@@ -23,8 +21,6 @@ function HarverstCardUtama({ image, title }) {
                 </div>
             </div>            
         </main>
-
-
     );
 }
 
