@@ -2,7 +2,8 @@ import React from "react";
 import Card1 from "../../components/Card1";
 import Card2 from "../../components/Card2";
 import LittleButton from "../../components/LittleButton";
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
+import Header from '@/layout/landingPages/header';
 import Footer from "../../components/Footer";
 import heroBg from "../../assets/heroSection.png"
 import bgPattern from "../../assets/background.png"
@@ -15,36 +16,47 @@ import Card3 from "../../components/Card3";
 
 const HomePage = () => {
   return (
-    <div className="w-full">
-      <div className="relative w-full">
+    <div className="min-h-screen bg-white flex justify-center items-center px-8 py-8">
+    <div className="w-full max-w-[1280px] bg-white rounded-3xl overflow-hidden shadow-xl">
+      <div className="relative">
+      {/* Sticky Header dengan latar transparan gelap agar kontras */}
+      <div className="sticky top-0 z-50 bg-black/40 backdrop-blur-sm">
+        <Header />
+      </div>
+
+      {/* Hero Background Section */}
+      <div className="relative w-full h-full overflow-hidden">
+        {/* Gambar background */}
         <img
           src={heroBg}
           alt="background"
-          className="w-full h-auto object-cover"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0">
-          {/* Header */}
-          <Header bgColor="transparent" />
 
-          {/* Hero Section */}
+        {/* Overlay hitam transparan */}
+        <div className="absolute inset-0 bg-black/20 z-10" />
+
+        {/* Hero Content di atas overlay */}
+        <div className="absolute inset-0 z-20 flex items-center justify-start">
           <section className="w-full px-6 md:px-15 py-1 flex flex-col items-start text-left max-w-5xl">
-            <button className="font-bold px-4 py-1 text-xs border border-black rounded-full mb-4 tracking-wide">
+            <button className="font-bold px-4 py-1 text-xs border border-white text-white rounded-full mb-4 tracking-wide bg-white/10 backdrop-blur-sm">
               BELIEVE IN QUALITY!
             </button>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-black">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-12 text-white drop-shadow-lg">
               Grow Smarter: <br /> Smart Tomato Tips
             </h1>
 
-            <hr className="w-full border-t border-black my-2 border-[2px]" />
+            <hr className="w-231 border-t border-white my-2 border-[2px]" />
 
-            <p className="font-bold text-base md:text-lg text-black w-full mb-8">
+            <p className="font-bold text-base md:text-lg text-white w-full mb-8 drop-shadow-sm">
               Not sure how to start with tomatoes? We’re here to guide you — from seed to salad
             </p>
 
             <LittleButton>Get Started</LittleButton>
           </section>
         </div>
+      </div>
       </div>
 
       <div 
@@ -278,6 +290,7 @@ const HomePage = () => {
         {/* Footer */}
         <Footer />
       </div>
+    </div>
     </div>
   );
 };
