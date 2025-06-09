@@ -1,0 +1,25 @@
+import React from "react";
+import LeftSidebar from "../../layout/dashboard/left-sidebar";
+import Header from "../../components/Header";
+import AddPlant from "../../components/MyPlant/AddPlant";
+
+const MyPlant = () => {
+  return (
+    <div className="min-h-screen bg-[#F8F9FA] flex flex-col">
+      <div className="flex flex-1">
+        <LeftSidebar />
+        <main className="flex-1 flex flex-col items-center justify-start px-8 py-8">
+          <h1 className="text-[20px] font-semibold text-gray-400 mb-6 w-full">
+            My Plant
+          </h1>
+          <AddPlant />
+          <footer className="mt-8 text-center w-full text-xs text-gray-400">
+            © 2024 TanamJO – Platform Edukasi dan Pemantauan Kesehatan Tanaman.
+          </footer>
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default MyPlant;
