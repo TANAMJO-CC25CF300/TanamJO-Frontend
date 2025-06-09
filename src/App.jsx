@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
+import Footer from '@/layout/landingPages/footer';
 
 //pages frontend
 import PlantGuide from '@/pages/landingPages/plantGuide';
@@ -10,18 +11,19 @@ import RomaTomato from '@/pages/landingPages/romaTomato';
 import HeirloomTomato from '@/pages/landingPages/heirloomTomato';
 import ArtikelDetail from '@/pages/landingPages/artikelDetail';
 import HomePage from '@/pages/landingPages/homePage';
+import IdentifyPlant from '@/pages/landingPages/IdentifyPlant';
 
 //pages dashboard
 import Dashboard from '@/pages/dashboard/dashboard'; 
 
-// import Card1 from "./components/Card1";
-// import image1 from "./assets/tomato1.png";
-// import HomePage from "./pages/landingPages/homePage";
-// import IdentifyPlant from "./pages/landingPages/IdentifyPlant";
-// import SignUp from "./pages/loginPages/signUp";
-// import LogIn from "./pages/loginPages/logIn";
-// import ForgotPassword from "./pages/loginPages/forgotPassword";
-// import ResetPassword from "./pages/loginPages/resetPassword";
+// import halaman auth
+import ForgetPassword from '@/pages/auth/forgetPassword';
+import ResetPassword from '@/pages/auth/resetPassword';
+import Register from '@/pages/auth/register';
+import Login from '@/pages/auth/login';
+
+import CameraCapture from '@/components/landingPages/capture/cameraCapture';
+import NotificationModal from '@/components/landingPages/notifikasi/notificationModal';
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
       <Routes>
         {/* Routes with Tailwind Layout */}
           <Route path="/" element={<HomePage/>} />
+          <Route path="/home-page" element={<HomePage/>} />
           <Route path="/plant-guide" element={<PlantGuide />} />
           <Route path="/plant-guide/cherry-tomato" element={<CherryTomato />} />
           <Route path="/plant-guide/beefsteak-tomato" element={<BeefsteakTomato />} />
@@ -36,10 +39,18 @@ function App() {
           <Route path="/plant-guide/heirloom-tomato" element={<HeirloomTomato />} />
           <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
+          <Route path="/identify-plant" element={<IdentifyPlant />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/capture" element={<CameraCapture />} />
+          <Route path="/notification" element={<NotificationModal />} />
       </Routes>
+
+      <Footer />
       
-      {/* <LogIn /> */}
     </>
   );
 }

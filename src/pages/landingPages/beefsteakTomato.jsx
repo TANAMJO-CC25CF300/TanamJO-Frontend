@@ -1,5 +1,5 @@
 import React from "react";
-import HarvestLanding from '@/components/landingPages/plantlis/HarvestLandingHome';
+import HarvestLanding from '@components/landingPages/plantlis/HarvestLandingAbout';
 import TomatoGuide from '@/components/landingPages/plantlis/TomatoGuide';
 
 function BeefsteakTomato() {

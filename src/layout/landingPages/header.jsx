@@ -38,9 +38,9 @@ function Header() {
                         </div>
 
                         <div className="hidden xl:flex xl:gap-x-15 text-sm/6 bg-white/20 backdrop-blur-sm rounded-full px-10 py-2.5 border-1 border-white">
-                            <Link to="/" className="font-semibold text-white tracking-wide">Home</Link>
+                            <Link to="/home-page" className="font-semibold text-white tracking-wide">Home</Link>
                             <Link to="/plant-guide" className="font-semibold text-white tracking-wide">Plant Care Guide</Link>
-                            <Link to="/" className="font-semibold text-white tracking-wide">Identify Plant</Link>
+                            <Link to="/identify-plant" className="font-semibold text-white tracking-wide">Identify Plant</Link>
                             <Link to="/encyclopedia" className="font-semibold text-white tracking-wide">Encyclopedia</Link>
                         </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import HarvestLanding from '@/components/landingPages/plantlis/HarvestLandingHome';
+import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandingAbout';
 import HarvestSection from '@/components/landingPages/plantlis/HarvestCardSection';
 import ArtikelGuide from '@/components/landingPages/artikel/ArtikelGuide';
 import bannerImage from '@/assets/Banner/banner-1.png';
@@ -12,7 +12,7 @@ function PlantGuide() {
 
         <main>            
             <div>
-                <HarvestLanding title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
+                <HarvestLandingAbout title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
             </div>
 
             <div className="lg:mx-0 xl:mx-10 -mt-6 w-auto rounded-4xl text-center relative z-20 mb-5 shadow-md pattern-background">
