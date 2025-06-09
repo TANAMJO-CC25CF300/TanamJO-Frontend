@@ -9,14 +9,13 @@ import CherryTomato from '@/pages/landingPages/cherryTomato';
 import BeefsteakTomato from '@/pages/landingPages/beefsteakTomato';
 import RomaTomato from '@/pages/landingPages/romaTomato';
 import HeirloomTomato from '@/pages/landingPages/heirloomTomato';
-import ArtikelDetail from '@/pages/landingPages/artikelDetail';
+import ArtikelDetail from '@/components/landingPages/artikel/artikelDetail';
+import ArtikelDetailWatering from '@/components/landingPages/artikel/artikelDetailWatering';
 import HomePage from '@/pages/landingPages/homePage';
 import IdentifyPlant from '@/pages/landingPages/IdentifyPlant';
 
 //pages dashboard
 import Dashboard from '@/pages/dashboard/dashboard'; 
-
-// import halaman auth
 import ForgetPassword from '@/pages/auth/forgetPassword';
 import ResetPassword from '@/pages/auth/resetPassword';
 import Register from '@/pages/auth/register';
@@ -36,8 +35,10 @@ function App() {
           <Route path="/plant-guide/cherry-tomato" element={<CherryTomato />} />
           <Route path="/plant-guide/beefsteak-tomato" element={<BeefsteakTomato />} />
           <Route path="/plant-guide/roma-tomato" element={<RomaTomato />} />
-          <Route path="/plant-guide/heirloom-tomato" element={<HeirloomTomato />} />
+          <Route path="/plant-guide/heirloom-tomato" element={<HeirloomTomato />} />         
           <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
+          <Route path="/plant-guide/artikel-detail-watering" element={<ArtikelDetailWatering />} />
+          <Route path="/plant-guide/artikel-detail-plant-problems" element={<ArtikelDetail />} />
           <Route path="/encyclopedia" element={<Encyclopedia />} />
           <Route path="/identify-plant" element={<IdentifyPlant />} />
           <Route path="/dashboard" element={<Dashboard />} />
