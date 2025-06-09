@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Footer from '@/layout/landingPages/footer';
+import BackToTop from '@/components/common/BackToTop';
 
 //pages frontend
 import PlantGuide from '@/pages/landingPages/plantGuide';
@@ -52,7 +53,7 @@ function App() {
       </Routes>
 
       <Footer />
-      
+      <BackToTop />
     </>
   );
 }
