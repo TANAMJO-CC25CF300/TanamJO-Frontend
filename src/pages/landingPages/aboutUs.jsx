@@ -214,7 +214,7 @@ function AboutUs() {
                             </p>
                         </div>
 
-                        <div className="w-full max-w-4xl mx-auto bg-gray-50 rounded-3xl p-4 md:p-5 flex items-center mt-6">
+                        <div className="w-full max-w-4xl mx-auto custom-banner-artikel rounded-3xl p-4 md:p-5 flex items-center mt-6">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-gray-300 mr-3 flex-shrink-0">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 9.75h.008v.008H11.25V9.75zm0 4.5h.008v.008H11.25v-.008zM12 2.25c5.385 0 9.75 4.365 9.75 9.75S17.385 21.75 12 21.75 2.25 17.385 2.25 12 6.615 2.25 12 2.25z" />
                             </svg>
