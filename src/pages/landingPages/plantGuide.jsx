@@ -1,18 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import HarvestLanding from '@/components/landingPages/plantlis/HarvestLandingHome';
+import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandingAbout';
 import HarvestSection from '@/components/landingPages/plantlis/HarvestCardSection';
 import ArtikelGuide from '@/components/landingPages/artikel/ArtikelGuide';
-import bannerImage from '@/assets/banner/banner-1.png';
+import bannerImage from '@/assets/Banner/banner-1.png';
 
 function PlantGuide() {
     const navigate = useNavigate();
 
     return (
 
-        <main>            
+        <>        
             <div>
-                <HarvestLanding title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
+                <HarvestLandingAbout title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
             </div>
 
             <div className="lg:mx-0 xl:mx-10 -mt-6 w-auto rounded-4xl text-center relative z-20 mb-5 shadow-md pattern-background">
@@ -106,7 +106,7 @@ function PlantGuide() {
                                     Tomato Insights
                                 </span>      
 
-                                <h2 className="text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
                                     Identify Plant Problems <br/>Before They Spread
                                 </h2>                
                             </div>
@@ -144,7 +144,7 @@ function PlantGuide() {
                     </div>        
                 </div>                              
             </div>
-        </main>
+        </>
         
     );
 }

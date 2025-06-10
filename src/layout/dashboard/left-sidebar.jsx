@@ -1,26 +1,38 @@
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo/logo.png";
 import {
   ChevronFirst,
   ChevronLast,
   Home,
   Sprout,
   Stethoscope,
-  Menu,
-  Search,
-  Bell,
-  User,
   LogOut,
+  Menu,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function LeftSidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
+  const handleResize = useCallback(() => {
+    const mobile = window.innerWidth < 1024;
+    setIsMobile(mobile);
+    setIsOpen(!mobile);
+  }, []);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleResize]);
+
   const mainMenus = [
-    { name: "Home", icon: Home, path: "/dashboard/home" },
-    { name: "My Plant", icon: Sprout, path: "/test" },
+    { name: "Home", icon: Home, path: "/dashboard" },
+    { name: "My Plant", icon: Sprout, path: "/MyPlant" },
     {
       name: "Disease Identify",
       icon: Stethoscope,
@@ -28,47 +40,66 @@ export default function LeftSidebar() {
     },
   ];
 
-  // Untuk dot indicator contoh pada menu Home
-  const menuWithDot = ["Home"];
-
   return (
-    <div className="flex h-screen">
+    <>
+      {/* Mobile Menu Button */}
+      {isMobile && !isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed top-4 left-4 z-50 p-3 bg-white rounded-lg shadow-md hover:bg-gray-50 border border-gray-200 md:hidden"
+          style={{ transform: 'translateX(0)' }}
+        >
+          <Menu size={18} className="text-gray-700" />
+        </button>
+      )}
+
+      {/* Overlay for mobile */}
+      {isMobile && isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[45] transition-opacity"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
       <aside
-        className={`h-screen bg-white border-r shadow-sm flex flex-col transition-all duration-300 fixed z-30 top-0 left-0 rounded-r-2xl ${
-          isOpen ? "w-64" : "w-20"
-        } md:relative md:top-0`}
+        className={`min-h-screen bg-white flex flex-col transition-all duration-300 ease-in-out fixed lg:relative z-[46] top-0 left-0
+          ${isOpen ? "w-64" : "w-16"} 
+          ${isMobile ? (isOpen ? "translate-x-0" : "-translate-x-full") : "translate-x-0"}
+          border-r border-gray-200 shadow-sm`}
       >
-        <nav className="h-full flex flex-col justify-between relative">
+        <nav className="h-full flex flex-col justify-between">
           <div>
             {/* Logo Section */}
-            <div className="p-4 pb-2 flex justify-between items-center">
-              {isOpen ? (
-                <img
-                  src={logo}
-                  alt="logo"
-                  className="transition-all duration-300 w-40"
-                />
-              ) : (
-                <button
-                  className="p-1.5 rounded-full hover:bg-gray-100 flex items-center justify-center"
-                  onClick={() => setIsOpen(true)}
-                >
-                  <ChevronLast size={32} />
-                </button>
-              )}
+            <div className="p-3 flex justify-between items-center border-b border-gray-100">
+              <div className="flex items-center">
+                {isOpen ? (
+                  <img
+                    src={logo}
+                    alt="logo"
+                    className="transition-all duration-300 w-32 object-contain"
+                  />
+                ) : (
+                  <button
+                    className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
+                    onClick={() => setIsOpen(true)}
+                  >
+                    <ChevronLast size={20} className="text-gray-600" />
+                  </button>
+                )}
+              </div>
               {isOpen && (
                 <button
-                  className="p-1.5 rounded-full hover:bg-gray-100 ml-2"
+                  className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  <ChevronFirst size={24} />
+                  <ChevronFirst size={16} className="text-gray-600" />
                 </button>
               )}
             </div>
 
             {/* Main Menu Section */}
-            <div className="px-1 py-2">
+            <div className="px-2 py-3">
               <ul className="space-y-1">
                 {mainMenus.map((menu) => {
                   const isActive = location.pathname === menu.path;
@@ -76,94 +107,75 @@ export default function LeftSidebar() {
                   return (
                     <li
                       key={menu.name}
-                      className="relative group flex justify-center"
+                      className="relative group"
                     >
                       <Link
                         to={menu.path}
                         className={`flex items-center ${
-                          isOpen ? "gap-4 px-4" : "px-0"
-                        } py-3 rounded-xl transition-colors duration-200 hover:bg-blue-100 group ${
+                          isOpen ? "gap-3 px-3" : "justify-center"
+                        } py-2 rounded-lg transition-all duration-200 
+                        ${
                           isActive
-                            ? "bg-blue-100 text-blue-700 font-medium"
-                            : "text-gray-700"
+                            ? "bg-blue-50 text-blue-600 font-medium"
+                            : "text-gray-600 hover:bg-gray-50"
                         } ${
-                          isOpen
-                            ? "justify-start w-full"
-                            : "justify-center w-12"
+                          isOpen ? "w-full" : "w-8 mx-auto"
                         }`}
                       >
                         <Icon
-                          size={24}
+                          size={18}
                           className={`${
-                            isActive ? "text-blue-700" : "text-gray-600"
-                          } group-hover:text-blue-700`}
+                            isActive ? "text-blue-600" : "text-gray-500"
+                          } transition-colors group-hover:text-blue-600 ${
+                            !isOpen && "transform group-hover:scale-110 transition-transform"
+                          }`}
                         />
-                        {/* Dot indicator */}
-                        {menuWithDot.includes(menu.name) && (
-                          <span
-                            className={`ml-2 w-2 h-2 rounded-full bg-blue-500 ${
-                              isOpen ? "" : "absolute left-8"
-                            }`}
-                          ></span>
-                        )}
-                        {/* Label */}
                         {isOpen && (
-                          <span className="transition-all duration-200 origin-left text-sm ml-2">
+                          <span className="text-sm font-medium transition-all duration-200">
                             {menu.name}
                           </span>
                         )}
                       </Link>
-                      {/* Tooltip saat collapse */}
                       {!isOpen && (
-                        <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-1 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
+                        <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity delay-75 z-50 whitespace-nowrap">
                           {menu.name}
-                        </span>
+                        </div>
                       )}
                     </li>
                   );
                 })}
               </ul>
             </div>
-
-            {/* Divider */}
-            <div className="px-2 py-2">
-              <div className="h-px bg-gray-200"></div>
-            </div>
           </div>
-          {/* Logout Button di bawah */}
-          <div className="mb-4 px-1">
+
+          {/* Logout Button */}
+          <div className="p-2 mb-2">
             <button
               className={`flex items-center ${
-                isOpen ? "gap-4 px-4" : "px-0 justify-center w-12"
-              } py-3 rounded-xl transition-colors duration-200 hover:bg-red-100 text-red-600 w-full group relative`}
+                isOpen ? "gap-3 px-3" : "justify-center"
+              } py-2 rounded-lg transition-all duration-200 hover:bg-red-50 text-red-600 w-full group relative
+              ${isOpen ? "hover:pl-4" : "w-8 mx-auto"}`}
             >
-              <LogOut size={24} />
-              {isOpen && <span className="text-sm ml-2">Logout</span>}
-              {/* Tooltip saat collapse */}
-              {!isOpen && (
-                <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-1 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
+              <LogOut 
+                size={18} 
+                className={`transition-transform group-hover:scale-110 ${
+                  isOpen && "group-hover:translate-x-1"
+                }`} 
+              />
+              {isOpen && (
+                <span className="text-sm font-medium transition-all duration-200">
                   Logout
                 </span>
               )}
+              {!isOpen && (
+                <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity delay-75 z-50 whitespace-nowrap">
+                  Logout
+                </div>
+              )}
             </button>
           </div>
-
-          {/* Mobile Toggle Button */}
-          {/* <button
-            className={`p-2 rounded-full hover:bg-gray-100 absolute top-4 transition-all duration-300 border shadow md:hidden block ${
-              isOpen ? "right-[-18px]" : "right-[-18px]"
-            }`}
-            onClick={() => setIsOpen((v) => !v)}
-          >
-            {isOpen ? <ChevronFirst size={20} /> : <ChevronLast size={20} />}
-          </button> */}
         </nav>
       </aside>
-
-      {/* Main Content Area */}
-      <main className="flex-1 md:ml-0 mt-14 md:mt-0">
-        {/* Your main content goes here */}
-      </main>
-    </div>
+    </>
   );
 }

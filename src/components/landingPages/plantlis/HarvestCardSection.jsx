@@ -1,38 +1,46 @@
 import React, { useState, useEffect } from "react";
 import HarverstCardUtama from './HarverstCardUtama';
+import card1 from '../../../assets/banner/card-1.png';
+import card2 from '../../../assets/banner/card-2.png';
+import card3 from '../../../assets/banner/card-3.png';
+import card4 from '../../../assets/banner/card-4.png';
+import card5 from '../../../assets/banner/card-5.png';
+import card6 from '../../../assets/banner/card-6.png';
+import card7 from '../../../assets/banner/card-7.png';
+import card8 from '../../../assets/banner/card-8.png';
 
 const harvestData = [
     {
-        image: "src/assets/banner/card-1.png",
-        title: "Fresh Tomatoes"
+        image: card1,
+        title: "Cherry Tomatoes"
     },
     {
-        image: "src/assets/banner/card-2.png",
-        title: "Organic Lettuce"
+        image: card2,
+        title: "Beefsteak Tomatoes"
     },
     {
-        image: "src/assets/banner/card-3.png",
-        title: "Green Spinach"
+        image: card3,
+        title: "Roma Tomatoes"
     },
     {
-        image: "src/assets/banner/card-4.png",
-        title: "Fresh Carrots"
+        image: card4,
+        title: "Heirloom Tomatoes"
     },
     {
-        image: "src/assets/banner/card-5.png",
-        title: "Red Bell Peppers"
+        image: card5,
+        title: "Green Tomatoes"
     },
     {
-        image: "src/assets/banner/card-6.png",
-        title: "Fresh Cucumbers"
+        image: card6,
+        title: "Yellow Tomatoes"
     },
     {
-        image: "src/assets/banner/card-7.png",
-        title: "Green Broccoli"
+        image: card7,
+        title: "Campari Tomatoes"
     },
     {
-        image: "src/assets/banner/card-8.png",
-        title: "Sweet Potatoes"
+        image: card8,
+        title: "Grape Tomatoes"
     }
 ];
 
@@ -60,7 +68,7 @@ function HarvestCardSection() {
     };
 
     return (
-        <main>
+        <>        
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 p-1">
                 {displayData.map((item, index) => (
                     <div key={index} className={`relative group ${displayData.length > 4 && index >= 4 ? 'mt-2.5' : ''}`}>
@@ -71,14 +79,11 @@ function HarvestCardSection() {
             </div>
 
             <div className="flex justify-center mt-8 xl:hidden">
-                <button
-                    onClick={handleShowMoreToggle}
-                    className="px-6 py-3 border border-gray-300 w-full rounded-full custome-deskription"
-                >
+                <button onClick={handleShowMoreToggle} className="px-6 py-3 border border-gray-300 w-full rounded-full custome-deskription">
                     {showAll ? 'Show Less' : 'Show More'}
                 </button>
             </div>                
-        </main>
+        </>
     );
 }
 

@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import LittleButton from "../LittleButton";
-import NotHavePlant from "../../assets/MyPlant/NotHavePlant.png";
-import FormPlant from "./FormPlant";
+import React from "react";
 
 const AddPlant = () => {
   const [openModal, setOpenModal] = useState(false);
