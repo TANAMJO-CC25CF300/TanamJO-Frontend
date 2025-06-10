@@ -1,6 +1,5 @@
 import React from "react";
 import LeftSidebar from "../../layout/dashboard/left-sidebar";
-import Header from "../../components/Header";
 import AddPlant from "../../components/MyPlant/AddPlant";
 
 const MyPlant = () => {

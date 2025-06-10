@@ -1,10 +1,10 @@
 import React from "react";
 import card1 from '@/assets/profile/profile-1.jpg';
-import banner1 from '@/assets/banner/card-7.png';
+import banner1 from '@/assets/Banner/card-7.png';
 
-const ArtikelUtama = () => (
+const ArtikelList = () => (
 
-    <main>
+    <>        
         <div className="flex-1 flex flex-col">
             <div className="w-full min-h-[280px] md:min-h-[260px] xl:min-h-[320px] rounded-t-3xl md:rounded-3xl overflow-hidden relative">
                 <img src={banner1} className="absolute inset-0 w-full h-full object-cover" alt="Banner Image" />
@@ -60,8 +60,8 @@ const ArtikelUtama = () => (
                 </div>
             </div>
         </div>        
-    </main>
+    </>
 
 );
 
-export default ArtikelUtama;
+export default ArtikelList;

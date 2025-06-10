@@ -2,25 +2,30 @@ import React from "react";
 
 function PlantCareItems({ items }) {
     return (
-        <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {items.map((item) => (
-                <div key={item.id} className="p-3 rounded-2xl text-white space-y-2 relative h-[160px] md:h-[180px] custom-banner">
-                    <div className="absolute top-2 sm:top-3 right-3 bg-white text-green-700 rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-bold text-sm sm:text-base">
-                        {item.id}
-                    </div>
+        <>        
+            <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {items.map((item) => (
+                    <div key={item.id} className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-600 to-green-800 p-5 w-full ">
+                        <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-white/10"></div>
+                        <div className="absolute -left-4 -bottom-4 h-24 w-24 rounded-full bg-white/10"></div>
 
-                    <div className="mt-4 sm:mt-5 md:mt-6">
-                        <h3 className="text-lg font-bold tracking-wide border-b border-white pb-1.5 sm:pb-2 text-left">
-                            {item.title}
-                        </h3>
-                        <p className="text-sm/6 sm:text-sm/6 leading-normal mt-2 sm:mt-2.5 text-left font-semibold tracking-wider max-w-[95%] sm:max-w-sm lg:line-clamp-3 xl:line-clamp-3">
-                            {item.description}
-                        </p>
+                        <div className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-green-700 shadow-md">
+                            <span className="text-lg font-bold">{item.id}</span>
+                        </div>
+
+                        <div className="relative mt-8">
+                            <h3 className="mb-4 text-xl font-bold tracking-wide text-white border-b border-white/30 pb-3">
+                                {item.title}
+                            </h3>
+                            <p className="text-sm leading-relaxed text-white/90 font-medium tracking-wide line-clamp-3">
+                                {item.description}
+                            </p>
+                        </div>
                     </div>
-                </div>
-            ))}
-        </main>
+                ))}
+            </div>
+        </>
     );
 }
 
-export default PlantCareItems; 
+export default PlantCareItems;

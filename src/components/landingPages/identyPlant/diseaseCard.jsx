@@ -1,7 +1,7 @@
 import React from "react";
 
 const DiseaseCard = ({ disease, plant, symptoms, treatment, image }) => (
-  <div className="w-full max-w-5xl flex bg-white rounded-2xl shadow p-6 items-center max-w-3xl mx-auto">
+  <div className="w-full max-w-5xl flex p-6 items-center max-w-3xl mx-auto">
     {/* Image or Placeholder */}
     {image ? (
       <img
@@ -10,7 +10,7 @@ const DiseaseCard = ({ disease, plant, symptoms, treatment, image }) => (
         className="w-40 h-40 object-cover rounded-lg mr-6 flex-shrink-0"
       />
     ) : (
-      <div className="w-20 h-20 bg-gray-200 rounded-lg mr-6 flex-shrink-0" />
+      <div className="w-20 h-20 mr-6 flex-shrink-0" />
     )}
     {/* Info */}
     <div className="flex-1">

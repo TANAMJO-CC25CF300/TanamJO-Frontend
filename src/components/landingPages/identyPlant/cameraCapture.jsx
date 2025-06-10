@@ -7,7 +7,6 @@ const CameraCapture = ({ onIdentified }) => {
   const [imageData, setImageData] = useState(null);
   const [error, setError] = useState("");
   const [showCamera, setShowCamera] = useState(false);
-  const [uploadFile, setUploadFile] = useState(null);
   const [uploadPreview, setUploadPreview] = useState(null);
   const [uploadError, setUploadError] = useState("");
   const cameraVideoRef = useRef(null);
@@ -28,7 +27,7 @@ const CameraCapture = ({ onIdentified }) => {
           });
           cameraVideoRef.current.srcObject = stream;
           cameraVideoRef.current.play();
-        } catch (error) {
+        } catch {
           setError(
             "Tidak dapat mengakses kamera. Pastikan izin kamera sudah diberikan."
           );
@@ -75,8 +74,6 @@ const CameraCapture = ({ onIdentified }) => {
 
   const validateAndPreview = (file) => {
     setUploadError("");
-    setUploadFile(null);
-    setUploadPreview(null);
     if (!file) return;
     if (!ACCEPTED_TYPES.includes(file.type)) {
       setUploadError("Format file harus JPG, JPEG, atau PNG.");
@@ -86,7 +83,6 @@ const CameraCapture = ({ onIdentified }) => {
       setUploadError("Ukuran file maksimal 2MB.");
       return;
     }
-    setUploadFile(file);
     const reader = new FileReader();
     reader.onloadend = () => {
       setUploadPreview(reader.result);
@@ -107,7 +103,7 @@ const CameraCapture = ({ onIdentified }) => {
   return (
     <div className="w-full px-2 sm:px-4 md:px-8 flex justify-center mt-6">
       {/* Card utama */}
-      <div className="w-full max-w-5xl bg-white bg-opacity-95 rounded-2xl shadow-lg p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20">
+      <div className="w-full max-w-5xl bg-opacity-95 border border-gray-200 rounded-2xl p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20">
         <div className="flex items-center justify-between mb-4">
           <span className="inline-block bg-green-200 text-green-800 text-xs px-3 py-1 rounded-full">
             Smart Selections

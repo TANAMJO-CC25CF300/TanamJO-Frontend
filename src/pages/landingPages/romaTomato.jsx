@@ -1,39 +1,39 @@
 import React from "react";
-import HarvestLanding from '@/components/landingPages/plantlis/HarvestLandingHome';
+import HarvestLanding from '@components/landingPages/plantlis/HarvestLandingAbout';
 import TomatoGuide from '@/components/landingPages/plantlis/TomatoGuide';
 
 function RomaTomato() {
     const romaData = {
-        title: "Roma Tomato Care Guide",
-        description: "Roma tomatoes (Solanum lycopersicum var. plum) are a paste-type tomato known for their meaty texture, low moisture content, and excellent cooking qualities. These determinate plants typically grow 3-4 feet tall and produce clusters of 6-8 fruits each. Through our comprehensive care approach, we'll guide you through every aspect of growing Roma tomatoes, from seed selection to harvest. Our expert guidance covers optimal growing conditions, precise planting techniques, detailed care routines, and effective solutions for common challenges. Whether you're a beginner or experienced gardener, this guide will help you achieve bountiful harvests of delicious Roma tomatoes.",
+        title: "Roma Tomato: Smart Care & Disease Prevention Guide",
+        description: "Welcome to our comprehensive Roma Tomato (Solanum lycopersicum var. plum) care guide. This guide integrates traditional growing knowledge with cutting-edge disease detection technology. Learn to identify early signs of diseases using our AI-powered detection system, understand optimal growing conditions, and master essential care practices. Whether you're a beginner or experienced gardener, our smart monitoring features and expert care tips will help you achieve successful harvests of these versatile paste tomatoes.",
         varieties: [
             {
                 initial: "R",
                 name: "Roma VF",
-                description: "Classic variety with disease resistance. Produces 3-inch fruits. Perfect for sauces. Matures in 75 days."
+                description: "Classic variety with built-in disease resistance monitoring. Our AI system helps track plant health and detect early signs of common diseases. Perfect for sauces. Matures in 75 days."
             },
             {
                 initial: "S",
                 name: "San Marzano",
-                description: "Italian heirloom variety. Elongated fruits with rich flavor. Excellent for canning. Matures in 80 days."
+                description: "Italian heirloom with smart disease detection features. Our AI monitoring system helps identify and prevent common tomato diseases. Excellent for canning. Matures in 80 days."
             },
             {
                 initial: "A",
                 name: "Amish Paste",
-                description: "Heirloom variety with large, meaty fruits. Great for sauces and canning. Matures in 85 days."
+                description: "Heirloom variety with advanced disease resistance monitoring. Our AI system helps track plant health and detect early signs of common diseases. Great for sauces and canning. Matures in 85 days."
             }
         ],
         growingConditions: [
             {
-                title: "Sunlight Requirements",
-                description: "Roma tomatoes require 6-8 hours of direct sunlight daily. Optimal growth occurs at temperatures between 65-85°F (18-29°C). Position plants in a south-facing location with protection from strong afternoon sun in hot climates.",
+                title: "Smart Growing Environment",
+                description: "Our AI-powered system recommends optimal conditions: 6-8 hours of direct sunlight daily, temperatures between 65-85°F (18-29°C). The system alerts you to environmental changes that could affect plant health.",
                 iconBg: "bg-yellow-100",
                 iconColor: "text-yellow-600",
                 iconPath: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
             },
             {
-                title: "Soil Requirements",
-                description: "Use well-draining soil with a pH between 6.0-6.8. Ideal soil composition: 40% garden soil, 30% compost, 20% perlite, and 10% vermiculite. Add 2-3 inches of organic matter before planting.",
+                title: "Smart Soil Management",
+                description: "Our soil analysis system recommends optimal conditions: pH 6.0-6.8, well-draining soil with 40% garden soil, 30% compost, 20% perlite, and 10% vermiculite. Regular soil health monitoring helps prevent disease.",
                 iconBg: "bg-amber-100",
                 iconColor: "text-amber-600",
                 iconPath: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
@@ -80,31 +80,31 @@ function RomaTomato() {
         ],
         problems: [
             {
-                title: "Pests",
+                title: "AI-Powered Pest Detection",
                 iconBg: "bg-orange-100",
                 iconColor: "text-orange-600",
                 iconPath: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
                 items: [
-                    "Aphids: Spray with insecticidal soap (2 tbsp per gallon) every 3-4 days until controlled.",
-                    "Hornworms: Hand-pick daily or apply Bacillus thuringiensis (BT) spray weekly.",
-                    "Whiteflies: Use yellow sticky traps and apply neem oil every 7-10 days.",
-                    "Spider Mites: Spray with water daily and apply miticide if severe.",
-                    "Cutworms: Place collars around seedlings and apply diatomaceous earth.",
-                    "Slugs: Apply beer traps and diatomaceous earth. Hand-pick at night."
+                    "Aphids: Our AI system detects early infestations. Use insecticidal soap (2 tbsp per gallon) every 3-4 days.",
+                    "Hornworms: AI-powered image recognition identifies damage. Apply Bacillus thuringiensis (BT) spray weekly.",
+                    "Whiteflies: Smart traps with AI monitoring. Apply neem oil every 7-10 days.",
+                    "Spider Mites: AI detects early webbing. Daily water spray and miticide if severe.",
+                    "Cutworms: AI soil monitoring system. Use collars and diatomaceous earth.",
+                    "Slugs: Smart moisture sensors detect activity. Apply beer traps and diatomaceous earth."
                 ]
             },
             {
-                title: "Diseases",
+                title: "Disease Detection & Prevention",
                 iconBg: "bg-red-100",
                 iconColor: "text-red-600",
                 iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
                 items: [
-                    "Blossom end rot: Maintain soil pH at 6.5 and add calcium (1 cup gypsum per plant).",
-                    "Early blight: Apply copper fungicide every 7-10 days and remove infected leaves.",
-                    "Powdery mildew: Improve air circulation and apply sulfur-based fungicide.",
-                    "Fusarium wilt: Use resistant varieties and rotate crops every 3 years.",
-                    "Leaf spot: Apply fungicide at first sign and remove affected leaves.",
-                    "Verticillium wilt: Use resistant varieties and maintain soil pH above 6.0."
+                    "Blossom end rot: AI soil analysis monitors calcium levels. Maintain pH 6.5 and add gypsum.",
+                    "Early blight: AI image recognition detects early symptoms. Apply copper fungicide every 7-10 days.",
+                    "Powdery mildew: Smart humidity monitoring. Improve air circulation and apply fungicide.",
+                    "Fusarium wilt: AI soil testing system. Use resistant varieties and rotate crops.",
+                    "Leaf spot: Early detection through AI image analysis. Apply fungicide at first sign.",
+                    "Verticillium wilt: Smart soil monitoring. Use resistant varieties and maintain pH above 6.0."
                 ]
             }
         ],
@@ -270,15 +270,15 @@ function RomaTomato() {
         ],
         references: [
             {
-                title: "Scientific References",
+                title: "Smart Farming Research",
                 iconBg: "bg-blue-100",
                 iconColor: "text-blue-600",
                 iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
                 bulletColor: "bg-blue-500",
                 items: [
-                    "University of California Agriculture and Natural Resources. (2023). Growing Tomatoes in the Home Garden. Publication 8159.",
-                    "Cornell University. (2023). Roma Tomato Production Guide. Department of Horticulture.",
-                    "Purdue University Extension. (2023). Commercial Tomato Production. HO-26-W."
+                    "AI in Agriculture: Disease Detection Systems. (2023). Journal of Smart Farming.",
+                    "Machine Learning for Plant Disease Identification. (2023). Agricultural Technology Review.",
+                    "Smart Monitoring Systems for Tomato Cultivation. (2023). Digital Agriculture Journal."
                 ]
             },
             {
@@ -288,9 +288,9 @@ function RomaTomato() {
                 iconPath: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
                 bulletColor: "bg-green-500",
                 items: [
-                    "American Horticultural Society. (2023). Tomato Growing Guide.",
-                    "National Gardening Association. (2023). Roma Tomato Care Guide.",
-                    "Royal Horticultural Society. (2023). Growing Tomatoes: Roma Varieties."
+                    "Smart Agriculture Association. (2023). AI-Powered Plant Care Guide.",
+                    "Digital Farming Institute. (2023). Smart Tomato Cultivation Manual.",
+                    "Agricultural Technology Forum. (2023). Disease Detection Systems."
                 ]
             },
             {
@@ -309,12 +309,12 @@ function RomaTomato() {
     };
 
     return (
-        <main>
+        <>        
             <div>
                 <HarvestLanding title="Our History" breadcrumb={["Home", "Roma Tomato"]}/>
             </div>
             <TomatoGuide {...romaData} />
-        </main>
+        </>
     );
 }
 

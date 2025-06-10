@@ -1,14 +1,10 @@
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo/logo.png";
 import {
   ChevronFirst,
   ChevronLast,
   Home,
   Sprout,
   Stethoscope,
-  Menu,
-  Search,
-  Bell,
-  User,
   LogOut,
 } from "lucide-react";
 import { useState } from "react";
@@ -28,8 +24,7 @@ export default function LeftSidebar() {
     },
   ];
 
-  // Untuk dot indicator contoh pada menu Home
-  const menuWithDot = ["Home"];
+  const menuWithDot = ["Home"]; // untuk indikator dot (misal notifikasi)
 
   return (
     <div className="flex h-screen">
@@ -98,7 +93,6 @@ export default function LeftSidebar() {
                             isActive ? "text-blue-700" : "text-gray-600"
                           } group-hover:text-blue-700`}
                         />
-                        {/* Dot indicator */}
                         {menuWithDot.includes(menu.name) && (
                           <span
                             className={`ml-2 w-2 h-2 rounded-full bg-blue-500 ${
@@ -106,14 +100,12 @@ export default function LeftSidebar() {
                             }`}
                           ></span>
                         )}
-                        {/* Label */}
                         {isOpen && (
                           <span className="transition-all duration-200 origin-left text-sm ml-2">
                             {menu.name}
                           </span>
                         )}
                       </Link>
-                      {/* Tooltip saat collapse */}
                       {!isOpen && (
                         <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-1 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
                           {menu.name}
@@ -125,12 +117,12 @@ export default function LeftSidebar() {
               </ul>
             </div>
 
-            {/* Divider */}
             <div className="px-2 py-2">
               <div className="h-px bg-gray-200"></div>
             </div>
           </div>
-          {/* Logout Button di bawah */}
+
+          {/* Logout Button */}
           <div className="mb-4 px-1">
             <button
               className={`flex items-center ${
@@ -139,7 +131,6 @@ export default function LeftSidebar() {
             >
               <LogOut size={24} />
               {isOpen && <span className="text-sm ml-2">Logout</span>}
-              {/* Tooltip saat collapse */}
               {!isOpen && (
                 <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-1 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap">
                   Logout
@@ -147,16 +138,6 @@ export default function LeftSidebar() {
               )}
             </button>
           </div>
-
-          {/* Mobile Toggle Button */}
-          {/* <button
-            className={`p-2 rounded-full hover:bg-gray-100 absolute top-4 transition-all duration-300 border shadow md:hidden block ${
-              isOpen ? "right-[-18px]" : "right-[-18px]"
-            }`}
-            onClick={() => setIsOpen((v) => !v)}
-          >
-            {isOpen ? <ChevronFirst size={20} /> : <ChevronLast size={20} />}
-          </button> */}
         </nav>
       </aside>
 
