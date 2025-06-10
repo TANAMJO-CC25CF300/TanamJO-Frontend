@@ -7,14 +7,14 @@ const AddPlant = () => {
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-2 relative">
+    <div className="flex flex-col w-full max-w-[1300px] mx-auto mt-2 relative">
       <div className="mb-4">
         <LittleButton onClick={() => setOpenModal(true)}>
           Add New Plant
         </LittleButton>
       </div>
       <div className="flex justify-start">
-        <div className="flex flex-col items-center justify-center min-h-[800px] w-[1106px] bg-white p-12 shadow-md rounded-md">
+        <div className="flex flex-col items-center justify-center min-h-[600px] md:min-h-[800px] w-[1200px] bg-white p-12 shadow-md rounded-md">
           <img
             src={NotHavePlant}
             alt="Not Have Plant"

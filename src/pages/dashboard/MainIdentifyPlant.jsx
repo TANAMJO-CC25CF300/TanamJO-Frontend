@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import CameraCapture from "../../Components/CameraCapture";
 import DiseaseCard from "../../components/DiseaseCard";
-import HarvestLanding from "@components/landingPages/plantlis/HarvestLandingHome";
-import mockRecommendations from "../../services/recomendation";
 
-const fetchData = async () => {
-  const response = await fetch("http:localhost:5000/predict");
-  const data = await response.json();
-  return data;
-  console.log(data);
-};
-
-const IdentifyPlant = () => {
+const mockRecommendations = [
+  '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint."',
+  '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint."',
+  '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint."',
+];
+const MainIdentifyPlant = () => {
   // State untuk menampilkan hasil identifikasi setelah upload/capture
   const [showResult, setShowResult] = useState(false);
   const [identifiedCard, setIdentifiedCard] = useState(null);
@@ -69,4 +65,4 @@ const IdentifyPlant = () => {
   );
 };
 
-export default IdentifyPlant;
+export default MainIdentifyPlant;

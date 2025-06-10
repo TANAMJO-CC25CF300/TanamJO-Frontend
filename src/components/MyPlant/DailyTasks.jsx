@@ -57,7 +57,7 @@ export default function DailyTasks() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="rounded-2xl border border-gray-300 p-6 w-[520px] bg-white">
+    <div className="rounded-2xl border border-gray-300 p-6 w-[579px] bg-white">
       <div className="mb-2">
         <span className="text-xl font-semibold">Daily Tasks</span>
         <div className="text-sm text-gray-600 text-center mt-1 mb-2">
