@@ -29,7 +29,7 @@ function BackToTop() {
   return (
     <>
       {isVisible && (
-        <button onClick={scrollToTop} className="fixed bottom-5 right-5 bg-white hover:bg-gray-100 text-green-600 p-3 rounded-full shadow-xl border-2 border-green-600 transition-all duration-500 z-40" aria-label="Back to top">
+        <button onClick={scrollToTop} className="fixed bottom-5 right-5 bg-gray-100 text-green-600 p-3 rounded-full shadow-xl border-2 border-green-600 transition-all duration-500 z-40" aria-label="Back to top">
           <FaArrowUp className="text-md" /> 
         </button>
       )}

@@ -18,11 +18,12 @@ function Header() {
         <>        
             <div className="bg-white">
                 <header className="absolute inset-x-0 top-0 z-50">
-                    <nav className="flex items-center justify-between p-5 xl:px-8" aria-label="Global">
+                    <nav className="flex items-center justify-between p-5 xl:px-8 h-22" aria-label="Global">
+
                         <div className="flex xl:flex-1">
-                            <Link to="/" className="-m-1.5 p-1.5">
+                            <Link to="/" className="relative -m-1.5 p-1.5 bg-white/95 backdrop-blur-sm h-[88px] rounded-b-full flex items-center justify-center">
                                 <span className="sr-only">Your Company</span>
-                                <img className="h-8 w-auto" src={logo} alt="Company Logo"/>
+                                <img className="h-20 w-auto object-contain" src={logo} alt="Company Logo" />
                             </Link>
                         </div>
 

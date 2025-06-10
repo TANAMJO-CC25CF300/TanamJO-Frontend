@@ -26,9 +26,10 @@ const SearchInput = ({ onClose }) => {
                             className="w-full bg-transparent px-4 py-3.5 text-lg tracking-wide focus:outline-none placeholder:text-gray-600 focus:placeholder:text-gray-600 transition-all duration-300 ease-in-out placeholder:font-nunito placeholder:tracking-wider placeholder:leading-normal text-gray-900"
                             style={{ border: "none", boxShadow: "none", letterSpacing: "0.025em" }} autoFocus
                         />
-                        
-                        <button className="ml-2 p-2 bg-transparent hover:bg-transparent focus:outline-none" onClick={() => console.log("Searching for:", searchTerm)}  aria-label="Search" tabIndex={0}>
-                            <FiSearch size={20} className="text-gray-600" />
+                        <button className="ml-2 p-2 bg-transparent hover:bg-transparent focus:outline-none" onClick={() => console.log("Searching for:", searchTerm)} aria-label="Search" tabIndex={0}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-600">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
                         </button>
                     </div>
                 </div>
