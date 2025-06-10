@@ -17,14 +17,16 @@ const SearchInput = () => {
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-transparent z-20">
             
-            <button className="absolute top-4 sm:top-5 right-4 sm:right-8 bg-gray-200 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center z-30" onClick={handleClose} aria-label="Close search">
-                <FiX className="text-white" size={25} />
+            <button className="absolute top-4 sm:top-5 right-4 sm:right-8 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center z-30" onClick={handleClose} aria-label="Close search">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-gray-400">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
             </button>
             
             <div className="w-full max-w-[92%] xs:max-w-[80%] sm:max-w-xl md:max-w-2xl px-2 sm:px-6">
                 <div className="relative flex items-center border-b border-gray-400">
                     <input type="text" placeholder="Search for plants, care tips, or solutions..." value={searchTerm} onChange={handleSearch}
-                        className="w-full bg-transparent px-4 py-3 text-lg tracking-wide focus:outline-none placeholder:text-gray-400 focus:placeholder:text-gray-400 transition-all duration-300 ease-in-out placeholder:font-nunito placeholder:tracking-wider placeholder:leading-normal"
+                        className="w-full bg-transparent px-4 py-3.5 text-lg tracking-wide focus:outline-none placeholder:text-gray-400 focus:placeholder:text-gray-400 transition-all duration-300 ease-in-out placeholder:font-nunito placeholder:tracking-wider placeholder:leading-normal"
                         style={{ border: "none", boxShadow: "none", letterSpacing: "0.025em" }}
                     />
                     
