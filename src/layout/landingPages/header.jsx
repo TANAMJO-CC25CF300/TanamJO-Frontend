@@ -52,7 +52,7 @@ function Header() {
                                     </svg>
                                 </div>
 
-                                <Link to="/" className="text-sm/6 font-semibold text-white tracking-wide bg-white/20 backdrop-blur-sm rounded-full px-10 py-2.5 border-1 border-white">
+                                <Link to="/login" className="text-sm/6 font-semibold text-white tracking-wide bg-white/20 backdrop-blur-sm rounded-full px-10 py-2.5 border-1 border-white">
                                     Sign Up
                                 </Link>
                             </div>
@@ -90,7 +90,7 @@ function Header() {
 
                                     <div className="py-10">
                                         <div className="py-0 text-gray-700">
-                                            <Link to="/" className="-mx-3 block px-3 py-3.5 text-md/7 font-semibold border border-gray-300 rounded-full text-center">
+                                            <Link to="/login" className="-mx-3 block px-3 py-3.5 text-md/7 font-semibold border border-gray-300 rounded-full text-center">
                                                 Sign Up
                                             </Link>
                                         </div>   
