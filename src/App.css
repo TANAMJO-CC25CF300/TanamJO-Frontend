@@ -60,10 +60,15 @@
     .custom-banner-artikel {
         position: relative;
         background-color: #f3eefb;
+        border: 1px solid #f3eefb;
     }
 
     .custom-text {
         color: #51a72c;
+    }
+
+    .custom-border {
+        border: 1px solid #51a72c;
     }
 
     .back-to-top-btn:hover {

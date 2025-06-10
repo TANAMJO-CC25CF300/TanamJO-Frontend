@@ -22,6 +22,7 @@ import Register from '@/pages/auth/register';
 import Login from '@/pages/auth/login';
 import CameraCapture from '@/components/landingPages/capture/cameraCapture';
 import NotificationModal from '@/components/landingPages/notifikasi/notificationModal';
+import SearchInput from '@/components/common/SearchInput';
 
 //pages dashboard
 import Dashboard from '@/pages/dashboard/dashboard'; 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/plantguide/artikelcardutama" element={<ArtikelCardUtama />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/identify-plant" element={<IdentifyPlant />} />
+        <Route path="/search-input" element={<SearchInput />} />
         
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />
