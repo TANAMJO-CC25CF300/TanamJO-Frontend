@@ -17,7 +17,7 @@ function Header() {
                         <div className="flex xl:flex-1">
                             <Link to="/" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
-                                <img className="h-8 w-auto" src={logo} alt="Company Logo"/>
+                                <img className="h-15 w-auto" src={logo} alt="Company Logo"/>
                             </Link>
                         </div>
 
