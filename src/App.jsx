@@ -35,6 +35,9 @@ import AddPlant from "@/components/MyPlant/AddPlant";
 import CardPlant from "@/components/MyPlant/CardPlant";
 import DailyTasks from "@/components/MyPlant/DailyTasks";
 import MyPlantPage from "@/pages/dashboard/MyPlantPage";
+import ProfilePage from "@/pages/dashboard/user/profile";
+import UpdatePasswordPage from "@/pages/dashboard/user/update-password";
+
 
 function App() {
   return (
@@ -66,6 +69,8 @@ function App() {
 
         {/* Dashboard Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile/:id" element={<ProfilePage />} />
+        <Route path="/update-password/:id" element={<UpdatePasswordPage />} />
         <Route path="/Sidebar" element={<LeftSidebar />} />
         <Route path="/MyPlant" element={<MyPlant />} />
         <Route path="/AddPlant" element={<AddPlant />} />

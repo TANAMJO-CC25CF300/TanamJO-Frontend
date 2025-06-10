@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Bell, Search, User, LogOut, ChevronDown } from "lucide-react";
+import { Bell, Search, User, LogOut, ChevronDown, Settings, Key } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -54,6 +55,15 @@ export default function Header() {
                 <p className="text-sm font-medium text-gray-900">John Doe</p>
                 <p className="text-xs text-gray-500">john@example.com</p>
               </div>
+              <div className="h-px bg-gray-200 my-1"></div>
+              <Link to="/profile/1" className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+                <User size={16} />
+                Profile
+              </Link>
+              <Link to="/update-password/1" className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+                <Key size={16} />
+                Update Password
+              </Link>
               <div className="h-px bg-gray-200 my-1"></div>
               <button 
                 className="w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-50 flex items-center gap-2"
