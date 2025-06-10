@@ -11,7 +11,7 @@ function HarvestLandingHome() {
 
                     <Header />
                     
-                    <div className="relative z-30 h-full flex flex-col justify-center px-4 md:px-0 xl:px-4">
+                    <div className="relative z-30 h-full flex flex-col justify-end px-4 md:px-0 xl:px-4 pb-12 sm:pb-16 md:pb-20">
                         <div className="text-left max-w-lg mx-auto sm:mx-0 sm:ml-2 md:ml-6 lg:ml-10 xl:ml-12">
                             <span className="inline-block text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[140px] sm:w-[160px] h-8 leading-8 text-center bg-white/20 backdrop-blur-sm border border-white/80 mb-1.5">
                                 SELECT IN QUANTITY

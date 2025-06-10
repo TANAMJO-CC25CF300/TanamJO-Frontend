@@ -6,7 +6,6 @@ import BackToTop from "@/components/common/BackToTop";
 // Landing Pages
 import HomePage from "@/pages/landingPages/homePage";
 import PlantGuide from "@/pages/landingPages/plantGuide";
-import Encyclopedia from "@/pages/landingPages/encyclopedia";
 import AboutUs from "@/pages/landingPages/aboutUs";
 import CherryTomato from "@/pages/landingPages/cherryTomato";
 import BeefsteakTomato from "@/pages/landingPages/beefsteakTomato";
@@ -25,7 +24,7 @@ import Register from "@/pages/auth/register";
 import Login from "@/pages/auth/login";
 
 // Components
-import CameraCapture from "@/components/landingPages/capture/cameraCapture";
+import CameraCapture from "@components/landingPages/identyPlant/cameraCapture";
 import NotificationModal from "@/components/landingPages/notifikasi/notificationModal";
 
 // Dashboard
@@ -47,7 +46,6 @@ function App() {
         {/* Landing Pages */}
         <Route path="/home-page" element={<HomePage />} />
         <Route path="/plant-guide" element={<PlantGuide />} />
-        <Route path="/encyclopedia" element={<Encyclopedia />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/plant-guide/cherry-tomato" element={<CherryTomato />} />
         <Route path="/plant-guide/beefsteak-tomato" element={<BeefsteakTomato />} />
