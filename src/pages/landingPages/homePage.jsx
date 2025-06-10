@@ -4,7 +4,7 @@ import HarvestLandingHome from '@components/landingPages/plantlis/HarvestLanding
 function HomePage() {
 
     return (
-      <main>            
+      <>        
         <div>
             <HarvestLandingHome/>
         </div>
@@ -13,7 +13,7 @@ function HomePage() {
 
                                
         </div>
-    </main>
+      </>
   );
 };
 

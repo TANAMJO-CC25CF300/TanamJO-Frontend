@@ -3,7 +3,7 @@ import HarvestLanding from '@components/landingPages/plantlis/HarvestLandingAbou
 
 function ArtikelDetailTemplate({  title, date, readTime, category, tags, description, quote, mainContent, features, benefits}) {
     return (
-        <main>
+        <>        
             <div>
                 <div>
                     <HarvestLanding title="Our History" breadcrumb={["Home", "Artikel Detail"]}/>
@@ -149,7 +149,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                     </div>
                 </div>
             </div>
-        </main>
+        </>
     );
 }
 

@@ -11,7 +11,7 @@ function HarvestLandingAbout({
 
     return (
 
-        <main>
+        <>        
             <div className="mt-0 mx-0 md:mx-0 lg:mx-0 xl:mx-10 xl:mt-10 relative shadow-md rounded-4xl">
                 <div className="relative w-full xl:rounded-t-4xl h-[380px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bannerImage})` }}>
 
@@ -36,7 +36,7 @@ function HarvestLandingAbout({
                     </div>
                 </div>
             </div>            
-        </main>
+        </>
 
     );
 }

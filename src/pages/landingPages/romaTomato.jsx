@@ -309,12 +309,12 @@ function RomaTomato() {
     };
 
     return (
-        <main>
+        <>        
             <div>
                 <HarvestLanding title="Our History" breadcrumb={["Home", "Roma Tomato"]}/>
             </div>
             <TomatoGuide {...romaData} />
-        </main>
+        </>
     );
 }
 

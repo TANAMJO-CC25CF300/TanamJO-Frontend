@@ -10,7 +10,7 @@ function PlantGuide() {
 
     return (
 
-        <main>            
+        <>        
             <div>
                 <HarvestLandingAbout title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
             </div>
@@ -144,7 +144,7 @@ function PlantGuide() {
                     </div>        
                 </div>                              
             </div>
-        </main>
+        </>
         
     );
 }

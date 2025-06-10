@@ -309,12 +309,12 @@ function PlantGuide() {
     };
 
     return (
-        <main>            
+        <>        
             <div>
                 <HarvestLanding title="Our History" breadcrumb={["Home", "Cherry Tomato"]}/>
             </div>
             <TomatoGuide {...cherryData} />
-        </main>
+        </>
     );
 }
 

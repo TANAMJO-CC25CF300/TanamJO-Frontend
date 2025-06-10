@@ -68,7 +68,7 @@ function HarvestCardSection() {
     };
 
     return (
-        <main>
+        <>        
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 p-1">
                 {displayData.map((item, index) => (
                     <div key={index} className={`relative group ${displayData.length > 4 && index >= 4 ? 'mt-2.5' : ''}`}>
@@ -83,7 +83,7 @@ function HarvestCardSection() {
                     {showAll ? 'Show Less' : 'Show More'}
                 </button>
             </div>                
-        </main>
+        </>
     );
 }
 

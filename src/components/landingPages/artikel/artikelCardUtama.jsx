@@ -31,7 +31,7 @@ function ArtikelCardUtama() {
   };
 
   return (
-    <main>            
+    <>        
       <div>
         <HarvestLandingAbout title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
       </div>
@@ -327,7 +327,7 @@ function ArtikelCardUtama() {
           </div>
         </div>
       </div>
-    </main>
+    </>
   );
 }
 

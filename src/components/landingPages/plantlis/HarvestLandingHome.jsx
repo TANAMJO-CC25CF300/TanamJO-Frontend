@@ -4,7 +4,7 @@ import bannerImage from '@/assets/Banner/banner-1.png';
 
 function HarvestLandingHome() {
     return (
-        <main>
+        <>        
             <div className="mt-0 mx-0 md:mx-0 lg:mx-0 xl:mx-10 xl:mt-10 relative shadow-md rounded-4xl h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px]">
                 <div className="relative w-full xl:rounded-t-4xl h-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bannerImage})` }}>
                     <div className="absolute inset-0 bg-black/28 lg:rounded-t-4xl"></div>
@@ -33,7 +33,7 @@ function HarvestLandingHome() {
                     </div>
                 </div>
             </div>
-        </main>
+        </>
     );
 }
 

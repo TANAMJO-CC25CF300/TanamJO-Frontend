@@ -33,7 +33,7 @@ const articles = [
 function Artikelsection() {
     return (
 
-        <main>            
+        <>        
             <div className="flex-1 flex flex-col gap-5 md:gap-0 mt-8 md:mt-8 xl:mt-0">
                 {articles.map((article) => (
                     <div key={article.id} className="min-h-[48px] p-0 rounded-3xl tj-text-gray font-semibold flex flex-col lg:flex-row items-start gap-3.5">
@@ -75,7 +75,7 @@ function Artikelsection() {
                     </div>
                 ))}
             </div>
-        </main>   
+        </>   
 
     );
 }

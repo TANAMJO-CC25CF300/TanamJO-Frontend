@@ -4,7 +4,7 @@ import banner1 from '@/assets/Banner/card-7.png';
 
 const ArtikelList = () => (
 
-    <main>
+    <>        
         <div className="flex-1 flex flex-col">
             <div className="w-full min-h-[280px] md:min-h-[260px] xl:min-h-[320px] rounded-t-3xl md:rounded-3xl overflow-hidden relative">
                 <img src={banner1} className="absolute inset-0 w-full h-full object-cover" alt="Banner Image" />
@@ -60,7 +60,7 @@ const ArtikelList = () => (
                 </div>
             </div>
         </div>        
-    </main>
+    </>
 
 );
 

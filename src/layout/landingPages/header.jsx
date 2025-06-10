@@ -10,7 +10,7 @@ function Header() {
     
     return (
 
-        <main>
+        <>        
             <div className="bg-white">
                 <header className="absolute inset-x-0 top-0 z-50">
                     <nav className="flex items-center justify-between p-5 xl:px-8" aria-label="Global">
@@ -101,7 +101,7 @@ function Header() {
                     </div>
                 </header>
             </div>
-        </main>
+        </>
         
     );
 }

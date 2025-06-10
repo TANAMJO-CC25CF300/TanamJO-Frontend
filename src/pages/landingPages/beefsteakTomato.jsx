@@ -309,12 +309,12 @@ function BeefsteakTomato() {
     };
 
     return (
-        <main>            
+        <>        
             <div>
                 <HarvestLanding title="Our History" breadcrumb={["Home", "Beefsteak Tomato"]}/>
             </div>
             <TomatoGuide {...beefsteakData} />
-        </main>
+        </>
     );
 }
 

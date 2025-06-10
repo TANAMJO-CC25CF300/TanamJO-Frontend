@@ -343,12 +343,12 @@ function Heirloom_tomato() {
     };
 
     return (
-        <main>
+        <>        
             <div>
                 <HarvestLanding title="Our History" breadcrumb={["Home", "Heirloom Tomato"]}/>
                 <TomatoGuide {...heirloomData} />
             </div>
-        </main>
+        </>
     );
 }
 
