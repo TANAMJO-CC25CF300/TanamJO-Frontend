@@ -20,7 +20,7 @@ export default function LeftSidebar() {
 
   const mainMenus = [
     { name: "Home", icon: Home, path: "/dashboard/home" },
-    { name: "My Plant", icon: Sprout, path: "/dashboard/my-plant" },
+    { name: "My Plant", icon: Sprout, path: "/test" },
     {
       name: "Disease Identify",
       icon: Stethoscope,

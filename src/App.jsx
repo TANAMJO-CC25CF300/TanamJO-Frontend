@@ -11,6 +11,11 @@ import HeirloomTomato from "@/pages/landingPages/heirloomTomato";
 import HomePage from "@/pages/landingPages/homePage";
 import LeftSidebar from "@/layout/dashboard/left-sidebar";
 import IdentifyPlant from "@/pages/landingPages/IdentifyPlant";
+import MyPlant from "@/pages/dashboard/MyPlantEmptyPage";
+import AddPlant from "@/components/MyPlant/AddPlant";
+import CardPlant from "@/components/MyPlant/CardPlant";
+import DailyTasks from "@/components/MyPlant/DailyTasks";
+import MyPlantPage from "@/pages/dashboard/MyPlantPage";
 
 //pages dashboard
 import Dashboard from "@/pages/dashboard/dashboard";
@@ -46,6 +51,11 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/Sidebar" element={<LeftSidebar />} />
         <Route path="/Disease-Identify" element={<IdentifyPlant />} />
+        <Route path="/MyPlant" element={<MyPlant />} />
+        <Route path="/AddPlant" element={<AddPlant />} />
+        <Route path="/CardPlant" element={<CardPlant />} />
+        <Route path="/DailyTasks" element={<DailyTasks />} />
+        <Route path="/MyPlantPage" element={<MyPlantPage />} />
       </Routes>
 
       {/* <LogIn /> */}
