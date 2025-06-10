@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Footer from '@/layout/landingPages/footer';
 import BackToTop from '@/components/common/BackToTop';
-import Header from '@/layout/dashboard/header';
+
 
 //pages frontend
 import PlantGuide from '@/pages/landingPages/plantGuide';
@@ -30,7 +30,6 @@ function App() {
   return (
     <>
       <Routes>
-        
         {/* Landing Pages Routes */}
         <Route path="/" element={<Navigate to="/home-page" replace />} />
         <Route path="/home-page" element={<HomePage />} />
@@ -53,9 +52,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         
         {/* Dashboard Routes */}
-        <Route path="/dashboard/*" element={<Header />}>
-          <Route index element={<Dashboard />} />
-        </Route>
+        <Route path="/dashboard" element={<Dashboard />} />
 
         {/* Other Routes */}
         <Route path="/capture" element={<CameraCapture />} />
