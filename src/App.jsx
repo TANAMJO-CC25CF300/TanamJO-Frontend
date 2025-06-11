@@ -31,12 +31,10 @@ import NotificationModal from "@/components/landingPages/notifikasi/notification
 import Dashboard from "@/pages/dashboard/dashboard";
 import LeftSidebar from "@/layout/dashboard/left-sidebar";
 import MyPlantEmptyPage from "@/pages/dashboard/MyPlantEmptyPage";
-import AddPlant from "@/components/MyPlant/AddPlant";
-import CardPlant from "@/components/MyPlant/CardPlant";
-import DailyTasks from "@/components/MyPlant/DailyTasks";
 import MyPlantPage from "@/pages/dashboard/MyPlantPage";
 import ProfilePage from "@/pages/dashboard/user/profile";
 import UpdatePasswordPage from "@/pages/dashboard/user/update-password";
+import MainIdentifyPlant from "@/pages/dashboard/MainIdentifyPlant";
 
 function App() {
   return (
@@ -87,10 +85,8 @@ function App() {
         <Route path="/update-password/:id" element={<UpdatePasswordPage />} />
         <Route path="/Sidebar" element={<LeftSidebar />} />
         <Route path="/MyPlantEmptyPage" element={<MyPlantEmptyPage />} />
-        <Route path="/AddPlant" element={<AddPlant />} />
-        <Route path="/CardPlant" element={<CardPlant />} />
-        <Route path="/DailyTasks" element={<DailyTasks />} />
         <Route path="/MyPlantPage" element={<MyPlantPage />} />
+        <Route path="/MainIdentifyPlant" element={<MainIdentifyPlant />} />
 
         {/* Other Components */}
         <Route path="/capture" element={<CameraCapture />} />

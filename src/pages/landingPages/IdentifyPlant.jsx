@@ -55,8 +55,6 @@ function IdentifyPlant() {
       setIdentifiedCard({
         disease: result.disease || "Tidak terdeteksi",
         plant: result.plant || "-",
-        symptoms: result.symptoms || "-",
-        treatment: result.treatment || "-",
         confidence: result.confidence
           ? `${(result.confidence * 100).toFixed(2)}%`
           : "-",
@@ -66,8 +64,6 @@ function IdentifyPlant() {
       setIdentifiedCard({
         disease: "Tidak terdeteksi",
         plant: "-",
-        symptoms: result.message || "Gagal memproses gambar",
-        treatment: "-",
         confidence: "-",
         image: imageUrl,
       });
@@ -109,8 +105,6 @@ function IdentifyPlant() {
                 <DiseaseCard
                   disease={identifiedCard.disease}
                   plant={identifiedCard.plant}
-                  symptoms={identifiedCard.symptoms}
-                  treatment={identifiedCard.treatment}
                   confidence={identifiedCard.confidence}
                   image={identifiedCard.image}
                 />
