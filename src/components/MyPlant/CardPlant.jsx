@@ -13,16 +13,16 @@ const CardPlant = ({
   image = TomatoImg,
 }) => {
   return (
-    <div className="w-full max-w-[579px] h-auto min-h-[670px] bg-white rounded-[30px] shadow-md flex flex-col p-4 md:p-8 relative overflow-hidden border border-[#070D05]/20">
+    <div className="w-full max-w-full md:max-w-[579px] mx-auto h-auto min-h-[400px] md:min-h-[670px] bg-white rounded-[30px] shadow-md flex flex-col p-4 md:p-8 relative overflow-x-auto border border-[#070D05]/20">
       {/* Background kuning dekoratif */}
       <div
-        className="absolute left-0 top-1/4 w-2/3 h-2/3 bg-yellow-200 rounded-full -z-10"
+        className="absolute left-0 top-16 w-[120px] md:w-[200px] lg:w-[320px] h-[120px] md:h-[250px] lg:h-[400px] bg-yellow-200 rounded-full -z-10"
         style={{ filter: "blur(2px)" }}
       />
       <img
         src={BgPlant}
         alt="bg plant"
-        className="absolute left-0 top-28 w-[200px] md:w-[320px] h-[250px] md:h-[400px] object-contain -z-0"
+        className="absolute left-0 top-20 w-[120px] md:w-[200px] lg:w-[320px] h-[120px] md:h-[250px] lg:h-[400px] object-contain -z-0"
         style={{ pointerEvents: "none" }}
       />
       {/* Judul */}
@@ -34,10 +34,10 @@ const CardPlant = ({
         <img
           src={image}
           alt={name}
-          className="w-[200px] md:w-[320px] h-[250px] md:h-[400px] object-contain drop-shadow-lg relative z-10"
+          className="w-[120px] md:w-[200px] lg:w-[320px] h-[120px] md:h-[250px] lg:h-[400px] object-contain drop-shadow-lg relative z-10"
         />
         {/* Info Card */}
-        <div className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-0 md:ml-8 w-full md:w-auto">
+        <div className="flex flex-col gap-3 md:gap-6 mt-4 md:mt-0 md:ml-8 w-full md:w-auto">
           {/* Phase */}
           <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 md:px-6 py-3 md:py-4 shadow-sm w-full md:min-w-[180px]">
             <img

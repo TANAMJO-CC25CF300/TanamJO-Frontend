@@ -24,15 +24,15 @@ export default function LeftSidebar() {
 
   useEffect(() => {
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [handleResize]);
 
   const mainMenus = [
     { name: "Home", icon: Home, path: "/dashboard" },
-    { name: "My Plant", icon: Sprout, path: "/MyPlant" },
+    { name: "My Plant", icon: Sprout, path: "/MyPlantEmptyPage" },
     {
       name: "Disease Identify",
       icon: Stethoscope,
@@ -46,8 +46,8 @@ export default function LeftSidebar() {
       {isMobile && !isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed top-4 left-4 z-50 p-3 bg-white rounded-lg shadow-md hover:bg-gray-50 border border-gray-200 md:hidden"
-          style={{ transform: 'translateX(0)' }}
+          className="fixed top-4 left-4 z-[100] p-3 bg-white rounded-lg shadow-md hover:bg-gray-50 border border-gray-200 lg:hidden"
+          style={{ transform: "translateX(0)" }}
         >
           <Menu size={18} className="text-gray-700" />
         </button>
@@ -55,7 +55,7 @@ export default function LeftSidebar() {
 
       {/* Overlay for mobile */}
       {isMobile && isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[45] transition-opacity"
           onClick={() => setIsOpen(false)}
         />
@@ -65,7 +65,13 @@ export default function LeftSidebar() {
       <aside
         className={`min-h-screen bg-white flex flex-col transition-all duration-300 ease-in-out fixed lg:relative z-[46] top-0 left-0
           ${isOpen ? "w-64" : "w-16"} 
-          ${isMobile ? (isOpen ? "translate-x-0" : "-translate-x-full") : "translate-x-0"}
+          ${
+            isMobile
+              ? isOpen
+                ? "translate-x-0"
+                : "-translate-x-full"
+              : "translate-x-0"
+          }
           border-r border-gray-200 shadow-sm`}
       >
         <nav className="h-full flex flex-col justify-between">
@@ -105,10 +111,7 @@ export default function LeftSidebar() {
                   const isActive = location.pathname === menu.path;
                   const Icon = menu.icon;
                   return (
-                    <li
-                      key={menu.name}
-                      className="relative group"
-                    >
+                    <li key={menu.name} className="relative group">
                       <Link
                         to={menu.path}
                         className={`flex items-center ${
@@ -118,16 +121,15 @@ export default function LeftSidebar() {
                           isActive
                             ? "bg-blue-50 text-blue-600 font-medium"
                             : "text-gray-600 hover:bg-gray-50"
-                        } ${
-                          isOpen ? "w-full" : "w-8 mx-auto"
-                        }`}
+                        } ${isOpen ? "w-full" : "w-8 mx-auto"}`}
                       >
                         <Icon
                           size={18}
                           className={`${
                             isActive ? "text-blue-600" : "text-gray-500"
                           } transition-colors group-hover:text-blue-600 ${
-                            !isOpen && "transform group-hover:scale-110 transition-transform"
+                            !isOpen &&
+                            "transform group-hover:scale-110 transition-transform"
                           }`}
                         />
                         {isOpen && (
@@ -156,11 +158,11 @@ export default function LeftSidebar() {
               } py-2 rounded-lg transition-all duration-200 hover:bg-red-50 text-red-600 w-full group relative
               ${isOpen ? "hover:pl-4" : "w-8 mx-auto"}`}
             >
-              <LogOut 
-                size={18} 
+              <LogOut
+                size={18}
                 className={`transition-transform group-hover:scale-110 ${
                   isOpen && "group-hover:translate-x-1"
-                }`} 
+                }`}
               />
               {isOpen && (
                 <span className="text-sm font-medium transition-all duration-200">

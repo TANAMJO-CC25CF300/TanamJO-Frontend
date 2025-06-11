@@ -8,7 +8,7 @@ export default function MyPlantPage() {
     <DashboardLayout>
       <div className="flex-1 flex flex-col">
         {/* Main Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 min-h-[calc(100vh-160px)] px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 sm:gap-4 min-h-[calc(100vh-160px)] px-2 sm:px-3 md:px-4 lg:px-6">
           {/* Card Plant */}
           <div className="w-full order-1 lg:order-1">
             <CardPlant />
