@@ -158,44 +158,86 @@ function HomePage() {
                     </div>                    
                 </div>
 
-                <div className="mt-3 mx-5 md:mx-15 border border-gray-200 rounded-2xl">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 p-4 sm:p-5 md:p-6 lg:p-8">
-                        {/* Card 1 */}
-                        <div className="bg-white rounded-4xl border border-gray-200 flex flex-col overflow-hidden shadow-sm relative w-full max-w-[300px] sm:w-[300px] h-auto sm:h-[370px]">
+                <div className="mt-2.5 mx-5 md:mx-15 border border-gray-200 rounded-3xl">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 p-4 sm:p-5 md:p-6 lg:p-8">
+                        {[1, 2, 3].map((item) => (
+                            <div key={item} className="rounded-3xl border border-gray-200 flex flex-col overflow-hidden relative w-full h-auto sm:h-[370px]">
                             <div className="relative w-full px-3 pt-3">
-                                <div className="w-full h-[180px] sm:h-[190px] rounded-3xl flex items-start justify-center relative overflow-hidden">
-                                    <img 
-                                        src={image} 
-                                        alt="Harvest Concepts"
-                                        className="w-full h-full object-cover"
-                                        onError={(e) => {
-                                            console.error('Error loading image');
-                                            e.target.style.display = 'none';
-                                        }}
-                                    />
+                                <div className="w-full h-[180px] sm:h-[190px] rounded-2xl flex items-start justify-center relative overflow-hidden">
+                                    <img src={image} alt={`Card ${item}`} className="w-full h-full object-cover" />
                                     <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
-                                    <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
-                                        <span className="custom-banner rounded-full w-7 h-7 flex items-center justify-center shadow-sm">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 text-white">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                            </svg>
-                                        </span>
+                                        <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
+                                            <span className="custom-banner rounded-full w-7 h-7 flex items-center justify-center shadow-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 text-white">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                                </svg>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="flex-1 flex flex-col px-5 pt-6 pb-5 text-left">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="inline-block w-2 h-2 rounded-full bg-yellow-400"></span>
-                                    <span className="text-xs font-semibold tracking-wide uppercase font-nunito steel-haze">Fertilizer</span>
+
+                                <div className="flex-1 flex flex-col px-5 pt-6 pb-5 text-left">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <span className="inline-block w-2 h-2 rounded-full bg-yellow-400"></span>
+                                        <span className="text-xs font-semibold tracking-wide uppercase font-nunito steel-haze">Fertilizer</span>
+                                    </div>
+
+                                    <div className="font-semibold text-lg md:text-xl steel-haze mb-2 text-left tracking-wide font-nunito">
+                                        Harvest Concepts {item}
+                                    </div>
+
+                                    <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider">
+                                        Farming and animal husbandry and discuss with farmers and scientists.
+                                    </p>
                                 </div>
-                                <div className="font-semibold text-lg md:text-xl steel-haze mb-2 text-left tracking-wide font-nunito">Harvest Concepts</div>
-                                <div className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider">
-                                    Farming and animal husbandry and discuss with farmers and scientists.
-                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
+
+                <div className="mt-15 mx-5 md:mx-15 rounded-3xl text-left space-y-4">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-3 md:space-y-0 md:space-x-8 lg:space-x-12 xl:space-x-50">
+                        <div className="w-full md:w-1/2 space-y-2 sm:space-y-2">
+                            <span className="inline-block text-sm sm:text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[160px] h-8 leading-8 text-center custom-banner">
+                                Tomato Insights
+                            </span>
+
+                            <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                Detect & Grow Better <br/> Tomatoes
+                            </h2>
+                        </div>
+
+                        <div className="w-full md:w-1/2 space-y-2 md:space-y-2">
+                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider sm:line-clamp-2 custome-deskription">
+                                Easily analyze your tomato plant's condition by snapping a photo. Get expert guidance for healthier growth and better yields.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-0 w-full pt-5">
+                        {[...Array(6)].map((_, index) => (
+                            <div key={index} className="relative bg-white border border-gray-200 rounded-3xl  p-5 h-[200px]">
+
+                                <div className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 text-gray-400">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/>
+                                    </svg>
+                                </div>
+
+                                <div className="flex flex-col h-full pt-8">
+                                    <h3 className="font-semibold text-lg md:text-xl steel-haze text-left tracking-wide font-nunito mb-2">Agriculture Products</h3>
+
+                                    <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider">
+                                        There are many variations of passages of lorem ipsum available but the majority have suffered alteration
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+
+                </div>
+
             </div>
         </>
         
