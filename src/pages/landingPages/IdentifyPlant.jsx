@@ -111,19 +111,18 @@ function IdentifyPlant() {
         </div>
 
         {showResult && identifiedCard && (
-          <div className="w-full max-w-5xl mx-auto mt-10 space-y-6 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 border border-gray-300 rounded-xl">
-            <div className="w-full">
-              <div className="p-6 flex justify-center">
-                <DiseaseCard
-                  disease={identifiedCard.disease}
-                  plant={identifiedCard.plant}
-                  symptoms={identifiedCard.symptoms}
-                  treatment={identifiedCard.treatment}
-                  confidence={identifiedCard.confidence}
-                  image={identifiedCard.image}
-                />
+            <div className="w-full max-w-5xl mx-auto mt-10 space-y-6 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 border border-gray-300 rounded-xl">
+              <div className="w-full">
+                <div className="p-6 flex justify-center">
+                  <DiseaseCard
+                    disease={identifiedCard.disease}
+                    plant={identifiedCard.plant}
+                    symptoms={identifiedCard.symptoms}  
+                    treatment={identifiedCard.treatment}
+                    image={identifiedCard.image}
+                  />
+                </div>
               </div>
-            </div>
 
             <div className="space-y-4 w-full flex flex-col items-center">
               <h3 className="text-lg font-semibold text-gray-800 text-center">Expert Recommendations</h3>
