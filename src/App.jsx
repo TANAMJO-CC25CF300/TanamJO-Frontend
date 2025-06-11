@@ -30,14 +30,13 @@ import NotificationModal from "@/components/landingPages/notifikasi/notification
 // Dashboard
 import Dashboard from "@/pages/dashboard/dashboard";
 import LeftSidebar from "@/layout/dashboard/left-sidebar";
-import MyPlant from "@/pages/dashboard/MyPlantEmptyPage";
+import MyPlantEmptyPage from "@/pages/dashboard/MyPlantEmptyPage";
 import AddPlant from "@/components/MyPlant/AddPlant";
 import CardPlant from "@/components/MyPlant/CardPlant";
 import DailyTasks from "@/components/MyPlant/DailyTasks";
 import MyPlantPage from "@/pages/dashboard/MyPlantPage";
 import ProfilePage from "@/pages/dashboard/user/profile";
 import UpdatePasswordPage from "@/pages/dashboard/user/update-password";
-
 
 function App() {
   return (
@@ -51,13 +50,28 @@ function App() {
         <Route path="/plant-guide" element={<PlantGuide />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/plant-guide/cherry-tomato" element={<CherryTomato />} />
-        <Route path="/plant-guide/beefsteak-tomato" element={<BeefsteakTomato />} />
+        <Route
+          path="/plant-guide/beefsteak-tomato"
+          element={<BeefsteakTomato />}
+        />
         <Route path="/plant-guide/roma-tomato" element={<RomaTomato />} />
-        <Route path="/plant-guide/heirloom-tomato" element={<HeirloomTomato />} />
+        <Route
+          path="/plant-guide/heirloom-tomato"
+          element={<HeirloomTomato />}
+        />
         <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
-        <Route path="/plant-guide/artikel-detail-watering" element={<ArtikelDetailWatering />} />
-        <Route path="/plant-guide/artikel-detail-plant-problems" element={<ArtikelDetail />} />
-        <Route path="/plantguide/artikelcardutama" element={<ArtikelCardUtama />} />
+        <Route
+          path="/plant-guide/artikel-detail-watering"
+          element={<ArtikelDetailWatering />}
+        />
+        <Route
+          path="/plant-guide/artikel-detail-plant-problems"
+          element={<ArtikelDetail />}
+        />
+        <Route
+          path="/plantguide/artikelcardutama"
+          element={<ArtikelCardUtama />}
+        />
         <Route path="/identify-plant" element={<IdentifyPlant />} />
         <Route path="/search-input" element={<SearchInput />} />
 
@@ -72,7 +86,7 @@ function App() {
         <Route path="/profile/:id" element={<ProfilePage />} />
         <Route path="/update-password/:id" element={<UpdatePasswordPage />} />
         <Route path="/Sidebar" element={<LeftSidebar />} />
-        <Route path="/MyPlant" element={<MyPlant />} />
+        <Route path="/MyPlantEmptyPage" element={<MyPlantEmptyPage />} />
         <Route path="/AddPlant" element={<AddPlant />} />
         <Route path="/CardPlant" element={<CardPlant />} />
         <Route path="/DailyTasks" element={<DailyTasks />} />

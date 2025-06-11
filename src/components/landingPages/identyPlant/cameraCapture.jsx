@@ -50,9 +50,15 @@ const CameraCapture = ({ onIdentified }) => {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    const dataUrl = canvas.toDataURL("image/png");
-    setImageData(dataUrl);
-    if (onIdentified) onIdentified(dataUrl);
+    canvas.toBlob((blob) => {
+      if (blob) {
+        const file = new File([blob], "photo.png", { type: "image/png" });
+        const url = URL.createObjectURL(blob);
+        setUploadPreview(url);
+        setImageData(file);
+        if (onIdentified) onIdentified(file);
+      }
+    }, "image/png");
     setShowCamera(false);
   };
 
@@ -83,20 +89,17 @@ const CameraCapture = ({ onIdentified }) => {
       setUploadError("Ukuran file maksimal 2MB.");
       return;
     }
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setUploadPreview(reader.result);
-    };
-    reader.readAsDataURL(file);
+    setUploadPreview(URL.createObjectURL(file));
+    setImageData(file);
   };
 
   const handleUpload = () => {
-    if (uploadPreview) {
-      setImageData(uploadPreview);
+    if (imageData instanceof File) {
       setShowCamera(false);
       setUploadError("");
-      if (onIdentified) onIdentified(uploadPreview);
+      if (onIdentified) onIdentified(imageData);
       setUploadPreview(null);
+      setImageData(null);
     }
   };
 
@@ -158,7 +161,7 @@ const CameraCapture = ({ onIdentified }) => {
             {uploadError}
           </div>
         )}
-        {uploadPreview && !imageData && (
+        {uploadPreview && (
           <div className="flex flex-col items-center mb-2">
             <img
               src={uploadPreview}
@@ -170,9 +173,9 @@ const CameraCapture = ({ onIdentified }) => {
         <div className="flex justify-center mb-2">
           <button
             onClick={handleUpload}
-            disabled={!uploadPreview}
+            disabled={!imageData}
             className={`px-8 py-2 rounded-lg font-semibold shadow transition ${
-              uploadPreview
+              imageData
                 ? "bg-green-600 text-white hover:bg-green-700"
                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
             }`}

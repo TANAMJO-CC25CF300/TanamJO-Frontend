@@ -1,31 +1,24 @@
 import React from "react";
-import LeftSidebar from "@/layout/dashboard/left-sidebar";
+import DashboardLayout from "@/layout/dashboard/layout";
 import CardPlant from "@/components/MyPlant/CardPlant";
 import DailyTasks from "@/components/MyPlant/DailyTasks";
 
 export default function MyPlantPage() {
   return (
-    <div className="min-h-screen bg-[#F7F7F7] flex">
-      {/* Sidebar */}
-      <LeftSidebar />
-      {/* Main Content */}
-      <div className="flex-1 ml-20 md:ml-64 flex flex-col">
+    <DashboardLayout>
+      <div className="flex-1 flex flex-col">
         {/* Main Section */}
-        <div className="flex flex-1 justify-center items-center gap-32 px-12 min-h-[calc(100vh-160px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 min-h-[calc(100vh-160px)] px-4 md:px-6">
           {/* Card Plant */}
-          <div className="flex justify-center items-center">
+          <div className="w-full order-1 lg:order-1">
             <CardPlant />
           </div>
           {/* Daily Tasks */}
-          <div className="w-[520px] flex-shrink-0">
+          <div className="w-full order-2 lg:order-2">
             <DailyTasks />
           </div>
         </div>
-        {/* Footer */}
-        <footer className="w-full text-center text-xs text-gray-400 py-4">
-          © 2024 TanamJO – Platform Edukasi dan Pemantauan Kesehatan Tanaman.
-        </footer>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }
