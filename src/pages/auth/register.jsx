@@ -76,16 +76,16 @@ export default function Register() {
 
   return (
     <div className="h-screen flex flex-col md:flex-row">
-      {/* Right Image/Info Section */}
+ 
       <div className="hidden md:flex w-1/2 bg-gradient-to-br from-[#5B8C51] to-[#4A7A3F] items-center justify-center relative text-white px-12 overflow-hidden">
-        {/* Decorative Elements */}
+       
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
         </div>
 
         <div className="max-w-md text-left relative z-10 mr-25">
-          {/* Tomato Theme Content */}
+       
           <div className="space-y-6">
             <h1 className="text-3xl font-extrabold mb-2 text-white font-nunito tracking-wide leading-tight">
               Single Sign On
@@ -102,6 +102,7 @@ export default function Register() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
+                
                 <div>
                   <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Deteksi Penyakit Tomat</span>
                   <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Deteksi dini penyakit tanaman tomat menggunakan AI</div>
@@ -114,6 +115,7 @@ export default function Register() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
+                
                 <div>
                   <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Deteksi Jenis Tanaman</span>
                   <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Identifikasi berbagai jenis tanaman menggunakan teknologi AI</div>
@@ -126,6 +128,7 @@ export default function Register() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                   </svg>
                 </div>
+
                 <div>
                   <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Daily Check-in & Task</span>
                   <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Kelola jadwal dan aktivitas harian budidaya tomat</div>
@@ -138,6 +141,7 @@ export default function Register() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                   </svg>
                 </div>
+
                 <div>
                   <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Artikel & Panduan</span>
                   <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Informasi lengkap seputar budidaya tomat</div>
@@ -148,11 +152,9 @@ export default function Register() {
         </div>
       </div>
 
-      {/* Left Form Section */}
       <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center relative">
         <button className="absolute top-4 left-10 text-blue-500 text-sm/6 hover:text-gray-700 flex items-center gap-1 font-nunito font-medium tracking-wide leading-normal"
-          onClick={() => navigate('/')}
-        >
+          onClick={() => navigate('/')}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
             <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
           </svg>
@@ -163,6 +165,7 @@ export default function Register() {
           <h1 className="text-4xl font-extrabold mb-3 bg-gradient-to-r from-[#5B8C51] to-[#0098C3] bg-clip-text text-transparent font-nunito tracking-wide leading-tight">
             Create Account
           </h1>
+
           <div className="flex items-center gap-2 mb-3">
             <p className="text-gray-600 text-lg font-nunito font-medium tracking-wide leading-normal">
               Hi, Ayo Bergabung
@@ -171,6 +174,7 @@ export default function Register() {
               #TanamJo
             </span>
           </div>
+
           <p className="text-gray-500 text-sm mb-8 font-nunito font-medium tracking-wide leading-normal ">
             Masuk ke akun Anda untuk melanjutkan perjalanan bertani bersama kami
           </p>
@@ -180,35 +184,19 @@ export default function Register() {
           <div className="flex flex-col gap-2">
             <FormInput
               label={<span>Email<span className="text-red-500 ml-1">*</span></span>}
-              name="email"
-              type="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="Masukkan Email Anda"
-              required
+              name="email" type="email" value={form.email} onChange={handleChange} placeholder="Masukkan Email Anda" required
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <FormInput
               label={<span>Password<span className="text-red-500 ml-1">*</span></span>}
-              name="password"
-              type="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="********"
-              required
+              name="password" type="password" value={form.password} onChange={handleChange} placeholder="********" required
             />
 
             <FormInput
               label={<span>Confirm Password<span className="text-red-500 ml-1">*</span></span>}
-              name="confirmPassword"
-              type="password"
-              value={form.confirmPassword}
-              onChange={handleChange}
-              placeholder="********"
-              required
-              className={isPasswordMismatch ? 'border-red-500' : ''}
+              name="confirmPassword" type="password" value={form.confirmPassword} onChange={handleChange} placeholder="********" required className={isPasswordMismatch ? 'border-red-500' : ''}
             />
           </div>
 
@@ -228,22 +216,14 @@ export default function Register() {
 
         <p className="text-sm/6 text-center mt-6 text-gray-600 font-nunito font-normal tracking-wide leading-normal">
           Already have an account?{' '}
-          <span
-            className="text-[#5B8C51] font-bold cursor-pointer underline font-nunito tracking-wide leading-normal"
-            onClick={() => navigate('/login')}
-          >
+          <span className="text-[#5B8C51] font-bold cursor-pointer underline font-nunito tracking-wide leading-normal" onClick={() => navigate('/login')}>
             Sign In
           </span>
         </p>
       </div>   
 
-      {/* Modal Notification */}
       <NotificationModal
-        isOpen={modal.isOpen}
-        title={modal.title}
-        type={modal.type}
-        onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))}
-      >
+        isOpen={modal.isOpen} title={modal.title} type={modal.type} onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))}>
         {modal.children}
       </NotificationModal>
     </div>
