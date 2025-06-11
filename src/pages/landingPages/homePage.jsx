@@ -14,101 +14,105 @@ function HomePage() {
             </div>
 
             <div className="lg:mx-0 xl:mx-10 mt-0 w-auto text-center relative z-20 mb-5 shadow-md pattern-background">
-                <div className="max-w-6xl mx-auto px-4 md:px-8 xl:px-16 grid grid-cols-1 md:grid-cols-3 gap-13 text-center mt-11">
-                    <div className="flex items-center gap-4 justify-center md:justify-start">
-                        <div className="w-13 h-13 custom-banner rounded-full shrink-0 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
+                
+                {/* area content */}
+                <div className="container mx-auto px-0 mt-8 lg:mt-12 w-full max-w-5xl">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                        <div className="flex items-center gap-3 p-4 sm:p-3 lg:p-4">
+                            <div className="w-10 h-10 lg:w-13 lg:h-13 bg-green-600 rounded-full shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 lg:h-8 lg:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <div className="flex flex-col text-left min-w-0">
+                                <span className="font-bold steel-haze font-nunito tracking-wider text-base lg:text-lg whitespace-nowrap">Expert Guidance</span>
+                                <p className="text-xs lg:text-sm custome-deskription font-nunito tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">Quick tips from tomato specialists.</p>
+                            </div>
                         </div>
-                        <div className="flex flex-col text-left">
-                            <span className="font-bold steel-haze font-nunito tracking-wider text-lg">Expert Guidance</span>
-                            <p className="text-sm custome-deskription font-nunito tracking-wide">Quick tips from tomato specialists.</p>
-                        </div>
-                    </div>
 
-                    <div className="flex items-center gap-4 justify-center md:justify-start">
-                        <div className="w-13 h-13 custom-banner rounded-full shrink-0 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                            </svg>
+                        <div className="flex items-center gap-3 p-4 sm:p-3 lg:p-4">
+                            <div className="w-10 h-10 lg:w-13 lg:h-13 bg-green-600 rounded-full shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 lg:h-8 lg:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div className="flex flex-col text-left min-w-0">
+                                <span className="font-bold steel-haze font-nunito tracking-wider text-base lg:text-lg whitespace-nowrap">Learning Resources</span>
+                                <p className="text-xs lg:text-sm custome-deskription font-nunito tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">Easy guides and how-tos.</p>
+                            </div>
                         </div>
-                        <div className="flex flex-col text-left">
-                            <span className="font-bold steel-haze font-nunito tracking-wider text-lg">Learning Resources</span>
-                            <p className="text-sm custome-deskription font-nunito tracking-wide">Easy guides and how-tos.</p>
-                        </div>
-                    </div>
 
-                    <div className="flex items-center gap-4 justify-center md:justify-start">
-                        <div className="w-13 h-13 custom-banner rounded-full shrink-0 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                        </div>
-                        <div className="flex flex-col text-left">
-                            <span className="font-bold steel-haze font-nunito tracking-wider text-lg">Community Support</span>
-                            <p className="text-sm custome-deskription font-nunito tracking-wide">Ask & share with fellow growers.</p>
+                        <div className="flex items-center gap-3 p-4 sm:p-3 lg:p-4">
+                            <div className="w-10 h-10 lg:w-13 lg:h-13 bg-green-600 rounded-full shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 lg:h-8 lg:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div className="flex flex-col text-left min-w-0">
+                                <span className="font-bold steel-haze font-nunito tracking-wider text-base lg:text-lg whitespace-nowrap">Learning Resources</span>
+                                <p className="text-xs lg:text-sm custome-deskription font-nunito tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">Easy guides and how-tos.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="w-full max-w-5xl border border-gray-300 rounded-2xl px-2 md:px-4 py-4 md:py-6 flex flex-col md:flex-row items-center gap-6 md:gap-8 mx-auto mt-15 bg-white">
-                    <div className="w-full md:w-1/2 flex justify-start items-center md:pl-0 xl:pl-3">
-                        <div className="bg-gray-200 w-full aspect-square rounded-2xl md:rounded-[20px] max-w-[260px] md:max-w-[300px] lg:max-w-[320px] flex items-center justify-center overflow-hidden ml-0 mt-0">
-                            <img src={bannerImage} alt="Tomato Plant" className="w-full h-full object-cover rounded-2xl md:rounded-[20px]" />
+                <div className="w-full max-w-5xl border border-gray-300 rounded-4xl p-6 sm:p-6 md:p-6 flex flex-col lg:flex-row items-start gap-6 lg:gap-0 mx-auto mt-8 sm:mt-8 lg:mt-13 bg-white">
+                    <div className="w-full lg:w-[35%] flex justify-center lg:justify-start">
+                        <div className="bg-gray-200 w-full aspect-[16/9] sm:aspect-[2/1] md:aspect-[2/1] lg:aspect-square rounded-2xl overflow-hidden max-w-none lg:max-w-[320px]">
+                            <img src={bannerImage} alt="Tomato Plant" className="w-full h-full object-cover" />
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-start items-start h-full pl-0 md:pl-0 xl:pl-0 mt-0 w-full">
-                        <div className="w-full flex flex-col items-start justify-start h-full">
-                            <h2 className="text-xl md:text-2xl font-bold steel-haze font-nunito tracking-wider mb-2 mt-0 text-left w-full pl-0 ml-0">
+                    <div className="w-full lg:w-[65%] flex flex-col items-start text-left lg:ml-10 lg:pt-8">
+                        <div className="w-full space-y-4">
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold steel-haze font-nunito tracking-wider text-left">
                                 Growing Knowledge, Growing Tomatoes
                             </h2>
-                            <p className="text-xs md:text-sm/6 custome-deskription mb-4 max-w-md font-medium tracking-wide text-left w-full pl-0 ml-0">
+                            <p className="text-sm sm:text-base custome-deskription font-medium tracking-wide text-left">
                                 Greetings from Dosner Organic Farms. We distribute only organic herbs and produce directly to consumers.
                             </p>
 
-                            <div className="grid grid-cols-2 gap-x-0 gap-y-5 mb-4 w-full">
-                                <div className="flex items-center gap-2 py-1 justify-start">
-                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-4 w-full text-left">
+                                <div className="flex items-start gap-2">
+                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0 mt-0.5">
                                         <FaCheck size={11} />
                                     </div>
-                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold whitespace-nowrap">Growing Tips</span>                                  
+                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold">Growing Tips</span>                                  
                                 </div>
 
-                                <div className="flex items-center gap-2 py-1 justify-start">
-                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0">
+                                <div className="flex items-start gap-2">
+                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0 mt-0.5">
                                         <FaCheck size={11} />
                                     </div>
-                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold whitespace-nowrap">Seasonal Planting Guides</span>                                  
+                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold">Seasonal Planting Guides</span>                                  
                                 </div>
 
-                                <div className="flex items-center gap-2 py-1 justify-start">
-                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0">
+                                <div className="flex items-start gap-2">
+                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0 mt-0.5">
                                         <FaCheck size={11} />
                                     </div>
-                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold whitespace-nowrap">Organic Tomato Care</span>                                  
+                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold">Organic Tomato Care</span>                                  
                                 </div>
 
-                                <div className="flex items-center gap-2 py-1 justify-start">
-                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0">
+                                <div className="flex items-start gap-2">
+                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0 mt-0.5">
                                         <FaCheck size={11} />
                                     </div>
-                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold whitespace-nowrap">Soil & Fertilizer Advice</span>                                  
+                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold">Soil & Fertilizer Advice</span>                                  
                                 </div>
 
-                                <div className="flex items-center gap-2 py-1 justify-start">
-                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0">
+                                <div className="flex items-start gap-2">
+                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0 mt-0.5">
                                         <FaCheck size={11} />
                                     </div>
-                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold whitespace-nowrap">Pest & Disease Solutions</span>                                  
+                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold">Pest & Disease Solutions</span>                                  
                                 </div>
 
-                                <div className="flex items-center gap-2 py-1 justify-start">
-                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0">
+                                <div className="flex items-start gap-2">
+                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-400 text-white flex-shrink-0 mt-0.5">
                                         <FaCheck size={11} />
                                     </div>
-                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold whitespace-nowrap">Beginner to Pro Guidance</span>                                  
+                                    <span className="text-sm custome-deskription font-nunito tracking-wide font-semibold">Beginner to Pro Guidance</span>                                  
                                 </div>
                             </div>
                         </div>
@@ -139,61 +143,64 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className="p-4 sm:p-5 md:p-6 lg:p-8 pt-15 sm:pt-15 md:pt-16 lg:pt-18">
-                    <div className="mx-auto max-w-xl rounded-2xl space-y-3 sm:space-y-4 md:space-y-4"> 
-                        <div className="space-y-2 md:space-y-2">
+                <div className="mt-15 mx-5 md:mx-15 rounded-3xl text-left space-y-4">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-3 md:space-y-0 md:space-x-8 lg:space-x-12 xl:space-x-50">
+                        <div className="w-full md:w-1/2 space-y-2 sm:space-y-2">
                             <span className="inline-block text-sm sm:text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[160px] h-8 leading-8 text-center custom-banner">
-                                Tomato Care
+                                Tomato Insights
                             </span>
 
-                            <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight steel-haze">
-                                Expert Tomato Plant <br/> Consultation & Diagnosis
+                            <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                Detect & Grow Better <br/> Tomatoes
                             </h2>
+                        </div>
 
-                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider max-w-sm mx-auto custome-deskription">
-                                Capture your tomato plant's condition and receive instant tips from experts.
+                        <div className="w-full md:w-1/2 space-y-2 md:space-y-2">
+                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider sm:line-clamp-2 custome-deskription">
+                                Easily analyze your tomato plant's condition by snapping a photo. Get expert guidance for healthier growth and better yields.
                             </p>
-                        </div>                    
-                    </div>                    
-                </div>
+                        </div>
+                    </div>
 
-                <div className="mt-2.5 mx-5 md:mx-15 border border-gray-200 rounded-3xl">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 p-4 sm:p-5 md:p-6 lg:p-8">
-                        {cardData.map((card) => (
-                            <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px]">
-                            <div className="relative w-full px-3 pt-3">
-                                <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
-                                    <img src={bannerImage} alt={`Card ${card.id}`} className="w-full h-full object-cover rounded-2xl" />
-                                    
-                                    <div className="absolute inset-0 bg-black opacity-18 rounded-xl"></div>
-                                        <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
-                                            <span className="custom-banner rounded-full w-7 h-7 flex items-center justify-center shadow-sm">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 text-white">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                                                </svg>
-                                            </span>
+                    <div className="mt-10 border border-gray-200 rounded-3xl">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 p-4 sm:p-5 md:p-6 lg:p-8">
+                            {cardData.map((card) => (
+                                <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px]">
+                                <div className="relative w-full px-3 pt-3">
+                                    <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
+                                        <img src={bannerImage} alt={`Card ${card.id}`} className="w-full h-full object-cover rounded-2xl" />
+                                        
+                                        <div className="absolute inset-0 bg-black opacity-18 rounded-xl"></div>
+                                            <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
+                                                <span className="custom-banner rounded-full w-7 h-7 flex items-center justify-center shadow-sm">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 text-white">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                                    </svg>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div className="flex-1 flex flex-col px-5 pt-6 pb-8 text-left">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <span className={`inline-block w-2 h-2 rounded-full ${card.categoryColor}`}></span>
-                                        <span className="text-xs font-semibold tracking-wide uppercase font-nunito steel-haze">{card.category}</span>
+                                    <div className="flex-1 flex flex-col px-5 pt-6 pb-8 text-left">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <span className={`inline-block w-2 h-2 rounded-full ${card.categoryColor}`}></span>
+                                            <span className="text-xs font-semibold tracking-wide uppercase font-nunito steel-haze">{card.category}</span>
+                                        </div>
+
+                                        <div className="font-semibold text-lg md:text-xl steel-haze mb-2 text-left tracking-wide font-nunito">
+                                            {card.title}
+                                        </div>
+
+                                        <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider line-clamp-3">
+                                            {card.description}
+                                        </p>
                                     </div>
-
-                                    <div className="font-semibold text-lg md:text-xl steel-haze mb-2 text-left tracking-wide font-nunito">
-                                        {card.title}
-                                    </div>
-
-                                    <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider line-clamp-3">
-                                        {card.description}
-                                    </p>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
+
                 
                 <div className="mt-15 mx-5 md:mx-15 rounded-3xl text-left space-y-4">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-3 md:space-y-0 md:space-x-8 lg:space-x-12 xl:space-x-50">
@@ -330,7 +337,7 @@ function HomePage() {
                     </div>
 
                 </div>
-
+                
             </div>
         </>
     )
