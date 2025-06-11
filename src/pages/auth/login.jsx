@@ -66,11 +66,11 @@ export default function LoginPage() {
             <h1 className="text-3xl font-extrabold mb-2 text-white font-nunito tracking-wide leading-tight">
               Single Sign On
             </h1>
+            
             <p className="text-sm/6 leading-relaxed text-white/90 max-w-xl font-nunito font-semibold tracking-wide">
               Hi Digiers, Sekarang akun-mu dapat digunakan untuk berbagai platform. Nikmati berbagai kemudahan akses platform dalam satu akun.
             </p>
 
-            
             <div className="mt-8 space-y-8">
               <div className="flex items-center gap-4 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center text-white">
@@ -84,6 +84,7 @@ export default function LoginPage() {
                   <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Platform Pelatihan Budidaya Tomat</div>
                 </div>
               </div>
+
               <div className="flex items-center gap-4 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,6 +96,7 @@ export default function LoginPage() {
                   <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Platform Jual Beli Hasil Panen Tomat</div>
                 </div>
               </div>
+
               <div className="flex items-center gap-4 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,6 +108,7 @@ export default function LoginPage() {
                   <div className="ttext-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Forum & Dukungan Petani Tomat</div>
                 </div>
               </div>
+
               <div className="flex items-center gap-4 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,6 +120,7 @@ export default function LoginPage() {
                   <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Platform Sertifikasi & Standar Budidaya</div>
                 </div>
               </div>
+              
               <div className="flex items-center gap-4 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -135,19 +139,33 @@ export default function LoginPage() {
 
       {/* Form Side */}
       <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center relative">
-        <button
-          className="absolute top-4 left-10 text-gray-500 text-sm hover:underline"
+        <button className="absolute top-4 left-10 text-gray-500 text-sm hover:text-gray-700 flex items-center gap-1 font-nunito font-medium tracking-wide leading-normal"
           onClick={() => navigate('/')}
         >
-          &lt; Beranda
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+          Beranda
         </button>
 
-        <h1 className="text-3xl font-extrabold mb-2 mt-10">Log In Account</h1>
-        <p className="mb-6 text-gray-600">
-          Hi, Selamat Datang <span className="text-[#5B8C51] font-semibold">#TanamJo</span>
-        </p>
+        <div className="text-center md:text-left">
+          <h1 className="text-4xl font-extrabold mb-3 bg-gradient-to-r from-[#5B8C51] to-[#0098C3] bg-clip-text text-transparent font-nunito tracking-wide leading-tight">
+            Welcome Back!
+          </h1>
+          <div className="flex items-center gap-2 mb-3">
+            <p className="text-gray-600 text-lg font-nunito font-medium tracking-wide leading-normal">
+              Hi, Selamat Datang
+            </p>
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold font-nunito tracking-wide leading-normal bg-[#5B8C51]/10 text-[#5B8C51]">
+              #TanamJo
+            </span>
+          </div>
+          <p className="text-gray-500 text-sm mb-8 font-nunito font-medium tracking-wide leading-normal ">
+            Masuk ke akun Anda untuk melanjutkan perjalanan bertani bersama kami
+          </p>
+        </div>
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-6">
           <FormInput
             label={
               <span>
