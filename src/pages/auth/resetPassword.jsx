@@ -61,9 +61,10 @@ export default function ResetPassword() {
             {showPass ? <EyeOff size={20} /> : <Eye size={20} />}
           </div>
         </div>
-        <BigButton onClick={handleSubmit} className="w-full bg-[#4C8B5E] hover:bg-[#3a6d4a] text-white">
-          Set new password
-        </BigButton>
+
+        <div onClick={handleSubmit} className="flex justify-center mt-10">
+          <BigButton type="submit">Set new password</BigButton>
+        </div>
       </div>
     </div>
   );
