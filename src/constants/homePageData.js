@@ -1,4 +1,6 @@
-import bannerImage from '@/assets/Banner/banner-1.png';
+import blog1Image from '@/assets/Blog/Blog-1.webp';
+import blog2Image from '@/assets/Blog/Blog-2.webp';
+import blog3Image from '@/assets/Blog/Blog-3.webp';
 
 export const cardData = [
     {
@@ -65,7 +67,7 @@ export const blogCardData = [
         categoryColor: "bg-emerald-500",
         date: "11 Juni 2025",
         author: "TamanJO",
-        image: bannerImage,
+        image: blog1Image,
         description: "Learn expert techniques for growing abundant tomatoes in limited space. Perfect for urban gardeners!"
     },
     {
@@ -75,7 +77,7 @@ export const blogCardData = [
         categoryColor: "bg-blue-500",
         date: "11 Juni 2025",
         author: "TamanJO",
-        image: bannerImage,
+        image: blog2Image,
         description: "Discover eco-friendly methods to protect your tomatoes from common pests and diseases."
     },
     {
@@ -85,7 +87,7 @@ export const blogCardData = [
         categoryColor: "bg-purple-500",
         date: "11 Juni 2025",
         author: "TamanJO",
-        image: bannerImage,
+        image: blog3Image,
         description: "Master the art of growing tomatoes without soil using modern hydroponic techniques."
     }
 ]; 

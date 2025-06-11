@@ -163,7 +163,7 @@ function HomePage() {
                             <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px]">
                             <div className="relative w-full px-3 pt-3">
                                 <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
-                                    <img src={bannerImage} alt={`Card ${card.id}`} className="w-full h-full object-cover rounded-2xl " />
+                                    <img src={bannerImage} alt={`Card ${card.id}`} className="w-full h-full object-cover rounded-2xl" />
                                     
                                     <div className="absolute inset-0 bg-black opacity-18 rounded-xl"></div>
                                         <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
@@ -240,8 +240,8 @@ function HomePage() {
                 <div className="flex flex-col md:flex-row items-stretch mt-15 md:mt-18 mx-6 md:mx-16 gap-0 md:gap-0">
                     <div className="flex-1 md:flex-[1.2] aspect-[4/3] md:aspect-auto md:min-h-[250px] xl:min-h-[300px] rounded-t-4xl md:rounded-tl-4xl md:rounded-bl-4xl md:rounded-tr-none md:rounded-br-none md:mr-0 mb-0 md:mb-0 overflow-hidden relative">
                         
-                        <img src={bannerImage} className="absolute inset-0 w-full h-full object-cover" alt="Banner Image"/>
-                        <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-green-800/45 to-transparent lg:rounded-t-4xl"></div>
+                        <img src={bannerImage} className="absolute inset-0 w-full h-full object-cover brightness-75" alt="Banner Image"/>
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-900/50 via-green-800/60 to-black/40 lg:rounded-t-4xl"></div>
                     </div>
 
                     <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 py-6 sm:py-7 md:px-12 lg:px-16 bg-white rounded-3xl md:rounded-3xl md:-ml-4 -mt-8 md:mt-0 z-10 shadow-sm max-w-full md:max-w-[600px]">
@@ -289,7 +289,8 @@ function HomePage() {
                             <div key={item.id} className="rounded-3xl flex flex-col overflow-hidden relative w-full h-auto group cursor-pointer">
                                 <div className="relative w-full">
                                     <div className="w-full h-[180px] sm:h-[260px] rounded-2xl flex items-start justify-center relative overflow-hidden bg-gray-200">
-                                        <img src={item.image} alt={item.title} className="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500" />
+                                        <img src={item.image} alt={item.title} className="w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all duration-500" />
+                                        <div className="absolute inset-0 bg-black opacity-15"></div>
                                         <div className="absolute top-3 left-3">
                                             <span className="inline-flex items-center bg-white/90 backdrop-blur-sm text-gray-700 text-xs tracking-wide font-bold px-4 py-1.5 rounded-full shadow-sm" style={{ letterSpacing: '0.08em' }}>
                                                 <span className={`w-2 h-2 rounded-full ${item.categoryColor} mr-2`}></span>
