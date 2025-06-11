@@ -53,18 +53,82 @@ export default function LoginPage() {
   return (
     <div className="h-screen flex flex-col md:flex-row">
       {/* Right Side Image */}
-      <div className="hidden md:flex w-1/2 bg-[#5B8C51] items-center justify-center relative text-white px-12">
-        <div className="max-w-md text-center">
-          <img src="" alt="Login Illustration" className="mb-4 mx-auto w-100" />
-          <h1 className="text-2xl font-bold mb-4">Smart Planting Needs</h1>
-          <p className="text-sm">
-            During the initial years of introduction of the modern crop varieties, micronutrient
-            deficiency disorders were discovered as an obstacle to obtain higher yields.
-          </p>
-          <div className="mt-6 flex justify-center gap-2">
-            <span className="h-2 w-2 bg-white rounded-full"></span>
-            <span className="h-2 w-2 bg-white/50 rounded-full"></span>
-            <span className="h-2 w-2 bg-white/50 rounded-full"></span>
+      <div className="hidden md:flex w-1/2 bg-gradient-to-br from-[#5B8C51] to-[#4A7A3F] items-center justify-center relative text-white px-12 overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div className="max-w-md text-left relative z-10 mr-25">
+          {/* Tomato Theme Content */}
+          <div className="space-y-6">
+            <h1 className="text-3xl font-extrabold mb-2 text-white font-nunito tracking-wide leading-tight">
+              Single Sign On
+            </h1>
+            <p className="text-sm/6 leading-relaxed text-white/90 max-w-xl font-nunito font-semibold tracking-wide">
+              Hi Digiers, Sekarang akun-mu dapat digunakan untuk berbagai platform. Nikmati berbagai kemudahan akses platform dalam satu akun.
+            </p>
+
+            
+            <div className="mt-8 space-y-8">
+              <div className="flex items-center gap-4 text-sm">
+                <div className="w-8 h-8 flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Tomat Training</span>
+                  <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Platform Pelatihan Budidaya Tomat</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-sm">
+                <div className="w-8 h-8 flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Tomat Market</span>
+                  <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Platform Jual Beli Hasil Panen Tomat</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-sm">
+                <div className="w-8 h-8 flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Komunitas Tomat</span>
+                  <div className="ttext-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Forum & Dukungan Petani Tomat</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-sm">
+                <div className="w-8 h-8 flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg">Sertifikasi Tomat</span>
+                  <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Platform Sertifikasi & Standar Budidaya</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-sm">
+                <div className="w-8 h-8 flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-bold text-white font-nunito tracking-wide leading-tight text-lg mb-3">Indeks Tomat Indonesia</span>
+                  <div className="text-white/80 text-xs font-nunito font-medium tracking-wide leading-normal">Website Indeks Kesehatan Tanaman Tomat</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
