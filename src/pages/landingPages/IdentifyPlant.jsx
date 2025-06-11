@@ -111,7 +111,7 @@ function IdentifyPlant() {
         </div>
 
         {showResult && identifiedCard && (
-            <div className="w-full max-w-5xl mx-auto mt-10 space-y-6 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 border border-gray-300 rounded-xl">
+            <div className="w-full max-w-5xl mx-auto mt-10 space-y-6 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 border border-gray-300 rounded-xl pb-8">
               <div className="w-full">
                 <div className="p-6 flex justify-center">
                   <DiseaseCard
