@@ -1,6 +1,9 @@
 import blog1Image from '@/assets/Blog/Blog-1.webp';
 import blog2Image from '@/assets/Blog/Blog-2.webp';
 import blog3Image from '@/assets/Blog/Blog-3.webp';
+import card1Image from '@/assets/Banner/card-1.png';
+import card2Image from '@/assets/Banner/card-2.png';
+import card3Image from '@/assets/Banner/card-3.png';
 
 export const cardData = [
     {
@@ -8,21 +11,24 @@ export const cardData = [
         title: "Organic Fertilizer Guide",
         description: "Learn about natural fertilizers and their benefits for tomato plants. Get expert tips on composting and soil enrichment.",
         category: "ORGANIC",
-        categoryColor: "bg-emerald-500"
+        categoryColor: "bg-emerald-500",
+        image: card1Image
     },
     {
         id: 2,
         title: "Seasonal Fertilizing Tips",
         description: "Discover the best fertilizing practices for each growing season. Maximize your tomato yield with proper timing and techniques.",
         category: "SEASONAL",
-        categoryColor: "bg-amber-500"
+        categoryColor: "bg-amber-500",
+        image: card2Image
     },
     {
         id: 3,
         title: "Nutrient Management",
         description: "Master the art of nutrient balance and learn how to address common deficiencies in tomato plants through proper fertilization.",
         category: "NUTRIENTS",
-        categoryColor: "bg-blue-500"
+        categoryColor: "bg-blue-500",
+        image: card3Image
     }
 ];
 

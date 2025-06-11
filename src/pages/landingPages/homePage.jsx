@@ -168,7 +168,7 @@ function HomePage() {
                                 <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px]">
                                 <div className="relative w-full px-3 pt-3">
                                     <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
-                                        <img src={bannerImage} alt={`Card ${card.id}`} className="w-full h-full object-cover rounded-2xl" />
+                                        <img src={card.image} alt={card.title} className="w-full h-full object-cover rounded-2xl" />
                                         
                                         <div className="absolute inset-0 bg-black opacity-18 rounded-xl"></div>
                                             <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
