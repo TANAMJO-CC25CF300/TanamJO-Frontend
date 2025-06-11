@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa";
 import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandingHome';
 import bannerImage from '@/assets/Banner/banner-1.png';
 import LittleButton from '@/components/LittleButton';
-import HarvestSection from '@/components/landingPages/plantlis/HarvestCardSection';
+import HarvestCardSection from '@/components/landingPages/plantlis/HarvestCardSection';
 
 function HomePage() {
 
@@ -135,7 +135,7 @@ function HomePage() {
                     </div>
 
                     <div className="w-full mt-7">
-                        <HarvestSection/>
+                        <HarvestCardSection/>
                     </div>
                 </div>
 
