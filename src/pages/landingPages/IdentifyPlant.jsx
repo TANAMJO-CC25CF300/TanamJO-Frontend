@@ -1,29 +1,77 @@
 import React, { useState } from "react";
-import CameraCapture from "../../Components/CameraCapture";
-import DiseaseCard from "../../components/DiseaseCard";
-import HarvestLanding from "@components/landingPages/plantlis/HarvestLandingHome";
+import CameraCapture from "../../components/landingPages/identyPlant/cameraCapture";
+import DiseaseCard from "../../components/landingPages/identyPlant/diseaseCard";
+import HarvestLandingAbout from "@components/landingPages/plantlis/HarvestLandingAbout";
 import mockRecommendations from "../../services/recomendation";
 
-const fetchData = async () => {
-  const response = await fetch("http:localhost:5000/predict");
-  const data = await response.json();
-  return data;
-  console.log(data);
+const fetchData = async (imageFile) => {
+  try {
+    if (!imageFile) {
+      return {
+        status: "error",
+        message: "File gambar tidak ditemukan",
+      };
+    }
+
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    const response = await fetch("http://localhost:5000/predict", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      return {
+        status: "success",
+        message: data.message,
+        disease: data.data.disease,
+        confidence: data.data.confidenceScore,
+      };
+    } else {
+      return {
+        status: "error",
+        message: data.message || "Terjadi kesalahan saat memproses gambar",
+      };
+    }
+  } catch (error) {
+    return {
+      status: "error",
+      message: error.message || "Terjadi kesalahan pada server",
+    };
+  }
 };
 
 function IdentifyPlant() {
   const [showResult, setShowResult] = useState(false);
   const [identifiedCard, setIdentifiedCard] = useState(null);
 
-  const handleIdentified = (image) => {
+  const handleIdentified = async (imageFile) => {
+    const result = await fetchData(imageFile);
     setShowResult(true);
-    setIdentifiedCard({
-      disease: "Busuk Daun",
-      plant: "Tomatitors",
-      symptoms: "Daun Layu, Berkecoklatan",
-      treatment: "Buang daun yang terinfeksi, semprot fungisida organik",
-      image: image,
-    });
+    const imageUrl = imageFile ? URL.createObjectURL(imageFile) : null;
+    if (result.status === "success") {
+      setIdentifiedCard({
+        disease: result.disease || "Tidak terdeteksi",
+        plant: result.plant || "-",
+        symptoms: result.symptoms || "-",
+        treatment: result.treatment || "-",
+        confidence: result.confidence
+          ? `${(result.confidence * 100).toFixed(2)}%`
+          : "-",
+        image: imageUrl,
+      });
+    } else {
+      setIdentifiedCard({
+        disease: "Tidak terdeteksi",
+        plant: "-",
+        symptoms: result.message || "Gagal memproses gambar",
+        treatment: "-",
+        confidence: "-",
+        image: imageUrl,
+      });
+    }
   };
 
   return (
@@ -63,11 +111,12 @@ function IdentifyPlant() {
                   plant={identifiedCard.plant}
                   symptoms={identifiedCard.symptoms}
                   treatment={identifiedCard.treatment}
+                  confidence={identifiedCard.confidence}
                   image={identifiedCard.image}
                 />
               </div>
 
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-800">
                   Expert Recommendations
                 </h3>
@@ -80,8 +129,8 @@ function IdentifyPlant() {
                       {rec}
                     </div>
                   ))}
-                </div>
-              </div>
+                </div> 
+             </div> */}
             </div>
           )}
         </div>

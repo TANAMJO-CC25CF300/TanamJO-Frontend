@@ -1,21 +1,20 @@
 import React from "react";
-import LeftSidebar from "../../layout/dashboard/left-sidebar";
-import AddPlant from "../../components/MyPlant/AddPlant";
+import DashboardLayout from "@/layout/dashboard/layout";
+import AddPlant from "@/components/MyPlant/AddPlant";
+import LeftSidebar from "@/layout/dashboard/left-sidebar";
 
-const MyPlant = () => {
+const MyPlantEmptyPage = () => {
   return (
-    <div className="min-h-screen bg-[#FFFFFF] flex flex-col">
-      <div className="flex flex-1">
-        <LeftSidebar />
-        <main className="flex-1 flex flex-col items-center justify-start px-8 py-8">
-          <AddPlant />
-          <footer className="mt-auto text-center w-full text-xs text-gray-400">
-            © 2024 TanamJO – Platform Edukasi dan Pemantauan Kesehatan Tanaman.
-          </footer>
-        </main>
+    <DashboardLayout>
+      <LeftSidebar />
+      <div className="flex-1 flex flex-col items-center justify-start px-8 py-8">
+        <AddPlant />
+        <footer className="mt-auto text-center w-full text-xs text-gray-400">
+          © 2024 TanamJO – Platform Edukasi dan Pemantauan Kesehatan Tanaman.
+        </footer>
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
-export default MyPlant;
+export default MyPlantEmptyPage;
