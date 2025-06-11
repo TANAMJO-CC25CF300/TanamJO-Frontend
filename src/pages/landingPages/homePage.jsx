@@ -234,8 +234,34 @@ function HomePage() {
                             </div>
                         ))}
                     </div>
+                </div>
 
+                <div className="flex flex-col md:flex-row items-stretch mt-15 md:mt-18 mx-6 md:mx-16 gap-0 md:gap-0">
+                    <div className="flex-1 md:flex-[1.2] aspect-[4/3] md:aspect-auto md:min-h-[250px] xl:min-h-[300px] rounded-t-4xl md:rounded-tl-4xl md:rounded-bl-4xl md:rounded-tr-none md:rounded-br-none md:mr-0 mb-0 md:mb-0 overflow-hidden relative">
+                        
+                        <img src={bannerImage} className="absolute inset-0 w-full h-full object-cover" alt="Banner Image"/>
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-green-800/45 to-transparent lg:rounded-t-4xl"></div>
+                    </div>
 
+                    <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 py-6 sm:py-7 md:px-12 lg:px-16 bg-white rounded-3xl md:rounded-3xl md:-ml-4 -mt-8 md:mt-0 z-10 shadow-sm max-w-full md:max-w-[600px]">
+                        <div className="flex flex-col items-start justify-start space-y-3 md:space-y-2 text-left">
+                            <div className="w-full space-y-2">      
+                                <span className="inline-block text-sm sm:text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[160px] h-8 leading-8 text-center custom-banner">
+                                    Tomato Insights
+                                </span>      
+
+                                <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                    Identify Plant Problems <br/>Before They Spread
+                                </h2>                
+                            </div>
+
+                            <div className="w-full space-y-2">
+                                <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription">
+                                    Use our smart detection tool to spot diseases early and take action fast. Improve plant care with accurate insights and easy-to-follow recommendations.
+                                </p>
+                            </div>
+                        </div>    
+                    </div>
                 </div>
 
             </div>
