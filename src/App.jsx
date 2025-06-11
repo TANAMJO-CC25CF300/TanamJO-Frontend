@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Footer from "@/layout/landingPages/footer";
 import BackToTop from "@/components/common/BackToTop";
+import ProtectedRoute from "@/components/auth/ProtectedRoute";
 
 // Landing Pages
 import HomePage from "@/pages/landingPages/homePage";
@@ -43,7 +44,7 @@ function App() {
         {/* Redirect root to home-page */}
         <Route path="/" element={<Navigate to="/home-page" replace />} />
 
-        {/* Landing Pages */}
+        {/* Public Routes (Landing Pages) */}
         <Route path="/home-page" element={<HomePage />} />
         <Route path="/plant-guide" element={<PlantGuide />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -79,14 +80,87 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
 
-        {/* Dashboard Routes */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profile/:id" element={<ProfilePage />} />
-        <Route path="/update-password/:id" element={<UpdatePasswordPage />} />
-        <Route path="/Sidebar" element={<LeftSidebar />} />
-        <Route path="/MyPlantEmptyPage" element={<MyPlantEmptyPage />} />
-        <Route path="/MyPlantPage" element={<MyPlantPage />} />
-        <Route path="/MainIdentifyPlant" element={<MainIdentifyPlant />} />
+        {/* Protected Routes (Dashboard) */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile/:id"
+          element={
+            <ProtectedRoute>
+              <ProfilePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/update-password/:id"
+          element={
+            <ProtectedRoute>
+              <UpdatePasswordPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/Sidebar"
+          element={
+            <ProtectedRoute>
+              <LeftSidebar />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/MyPlantEmptyPage"
+          element={
+            <ProtectedRoute>
+              <MyPlantEmptyPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/AddPlant"
+          element={
+            <ProtectedRoute>
+              <AddPlant />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/CardPlant"
+          element={
+            <ProtectedRoute>
+              <CardPlant />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/DailyTasks"
+          element={
+            <ProtectedRoute>
+              <DailyTasks />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/MyPlantPage"
+          element={
+            <ProtectedRoute>
+              <MyPlantPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/MainIdentifyPlant"
+          element={
+            <ProtectedRoute>
+              <MainIdentifyPlant />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Other Components */}
         <Route path="/capture" element={<CameraCapture />} />

@@ -1,9 +1,23 @@
 import React, { useState } from "react";
 import { Bell, Search, User, LogOut, ChevronDown, Settings, Key } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  console.log(user);
+
+  const handleLogout = () => {
+    // Clear all auth data from localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    
+    // Redirect to login page
+    navigate('/login');
+  };
 
   return (
     <header className="bg-white border-b border-gray-200 py-4 px-4 lg:px-8 flex items-center justify-between sticky top-0 z-40">
@@ -42,8 +56,8 @@ export default function Header() {
               <User size={20} className="text-white" />
             </div>
             <div className="hidden md:block">
-              <h4 className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">John Doe</h4>
-              <p className="text-xs text-gray-500">john@example.com</p>
+              <h4 className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors">{user.name}</h4>
+              <p className="text-xs text-gray-500">{user.email}</p>
             </div>
             <ChevronDown size={16} className="text-gray-500" />
           </div>
@@ -52,25 +66,22 @@ export default function Header() {
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-1">
               <div className="px-4 py-2">
-                <p className="text-sm font-medium text-gray-900">John Doe</p>
-                <p className="text-xs text-gray-500">john@example.com</p>
+                <p className="text-sm font-medium text-gray-900">{user.name}</p>
+                <p className="text-xs text-gray-500">{user.email}</p>
               </div>
               <div className="h-px bg-gray-200 my-1"></div>
-              <Link to="/profile/1" className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+              <Link to={`/profile/${user.id}`} className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
                 <User size={16} />
                 Profile
               </Link>
-              <Link to="/update-password/1" className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+              <Link to={`/update-password/${user.id}`} className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 flex items-center gap-2">
                 <Key size={16} />
                 Update Password
               </Link>
               <div className="h-px bg-gray-200 my-1"></div>
               <button 
                 className="w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-50 flex items-center gap-2"
-                onClick={() => {
-                  // Add logout logic here
-                  console.log('Logout clicked');
-                }}
+                onClick={handleLogout}
               >
                 <LogOut size={16} />
                 Logout

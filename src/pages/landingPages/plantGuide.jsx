@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandingAbout';
-import HarvestSection from '@/components/landingPages/plantlis/HarvestCardSection';
+import HarvestCardSection from '@/components/landingPages/plantlis/HarvestCardSection';
 import ArtikelGuide from '@/components/landingPages/artikel/ArtikelGuide';
 import bannerImage from '@/assets/Banner/banner-1.png';
 
@@ -88,7 +88,7 @@ function PlantGuide() {
                     </div>
 
                     <div className="w-full mt-7">
-                        <HarvestSection/>
+                        <HarvestCardSection/>
                     </div>
                 </div>
 
