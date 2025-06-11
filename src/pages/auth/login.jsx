@@ -161,12 +161,7 @@ export default function LoginPage() {
                   <span className="text-red-500 ml-1 font-nunito font-medium tracking-wide leading-normal">*</span>
                 </span>
               }
-              name="email"
-              type="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="Masukan Email Anda"
-              required
+              name="email" type="email" value={form.email} onChange={handleChange} placeholder="Masukan Email Anda" required
             />
           </div>
 
@@ -178,12 +173,7 @@ export default function LoginPage() {
                   <span className="text-red-500 ml-1">*</span>
                 </span>
               }
-              name="password"
-              type="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="********"
-              required
+              name="password" type="password" value={form.password} onChange={handleChange} placeholder="********" required
             />
           </div>
 
