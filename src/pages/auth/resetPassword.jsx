@@ -22,48 +22,116 @@ export default function ResetPassword() {
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-50">
       <div className="bg-white p-8 rounded-2xl shadow-md w-[90%] max-w-md text-center">
-        <div className="text-left mb-4">
+        <div className="text-left mb-4 text-blue-500">
           <ArrowLeft className="cursor-pointer" onClick={() => navigate('/login')} />
         </div>
+        
         <div className="flex justify-center mb-4">
-          <img src="/lock-icon.svg" alt="lock" className="h-10" />
-        </div>
-        <h2 className="text-lg font-semibold mb-1">Set new password</h2>
-        <p className="text-sm text-gray-500 mb-4">
-          Make sure your password has the following content:
-        </p>
-        <div className="text-xs flex justify-between text-gray-600 mb-4">
-          <span>+8 Characters</span>
-          <span>AA</span>
-          <span>aa</span>
-          <span>123</span>
-          <span>!@#</span>
-        </div>
-        <div className="mb-4 relative">
-          <FormInput
-            type={showPass ? "text" : "password"}
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className="absolute right-3 top-2.5 cursor-pointer" onClick={() => setShowPass(!showPass)}>
-            {showPass ? <EyeOff size={20} /> : <Eye size={20} />}
-          </div>
-        </div>
-        <div className="mb-6 relative">
-          <FormInput
-            type={showPass ? "text" : "password"}
-            placeholder="Confirm Password"
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
-          />
-          <div className="absolute right-3 top-2.5 cursor-pointer" onClick={() => setShowPass(!showPass)}>
-            {showPass ? <EyeOff size={20} /> : <Eye size={20} />}
-          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[#5B8C51]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
         </div>
 
-        <div onClick={handleSubmit} className="flex justify-center mt-10">
-          <BigButton type="submit">Set new password</BigButton>
+        <div className="mb-6">
+          <h2 className="text-2xl font-extrabold mb-2 bg-gradient-to-r from-[#5B8C51] to-[#0098C3] bg-clip-text text-transparent font-nunito tracking-wide leading-tight text-center">
+            Set New Password
+          </h2>
+
+          <div className="flex justify-center items-center mb-0">
+            <p className="text-gray-600 text-sm font-nunito font-medium tracking-wide leading-normal text-center">
+              Buat password baru yang aman untuk akun Anda
+            </p>
+          </div>
+
+          <p className="text-gray-500 text-sm font-nunito font-medium tracking-wide leading-normal text-center">
+            Pastikan password Anda memenuhi kriteria berikut:
+          </p>
+        </div>
+
+        <div className="flex justify-between mb-6">
+          <div className="flex flex-col items-center">
+            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">+8</span>
+            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Character</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">AA</span>
+            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Uppercase</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">aa</span>
+            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Lowercase</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">123</span>
+            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Number</span>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">!@#</span>
+            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Simbol</span>
+          </div>
+        </div>
+        
+        <div className="space-y-4">
+          <div className="relative group">
+            <FormInput
+              type={showPass ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#5B8C51] focus:ring-2 focus:ring-[#5B8C51]/20 transition-all duration-200 pr-12 text-gray-700 placeholder-gray-400"
+            />
+            <div 
+              className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-[#5B8C51] transition-colors duration-200 group-hover:text-[#5B8C51]"
+              onClick={() => setShowPass(!showPass)}
+            >
+              {showPass ? <EyeOff size={18} /> : <Eye size={18} />}
+            </div>
+
+            {password && (
+              <div className="absolute -bottom-5 left-0 text-xs text-gray-500">
+                {password.length < 8 ? (
+                  <span className="text-red-500">Password terlalu pendek</span>
+                ) : (
+                  <span className="text-green-500">Password cukup panjang</span>
+                )}
+              </div>
+            )}
+          </div>
+          
+          <div className="relative group mt-5">
+            <FormInput
+              type={showPass ? "text" : "password"}
+              placeholder="Confirm Password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#5B8C51] focus:ring-2 focus:ring-[#5B8C51]/20 transition-all duration-200 pr-12 text-gray-700 placeholder-gray-400"
+            />
+
+            <div 
+              className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 hover:text-[#5B8C51] transition-colors duration-200 group-hover:text-[#5B8C51]"
+              onClick={() => setShowPass(!showPass)}
+            >
+              {showPass ? <EyeOff size={18} /> : <Eye size={18} />}
+            </div>
+            {confirm && (
+              <div className="absolute -bottom-5 left-0 text-xs">
+                {password !== confirm ? (
+                  <span className="text-red-500">Password tidak cocok</span>
+                ) : (
+                  <span className="text-green-500">Password cocok</span>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+        
+        <div onClick={handleSubmit} className="flex justify-center mt-8">
+          <BigButton type="submit">Apply New Password</BigButton>
         </div>
       </div>
     </div>
