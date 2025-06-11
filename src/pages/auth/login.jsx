@@ -1,11 +1,14 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import FormInput from '@/pages/auth/formInput';
 import NotificationModal from '@/components/landingPages/notifikasi/notificationModal';
 import BigButton from '@/components/BigButton';
+import axiosInstance from "@/utils/axios-config";
 
 export default function LoginPage() {
+
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [form, setForm] = useState({
     email: '',
@@ -17,7 +20,7 @@ export default function LoginPage() {
     isOpen: false,
     title: '',
     type: '',
-    children: null,
+    message: '',
   });
 
   const handleChange = (e) => {
@@ -28,23 +31,38 @@ export default function LoginPage() {
     }));
   };
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // await login({ email: form.email, password: form.password });
-      setModal({
-        isOpen: true,
-        title: 'Login Berhasil',
-        type: 'success',
-        children: <p>Selamat datang kembali di <strong>TanamJo</strong>!</p>,
+      const response = await axiosInstance.post('/login', { 
+        email: form.email, 
+        password: form.password 
       });
-      setTimeout(() => navigate('/dashboard'), 1500);
-    } catch (err) {
+      
+      if (response.data.status === "success") {
+        localStorage.setItem("token", response.data.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.data.user));
+        
+        setModal({
+          isOpen: true,
+          title: "Success",
+          type: "success",
+          message: response.data.message,
+        });
+
+        // Redirect to the page they tried to visit or dashboard
+        const from = location.state?.from?.pathname || "/dashboard";
+        setTimeout(() => {
+          navigate(from, { replace: true });
+        }, 2000);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
       setModal({
         isOpen: true,
-        title: 'Login Gagal',
-        type: 'error',
-        children: <p>{err.message || 'Email atau password salah.'}</p>,
+        title: "Error",
+        type: "error",
+        message: error.response?.data?.message || "An error occurred during login",
       });
     }
   };
@@ -156,7 +174,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <form onSubmit={handleLogin} className="flex flex-col gap-2">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
           <div className="flex flex-col gap-2">
             <FormInput
               label={
@@ -212,7 +230,7 @@ export default function LoginPage() {
 
       <NotificationModal
         isOpen={modal.isOpen} title={modal.title} type={modal.type} onClose={() => setModal((prev) => ({ ...prev, isOpen: false }))}>
-        {modal.children}
+        {modal.message}
       </NotificationModal>
     </div>
   );

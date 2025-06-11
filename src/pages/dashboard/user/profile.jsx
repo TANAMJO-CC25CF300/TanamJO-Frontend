@@ -1,51 +1,105 @@
 import React, { useEffect, useState } from "react";
 import DashboardLayout from "@/layout/dashboard/layout";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "@/utils/axios-config";
+import NotificationModal from "@/components/landingPages/notifikasi/notificationModal";
+import ProfileHeader from "@/components/Dashboard/user/profile-header";
+import FormInput from "@/components/ui/formInput";
 
 export default function ProfilePage() {
     
-  const API_URL = import.meta.env.VITE_API_URL;
-  console.log(API_URL);
   const { id } = useParams();
   const [user, setUser] = useState({
     name: "",
     email: "",
-    gender: "",
+    gender: null,
     userPoints: 0,
     userLevel: "",
+  });
+  const [modal, setModal] = useState({
+    isOpen: false,
+    title: "",
+    type: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser(prev => ({
       ...prev,
-      [name]: value
+      [name]: name === "gender" ? (value === "none" ? null : value) : value
     }));
   };
-
-  console.log(user);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`${API_URL}/users/${id}`);
+        const response = await axiosInstance.get(`/users/${id}`);
         const data = response.data?.data;
 
         setUser({
           name: data?.user?.name || "",
           email: data?.user?.email || "",
-          gender: data?.user?.gender || "other",
-          userPoints: 0,
-          userLevel: "Silver",
+          gender: data?.user?.gender || null,
+          userPoints: data?.user?.poin || 0,
+          userLevel: data?.user?.level_name || "",
         });
       } catch (error) {
         console.error('Error fetching user data:', error);
+        setModal({
+          isOpen: true,
+          title: "Error",
+          type: "error",
+          message: error.response?.data?.message || "Error fetching user data"
+        });
       }
     };
 
     fetchUser();
-  }, []);
+  }, [id]);
+
+  const handleSubmit = async () => {
+    // Client-side validation
+    if (!user.name.trim()) {
+      setModal({
+        isOpen: true,
+        title: "Error",
+        type: "error",
+        message: "Name cannot be empty"
+      });
+      return;
+    }
+
+    if (!user.email.trim()) {
+      setModal({
+        isOpen: true,
+        title: "Error",
+        type: "error",
+        message: "Email cannot be empty"
+      });
+      return;
+    }
+
+    try {
+      const response = await axiosInstance.put(`/users/${id}`, user);
+      console.log(response.data);
+      setModal({
+        isOpen: true,
+        title: "Success",
+        type: "success",
+        message: "Profile updated successfully"
+      });
+    } catch (error) {
+      console.error('Error updating user data:', error);
+      const errorMessage = error.response?.data?.error || error.response?.data?.message || "Error updating user data";
+      setModal({
+        isOpen: true,
+        title: "Error",
+        type: "error",
+        message: errorMessage
+      });
+    }
+  };
 
   console.log(id);
 
@@ -53,69 +107,52 @@ export default function ProfilePage() {
     <DashboardLayout>
       <div className="mx-auto w-full max-w-7xl px-6 py-8">
         {/* Profile Header */}
-        <div className="mb-8 bg-white rounded-[20px] shadow-sm p-8">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="relative">
-              <div className="w-40 h-40 rounded-full bg-[#0098C3] flex items-center justify-center text-white text-4xl font-semibold">
-                {user.name ? user.name.split(' ').map(n => n[0]).join('') : 'U'}
-              </div>
-            </div>
-            <div className="text-center md:text-left flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{user.name}</h1>
-              <p className="text-lg text-gray-600 mb-4">{user.email}</p>
-              <div className="flex flex-col md:flex-row gap-3">
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-50 text-blue-700">
-                  Level: {user.userLevel}
-                </span>
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-50 text-green-700">
-                  Points: {user.userPoints}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProfileHeader user={user} />
 
         {/* Profile Information */}
         <div className="bg-white rounded-[20px] shadow-sm p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Personal Information</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Edit Profile</h2>
           <div className="max-w-3xl">
             <div className="space-y-8">
-              <div>
-                <label className="block text-[15px] font-medium text-gray-700 mb-3">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={user.name}
-                  onChange={handleChange}
-                  className="w-full px-5 py-4 text-base text-gray-900 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your full name"
-                />
-              </div>
-              <div>
-                <label className="block text-[15px] font-medium text-gray-700 mb-3">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={user.email}
-                  onChange={handleChange}
-                  className="w-full px-5 py-4 text-base text-gray-900 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your email"
-                />
-              </div>
+              <FormInput
+                label={
+                  <span>
+                    Full Name
+                    <span className="text-red-500 ml-1 font-nunito font-medium tracking-wide leading-normal">*</span>
+                  </span>
+                }
+                name="name"
+                type="text"
+                value={user.name}
+                onChange={handleChange}
+                placeholder="Enter your full name"
+                required
+              />
+              <FormInput
+                label={
+                  <span>
+                    Email
+                    <span className="text-red-500 ml-1 font-nunito font-medium tracking-wide leading-normal">*</span>
+                  </span>
+                }
+                name="email"
+                type="email"
+                value={user.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                required
+              />
               <div>
                 <label className="block text-[15px] font-medium text-gray-700 mb-3">
                   Gender
+                  <span className="text-red-500 ml-1 font-nunito font-medium tracking-wide leading-normal">*</span>
                 </label>
                 <div className="flex gap-6">
                   <label className="flex items-center">
                     <input
                       type="radio"
                       name="gender"
-                      value="Male"
+                      value="male"
                       checked={user.gender === "male"}
                       onChange={handleChange}
                       className="w-4 h-4 text-[#0098C3] border-gray-300 focus:ring-[#0098C3]"
@@ -126,28 +163,21 @@ export default function ProfilePage() {
                     <input
                       type="radio"
                       name="gender"
-                      value="Female"
+                      value="female"
                       checked={user.gender === "female"}
                       onChange={handleChange}
                       className="w-4 h-4 text-[#0098C3] border-gray-300 focus:ring-[#0098C3]"
                     />
                     <span className="ml-2 text-gray-700">Female</span>
                   </label>
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="gender"
-                      value="Other"
-                      checked={user.gender === "other"}
-                      onChange={handleChange}
-                      className="w-4 h-4 text-[#0098C3] border-gray-300 focus:ring-[#0098C3]"
-                    />
-                    <span className="ml-2 text-gray-700">Other</span>
-                  </label>
                 </div>
               </div>
               <div className="pt-4">
-                <button className="w-full md:w-auto px-8 py-4 bg-[#0098C3] text-white text-base font-medium rounded-2xl hover:bg-[#0082A7] transition-all duration-200">
+                <button 
+                  type="submit"
+                  className="w-full md:w-auto px-8 py-4 bg-[#0098C3] text-white text-base font-medium rounded-2xl hover:bg-[#0082A7] transition-all duration-200"
+                  onClick={handleSubmit}
+                >
                   Save Changes
                 </button>
               </div>
@@ -155,6 +185,13 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
+      <NotificationModal
+        isOpen={modal.isOpen}
+        title={modal.title}
+        type={modal.type}
+        message={modal.message}
+        onClose={() => setModal(prev => ({ ...prev, isOpen: false }))}
+      />
     </DashboardLayout>
   );
 }
