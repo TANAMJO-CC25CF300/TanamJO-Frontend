@@ -1,6 +1,6 @@
 import React from "react";
 import Header from '@/layout/landingPages/header';
-import bannerImage from '@/assets/Banner/banner-1.png';
+import bannerImage from '@/assets/Banner/Banner-2.jpg';
 
 function HarvestLandingAbout({ 
 
