@@ -30,7 +30,7 @@ function HarvestLandingHome() {
                                 <span className="text-white/90">Smart Tomato Tips</span>
                             </h1>
 
-                            <p className="text-white/90 text-base sm:text-md font-nunito tracking-wide leading-relaxed font-medium max-w-xl mb-8 border-t border-white/40 pt-4 bg-black/10 rounded-b-xl shadow-inner">
+                            <p className="text-white/90 text-base sm:text-md font-nunito tracking-thingt leading-relaxed font-semibold max-w-xl mb-8 border-t-2 border-white pt-4 shadow-inner italic">
                                 Discover expert techniques and innovative solutions for cultivating perfect tomatoes. Your journey to a bountiful harvest starts here.
                             </p>
 
