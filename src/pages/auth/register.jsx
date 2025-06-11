@@ -150,7 +150,7 @@ export default function Register() {
 
       {/* Left Form Section */}
       <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center relative">
-        <button className="absolute top-4 left-10 text-gray-500 text-sm hover:text-gray-700 flex items-center gap-1 font-nunito font-medium tracking-wide leading-normal"
+        <button className="absolute top-4 left-10 text-blue-500 text-sm/6 hover:text-gray-700 flex items-center gap-1 font-nunito font-medium tracking-wide leading-normal"
           onClick={() => navigate('/')}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
