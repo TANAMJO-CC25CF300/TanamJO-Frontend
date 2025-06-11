@@ -5,7 +5,7 @@ import bannerImage from '@/assets/Banner/banner-1.png';
 function HarvestLandingHome() {
     return (
         <>        
-            <div className="mt-0 mx-0 md:mx-0 lg:mx-0 xl:mx-10 xl:mt-10 relative shadow-md rounded-4xl h-[90vh]">
+            <div className="mt-0 mx-0 md:mx-0 lg:mx-0 xl:mx-10 xl:mt-10 relative shadow-md rounded-4xl h-[95vh]">
                 <div 
                     className="relative w-full xl:rounded-t-4xl h-full bg-cover bg-center bg-no-repeat" 
                     style={{ 

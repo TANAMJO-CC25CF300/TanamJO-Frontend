@@ -4,32 +4,10 @@ import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandin
 import HarvestCardSectionHome from '@/components/landingPages/plantlis/HarverstCardSectionHome';
 import bannerImage from '@/assets/Banner/banner-1.png';
 import LittleButton from '@/components/LittleButton';
-import image from '@/assets/Banner/banner-1.png';
+import { cardData, insightCardData, blogCardData } from '@/constants/homePageData';
 
 function HomePage() {
-    const cardData = [
-        {
-            id: 1,
-            title: "Organic Fertilizer Guide",
-            description: "Learn about natural fertilizers and their benefits for tomato plants. Get expert tips on composting and soil enrichment.",
-            category: "Fertilizer"
-        },
-        {
-            id: 2,
-            title: "Seasonal Fertilizing Tips",
-            description: "Discover the best fertilizing practices for each growing season. Maximize your tomato yield with proper timing and techniques.",
-            category: "Fertilizer"
-        },
-        {
-            id: 3,
-            title: "Nutrient Management",
-            description: "Master the art of nutrient balance and learn how to address common deficiencies in tomato plants through proper fertilization.",
-            category: "Fertilizer"
-        }
-    ];
-
     return (
-
         <>        
             <div>
                 <HarvestLandingAbout title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
@@ -182,11 +160,12 @@ function HomePage() {
                 <div className="mt-2.5 mx-5 md:mx-15 border border-gray-200 rounded-3xl">
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 p-4 sm:p-5 md:p-6 lg:p-8">
                         {cardData.map((card) => (
-                            <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col overflow-hidden relative w-full h-auto sm:h-[380px]">
+                            <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px]">
                             <div className="relative w-full px-3 pt-3">
-                                <div className="w-full h-[180px] sm:h-[190px] rounded-2xl flex items-start justify-center relative overflow-hidden">
-                                    <img src={image} alt={`Card ${card.id}`} className="w-full h-full object-cover" />
-                                    <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
+                                <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
+                                    <img src={bannerImage} alt={`Card ${card.id}`} className="w-full h-full object-cover rounded-2xl " />
+                                    
+                                    <div className="absolute inset-0 bg-black opacity-18 rounded-xl"></div>
                                         <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
                                             <span className="custom-banner rounded-full w-7 h-7 flex items-center justify-center shadow-sm">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 text-white">
@@ -199,7 +178,7 @@ function HomePage() {
 
                                 <div className="flex-1 flex flex-col px-5 pt-6 pb-8 text-left">
                                     <div className="flex items-center gap-2 mb-2">
-                                        <span className="inline-block w-2 h-2 rounded-full bg-yellow-400"></span>
+                                        <span className={`inline-block w-2 h-2 rounded-full ${card.categoryColor}`}></span>
                                         <span className="text-xs font-semibold tracking-wide uppercase font-nunito steel-haze">{card.category}</span>
                                     </div>
 
@@ -214,6 +193,141 @@ function HomePage() {
                             </div>
                         ))}
                     </div>
+                </div>
+                
+                <div className="mt-15 mx-5 md:mx-15 rounded-3xl text-left space-y-4">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-3 md:space-y-0 md:space-x-8 lg:space-x-12 xl:space-x-50">
+                        <div className="w-full md:w-1/2 space-y-2 sm:space-y-2">
+                            <span className="inline-block text-sm sm:text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[160px] h-8 leading-8 text-center custom-banner">
+                                Tomato Insights
+                            </span>
+
+                            <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                Detect & Grow Better <br/> Tomatoes
+                            </h2>
+                        </div>
+
+                        <div className="w-full md:w-1/2 space-y-2 md:space-y-2">
+                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider sm:line-clamp-2 custome-deskription">
+                                Easily analyze your tomato plant's condition by snapping a photo. Get expert guidance for healthier growth and better yields.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-0 w-full pt-5">
+                        {insightCardData.map((card, index) => (
+                            <div key={index} className="relative bg-white border border-gray-200 rounded-3xl p-5 h-[200px]">
+                                <div className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 text-gray-400">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                                    </svg>
+                                </div>
+
+                                <div className="flex flex-col h-full pt-8">
+                                    <h3 className="font-semibold text-lg md:text-xl steel-haze text-left tracking-wide font-nunito mb-2">
+                                        {card.title}
+                                    </h3>
+
+                                    <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider">
+                                        {card.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="flex flex-col md:flex-row items-stretch mt-15 md:mt-18 mx-6 md:mx-16 gap-0 md:gap-0">
+                    <div className="flex-1 md:flex-[1.2] aspect-[4/3] md:aspect-auto md:min-h-[250px] xl:min-h-[300px] rounded-t-4xl md:rounded-tl-4xl md:rounded-bl-4xl md:rounded-tr-none md:rounded-br-none md:mr-0 mb-0 md:mb-0 overflow-hidden relative">
+                        
+                        <img src={bannerImage} className="absolute inset-0 w-full h-full object-cover" alt="Banner Image"/>
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-green-800/45 to-transparent lg:rounded-t-4xl"></div>
+                    </div>
+
+                    <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 py-6 sm:py-7 md:px-12 lg:px-16 bg-white rounded-3xl md:rounded-3xl md:-ml-4 -mt-8 md:mt-0 z-10 shadow-sm max-w-full md:max-w-[600px]">
+                        <div className="flex flex-col items-start justify-start space-y-3 md:space-y-2 text-left">
+                            <div className="w-full space-y-2">      
+                                <span className="inline-block text-sm sm:text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[160px] h-8 leading-8 text-center custom-banner">
+                                    Tomato Insights
+                                </span>      
+
+                                <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                    Identify Plant Problems <br/>Before They Spread
+                                </h2>                
+                            </div>
+
+                            <div className="w-full space-y-2">
+                                <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider custome-deskription">
+                                    Use our smart detection tool to spot diseases early and take action fast. Improve plant care with accurate insights and easy-to-follow recommendations.
+                                </p>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+
+                <div className="mt-15 mx-5 md:mx-15 rounded-3xl text-left space-y-4">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-3 md:space-y-0 md:space-x-8 lg:space-x-12 xl:space-x-50">
+                        <div className="w-full md:w-1/2 space-y-2 sm:space-y-2">
+                            <span className="inline-block text-sm sm:text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[160px] h-8 leading-8 text-center custom-banner">
+                                Tomato Insights
+                            </span>
+
+                            <h2 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight line-clamp-2 steel-haze">
+                                Detect & Grow Better <br/> Tomatoes
+                            </h2>
+                        </div>
+
+                        <div className="w-full md:w-1/2 space-y-2 md:space-y-2">
+                            <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider sm:line-clamp-2 custome-deskription">
+                                Easily analyze your tomato plant's condition by snapping a photo. Get expert guidance for healthier growth and better yields.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 pt-5">
+                        {blogCardData.map((item) => (
+                            <div key={item.id} className="rounded-3xl flex flex-col overflow-hidden relative w-full h-auto group cursor-pointer">
+                                <div className="relative w-full">
+                                    <div className="w-full h-[180px] sm:h-[260px] rounded-2xl flex items-start justify-center relative overflow-hidden bg-gray-200">
+                                        <img src={item.image} alt={item.title} className="w-full h-full object-cover brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500" />
+                                        <div className="absolute top-3 left-3">
+                                            <span className="inline-flex items-center bg-white/90 backdrop-blur-sm text-gray-700 text-xs tracking-wide font-bold px-4 py-1.5 rounded-full shadow-sm" style={{ letterSpacing: '0.08em' }}>
+                                                <span className={`w-2 h-2 rounded-full ${item.categoryColor} mr-2`}></span>
+                                                {item.category}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex-1 flex flex-col pt-4 text-left">
+                                        <div className="flex items-center gap-3 mb-3 text-sm/6 text-gray-600 font-nunito tracking-wider">
+                                            <span className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
+                                                <time dateTime="2025-06-11" className="text-gray-700 font-nunito tracking-wide font-semibold">{item.date}</time>
+                                            </span>
+
+                                            <span className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                </svg>
+                                                <span className="text-gray-700 font-nunito tracking-wide font-semibold">{item.author}</span>
+                                            </span>
+                                        </div>
+
+                                        <div className="font-semibold text-lg md:text-lg steel-haze mb-3 text-left tracking-wide font-nunito group-hover:text-emerald-600 transition-colors duration-300">
+                                            {item.title}
+                                        </div>
+
+                                        <p className="text-sm/6 leading-relaxed text-gray-600 font-nunito tracking-wide line-clamp-2">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
 
             </div>
