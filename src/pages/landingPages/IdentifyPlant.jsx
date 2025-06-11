@@ -16,13 +16,14 @@ const fetchData = async (imageFile) => {
     const formData = new FormData();
     formData.append("image", imageFile);
 
-    const response = await fetch("http://localhost:5000/predict", {
+    const response = await fetch("http://localhost:4545/predicts", {
       method: "POST",
       body: formData,
     });
 
     const data = await response.json();
     if (response.ok) {
+      console.log("API Response Data:", data);
       return {
         status: "success",
         message: data.message,
@@ -110,21 +111,55 @@ function IdentifyPlant() {
                 />
               </div>
 
-              {/* <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  Expert Recommendations
-                </h3>
-                <div className="grid gap-4">
-                  {mockRecommendations.map((rec, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-gradient-to-r from-[#5B8C51] to-[#4A7A40] text-white rounded-xl px-6 py-4 text-sm md:text-base shadow-lg transform transition-all duration-300 hover:scale-[1.01] hover:shadow-xl"
-                    >
-                      {rec}
-                    </div>
-                  ))}
-                </div> 
-             </div> */}
+              {identifiedCard.disease !== "Healthy (Sehat)" && (
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    Expert Recommendations
+                  </h3>
+                  {console.log("Identified Disease:", identifiedCard.disease)}
+                  {console.log(
+                    "Available Recommendations:",
+                    mockRecommendations
+                  )}
+                  {console.log(
+                    "Filtered Recommendations:",
+                    mockRecommendations.filter(
+                      (rec) =>
+                        rec.title
+                          .toLowerCase()
+                          .includes(identifiedCard.disease.toLowerCase()) ||
+                        identifiedCard.disease
+                          .toLowerCase()
+                          .includes(rec.title.toLowerCase())
+                    )
+                  )}
+                  <div className="grid gap-4">
+                    {mockRecommendations
+                      .filter(
+                        (rec) =>
+                          rec.title
+                            .toLowerCase()
+                            .includes(identifiedCard.disease.toLowerCase()) ||
+                          identifiedCard.disease
+                            .toLowerCase()
+                            .includes(rec.title.toLowerCase())
+                      )
+                      .map((rec, idx) => (
+                        <div
+                          key={idx}
+                          className="bg-gradient-to-r from-[#5B8C51] to-[#4A7A40] text-white rounded-xl px-6 py-4 text-sm md:text-base shadow-lg transform transition-all duration-300 hover:scale-[1.01] hover:shadow-xl"
+                        >
+                          <h4 className="font-semibold mb-2">{rec.title}</h4>
+                          <ul className="list-disc list-inside space-y-1">
+                            {rec.description.map((item, itemIdx) => (
+                              <li key={itemIdx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>

@@ -13,7 +13,7 @@ const DiseaseCard = ({ disease, plant, image, confidence }) => {
   const isHealthy = disease && disease.toLowerCase() === "healthy";
 
   return (
-    <div className="w-full max-w-5xl flex flex-col md:flex-row p-4 md:p-6 items-center bg-white rounded-lg shadow-md mx-auto">
+    <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row p-4 md:p-6 items-center bg-white rounded-lg shadow-md">
       {/* Image or Placeholder */}
       {image ? (
         <img

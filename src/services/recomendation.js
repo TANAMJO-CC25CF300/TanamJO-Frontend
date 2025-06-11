@@ -1,48 +1,91 @@
 const mockRecommendations = [
   {
-    title: "Tungau Laba-Laba Dua Titik (Two-Spotted Spider Mite)",
-    description:
-      "Rekomendasi: Semprot ekstrak daun tembakau (16,5-50,73 t/ha) untuk mengurangi populasi tungau Tumpangsari tomat dengan bawang merah untuk proteksi alami Gunakan akarisida berbahan aktif abamektin atau fenpiroksimat untuk kasus parah Pertahankan kelembaban <85% dan ventilasi memadai Varietas tahan: Mountain Magic, Plum Regal",
+    title: "Bacterial_Spot",
+    description: [
+      "Semprotkan fungisida tembaga (seperti campuran Bordeaux) pagi hari sebelum matahari terik",
+      "Cabut dan musnahkan daun yang menunjukkan gejala bercak berair dengan membakarnya",
+      "Sterilkan alat pertanian dengan alkohol 70% setelah kontak dengan tanaman sakit",
+    ],
   },
   {
-    title: "Jamur Daun (Leaf Mold)",
-    description:
-      "Rekomendasi: Aplikasi fungisida klorotalonil (Bravo Weather Stik) atau azoxistrobin (Quadris Top) Gunakan biofungisida Serenade ASO sebagai alternatif organik Pangkas daun bawah & pertahankan sirkulasi udara baik Varietas tahan: Mountain Magic, Plum Regal",
+    title: "Early_Blight",
+    description: [
+      "Potong daun bawah yang menunjukkan gejala bercak konsentris menggunakan gunting steril",
+      "Aplikasi PGPR (Pseudomonas fluorescens PF1) melalui penyiraman akar mingguan",
+      "Berikan mulsa jerami untuk mengurangi percikan tanah ke daun",
+    ],
   },
   {
-    title: "Hawar Daun Dini (Early Blight)",
-    description:
-      "Rekomendasi: Rotasi tanaman 2-3 tahun dengan non-solanaceae Aplikasi fungisida tembaga atau klorotalonil setiap 7-10 hari Buang daun terinfeksi & mulsa jerami untuk hindari cipratan tanah Varietas tahan: Mountain Merit, Defiant",
+    title: "Late_Blight",
+    description: [
+      "Semprotkan fungisida sistemik (dimetomorf 50%) setiap 5-7 hari",
+      "Pasang sungkup jaring halus untuk mengurangi kelembapan",
+      "Monitor suhu harian - pertahankan <25°C dengan naungan paranet",
+    ],
   },
   {
-    title: "Hawar Daun Lambat (Late Blight)",
-    description:
-      "Rekomendasi: Segera hancurkan tanaman terinfeksi dengan dibakar Fungisida mankozeb 80% WP (20g/10L) atau klorotalonil Hindiri irigasi atas & pertahankan jarak tanam 60cm Varietas toleran: Mountain Magic, Iron Lady",
+    title: "Leaf_Mold",
+    description: [
+      "Kurangi kelembapan dengan pengaturan jarak tanam 60cm antar tanaman",
+      "Semprotkan Trichoderma hamatum pagi hari",
+      "Rotasi fungisida tembaga hidroksida dan klorotalonil setiap 10 hari",
+    ],
   },
   {
-    title: "Bercak Septoria (Septoria Leaf Spot)",
-    description:
-      "Rekomendasi: Buang daun sakit & aplikasi fungisida klorotalonil setiap 10 hari Rotasi tanaman 3-4 tahun dengan non-solanaceae Mulsa plastik hitam untuk cegah percikan tanah Hindari pupuk nitrogen berlebihan",
+    title: "Septoria_Leaf_Spot",
+    description: [
+      "Buang daun dengan bintik abu-abu berkantung spora hitam",
+      "Aplikasi mankozeb 0.2% tiap 7 hari selama fase pembungaan",
+      "Rotasi fungisida tembaga hidroksida dan klorotalonil setiap 10 hari",
+    ],
   },
   {
-    title: "Bercak Bakteri (Bacterial Spot)",
-    description:
-      "Rekomendasi: Perendaman benih dalam air panas (50°C, 25 menit) Semprot campuran tembaga + mankozeb setiap 5-7 hari Sanitasi alat pertanian dengan alkohol 70% Hindari kerja di kebun saat daun basah",
+    title: "Spider_Mites_Two-Spotted_Spider_Mite",
+    description: [
+      "Semprotkan ekstrak daun sirih 200cc/L air setiap 3 hari",
+      "Pasang perangkap lengket kuning di antara tanaman",
+      "Tingkatkan kelembapan dengan pengabutan air malam hari",
+    ],
   },
   {
-    title: "Bercak Target (Target Spot)",
-    description:
-      "Rekomendasi: Aplikasi azoxistrobin 250g/L SC (10ml/10L) atau mankozeb 80% WP Rotasi fungisida untuk hindari resistensi Pangkas daun tua & pertahankan kelembaban <80% Bersihkan sisa tanaman terinfeksi",
+    title: "Target_Spot",
+    description: [
+      "Aplikasi Bacillus polymixa BG25 melalui penyemprotan daun",
+      "Pangkas cabang ketiak untuk meningkatkan sirkulasi udara",
+      "Rotasi tanaman dengan non-solanaceae selama 2 musim",
+    ],
   },
   {
-    title: "Tanaman Sehat (Healthy)",
-    description:
-      "Rekomendasi: Pemupukan seimbang NPK 4:2:6 dengan biostimulan Maximato Irigasi tetes & mulsa jerami untuk pertahankan kelembaban Monitoring rutin & karantina tanaman baru Rotasi tanaman tahunan dengan legum",
+    title: "Tomato_Yellow_Leaf_Curl_Virus",
+    description: [
+      "Pasang kelambu anti serangga di persemaian",
+      "Semprot insektisida nabati pagi hari targeting kutu kebul",
+      "Cabut dan bakar tanaman menunjukkan gejala keriting",
+    ],
   },
   {
-    title: "Virus Mosaik Tomat (Tomato Mosaic Virus)",
-    description:
-      "Rekomendasi: Cabut & bakar tanaman terinfeksi segera Sterilisasi alat dengan NaOH 10% atau susu skim Gunakan varietas tahan bermerk ToMV/TMV Kontrol vektor (kutu daun) dengan insektisida sistemik Setiap rekomendasi didukung oleh penelitian dari jurnal akademik dan panduan ekstensi pertanian terpercaya. Implementasikan secara integratif untuk hasil optimal.",
+    title: "Tomato_Mosaic_Virus",
+    description: [
+      "Sterilisasi biji dengan Na3PO4 10% sebelum semai",
+      "Hindari kontak langsung dengan tanaman saat daun basah",
+      "Aplikasi susu skim 10% sebagai penghambat virus",
+    ],
+  },
+  {
+    title: "healthy",
+    description: [
+      "Monitor pH tanah harian - pertahankan 6.0-6.8",
+      "Berikan pupuk daun kalsium nitrat mingguan",
+      "Rotasi penyemprotan PGPR dan Trichoderma",
+    ],
+  },
+  {
+    title: "powdery_mildew",
+    description: [
+      "Semprotkan campuran baking soda 1% + sabun cair",
+      "Pangkas daun overlap untuk sirkulasi udara optimal",
+      "Aplikasi minyak neem 2% setiap 10 hari",
+    ],
   },
 ];
 

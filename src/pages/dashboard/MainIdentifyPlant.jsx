@@ -16,7 +16,7 @@ const fetchData = async (imageFile) => {
     const formData = new FormData();
     formData.append("image", imageFile);
 
-    const response = await fetch("http://localhost:5000/predict", {
+    const response = await fetch("http://localhost:4545/predicts", {
       method: "POST",
       body: formData,
     });
@@ -97,7 +97,7 @@ const MainIdentifyPlant = () => {
 
           {/* Hasil Identifikasi */}
           {showResult && identifiedCard && (
-            <div className="w-full max-w-5xl mx-auto mt-10 space-y-6">
+            <div className="w-full max-w-5xl mx-auto mt-10 space-y-6 min-h-[600px]">
               <div className="p-6 transform transition-all duration-300 hover:scale-[1.02]">
                 <DiseaseCard
                   disease={identifiedCard.disease}
@@ -108,6 +108,38 @@ const MainIdentifyPlant = () => {
                   image={identifiedCard.image}
                 />
               </div>
+              {identifiedCard.disease !== "Healthy (Sehat)" && (
+                <div className="w-full max-w-5xl mx-auto space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    Expert Recommendations
+                  </h3>
+                  <div className="grid gap-4">
+                    {mockRecommendations
+                      .filter(
+                        (rec) =>
+                          rec.title
+                            .toLowerCase()
+                            .includes(identifiedCard.disease.toLowerCase()) ||
+                          identifiedCard.disease
+                            .toLowerCase()
+                            .includes(rec.title.toLowerCase())
+                      )
+                      .map((rec, idx) => (
+                        <div
+                          key={idx}
+                          className="bg-gradient-to-r from-[#5B8C51] to-[#4A7A40] text-white rounded-xl px-6 py-4 text-sm md:text-base shadow-lg transform transition-all duration-300 hover:scale-[1.01] hover:shadow-xl"
+                        >
+                          <h4 className="font-semibold mb-2">{rec.title}</h4>
+                          <ul className="list-disc list-inside space-y-1">
+                            {rec.description.map((item, itemIdx) => (
+                              <li key={itemIdx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
