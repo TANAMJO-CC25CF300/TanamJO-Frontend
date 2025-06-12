@@ -43,15 +43,15 @@ export default function LeftSidebar() {
   return (
     <>
       {/* Mobile Menu Button */}
-      {isMobile && !isOpen && (
+      {/* {isMobile && !isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed top-4 left-4 z-[100] p-3 bg-white rounded-lg shadow-md hover:bg-gray-50 border border-gray-200 lg:hidden"
-          style={{ transform: "translateX(0)" }}
+          className="p-3 bg-white rounded-lg hover:bg-gray-50 border border-gray-200 lg:hidden"
         >
           <Menu size={18} className="text-gray-700" />
         </button>
-      )}
+      )} */}
+
 
       {/* Overlay for mobile */}
       {isMobile && isOpen && (

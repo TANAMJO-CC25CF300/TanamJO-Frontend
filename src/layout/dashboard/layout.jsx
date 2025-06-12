@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LeftSidebar from "./left-sidebar";
 import Header from "./header";
 
 export default function DashboardLayout({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#F7F7F7]">
       <div className="flex min-h-screen">
@@ -12,7 +25,7 @@ export default function DashboardLayout({ children }) {
         {/* Main Content */}
         <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
           {/* Header */}
-          <Header />
+          <Header isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen} />
 
           {/* Main Content Area */}
           <div className="flex-1 p-2 sm:p-3 md:p-4 lg:p-6 overflow-auto">
