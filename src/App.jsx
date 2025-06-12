@@ -26,15 +26,10 @@ import Register from "@/pages/auth/register";
 import Login from "@/pages/auth/login";
 
 // Components
-import CameraCapture from "@components/landingPages/identyPlant/cameraCapture";
 import NotificationModal from "@/components/landingPages/notifikasi/notificationModal";
-import AddPlant from "@/components/MyPlant/AddPlant";
-import CardPlant from "@/components/MyPlant/CardPlant";
-import DailyTasks from "@/components/MyPlant/DailyTasks";
 
 // Dashboard
 import Dashboard from "@/pages/dashboard/dashboard";
-import LeftSidebar from "@/layout/dashboard/left-sidebar";
 import MyPlantEmptyPage from "@/pages/dashboard/MyPlantEmptyPage";
 import MyPlantPage from "@/pages/dashboard/MyPlantPage";
 import ProfilePage from "@/pages/dashboard/user/profile";
@@ -111,42 +106,10 @@ function App() {
           }
         />
         <Route
-          path="/Sidebar"
-          element={
-            <ProtectedRoute>
-              <LeftSidebar />
-            </ProtectedRoute>
-          }
-        />
-        <Route
           path="/MyPlantEmptyPage"
           element={
             <ProtectedRoute>
               <MyPlantEmptyPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/AddPlant"
-          element={
-            <ProtectedRoute>
-              <AddPlant />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/CardPlant"
-          element={
-            <ProtectedRoute>
-              <CardPlant />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/DailyTasks"
-          element={
-            <ProtectedRoute>
-              <DailyTasks />
             </ProtectedRoute>
           }
         />
@@ -168,7 +131,6 @@ function App() {
         />
 
         {/* Other Components */}
-        <Route path="/capture" element={<CameraCapture />} />
         <Route path="/notification" element={<NotificationModal />} />
       </Routes>
 

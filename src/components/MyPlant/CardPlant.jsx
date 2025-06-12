@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Droplet, Sun, Thermometer } from "lucide-react";
 import PhaseIcon from "@/assets/MyPlant/Phase.svg";
@@ -6,6 +6,7 @@ import PlantIcon from "@/assets/MyPlant/plant.svg";
 import DescIcon from "@/assets/MyPlant/description.svg";
 import TomatoImg from "@/assets/MyPlant/persiapan,benih,transplanting,vegetatif.png";
 import BgPlant from "@/assets/MyPlant/bgPlant.png";
+import axios from "axios";
 
 const CardPlant = ({ plants }) => {
   // Ambil array tanaman yang benar
@@ -20,6 +21,38 @@ const CardPlant = ({ plants }) => {
   }
 
   const plant = plantList[0]; // Get the most recent plant
+
+  // Tambahkan state untuk tips
+  const [tips, setTips] = useState([]);
+  const [loadingTips, setLoadingTips] = useState(true);
+
+  useEffect(() => {
+    const fetchTips = async () => {
+      setLoadingTips(true);
+      try {
+        const token = localStorage.getItem("token");
+        const userId = 1; // Ganti dengan userId dinamis jika ada
+        const plantAge = plant?.plant_age;
+        let url = `http://localhost:4545/checkin?userId=${userId}`;
+        if (plantAge !== undefined && plantAge !== null) {
+          url += `&plantAge=${plantAge}`;
+        }
+        const res = await axios.get(url, {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : undefined,
+          },
+        });
+        const apiData = res.data && res.data.data ? res.data.data : {};
+        setTips(apiData.tips || []);
+      } catch (err) {
+        setTips([]);
+      }
+      setLoadingTips(false);
+    };
+    if (plant?.id && plant?.plant_age) {
+      fetchTips();
+    }
+  }, [plant?.id, plant?.plant_age]);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -81,6 +114,26 @@ const CardPlant = ({ plants }) => {
         <p className="text-gray-600 text-sm leading-relaxed">
           {plant.description || "No description available"}
         </p>
+      </motion.div>
+
+      {/* Plant Tips dari API Checkin */}
+      <motion.div variants={itemVariants} className="mb-6">
+        <h3 className="text-sm font-medium text-green-700 mb-2">
+          Tips Hari Ini
+        </h3>
+        {loadingTips ? (
+          <p className="text-xs text-gray-400">Memuat tips...</p>
+        ) : tips.length > 0 ? (
+          <ul className="list-disc list-inside text-sm text-green-700 space-y-1">
+            {tips.map((tip, idx) => (
+              <li key={idx}>{tip}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-xs text-gray-400">
+            Tidak ada tips untuk hari ini.
+          </p>
+        )}
       </motion.div>
 
       {/* Plant Care Tips */}

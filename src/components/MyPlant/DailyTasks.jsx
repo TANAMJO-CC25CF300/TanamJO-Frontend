@@ -9,12 +9,32 @@ export default function DailyTasks({ plant }) {
   const [description, setDescription] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
+  // Key unik untuk status task per plant dan per plant age
+  const getTaskKey = () => `completedTasks_${plant?.id}_${plant?.plant_age}`;
+
   const handleTaskClick = (taskId) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === taskId ? { ...task, done: !task.done } : task
-      )
+    const updatedTasks = tasks.map((task) =>
+      task.id === taskId ? { ...task, done: !task.done } : task
     );
+    setTasks(updatedTasks);
+    // Simpan status task ke localStorage dengan key unik
+    const completedTasks = updatedTasks
+      .filter((task) => task.done)
+      .map((task) => task.id);
+    localStorage.setItem(getTaskKey(), JSON.stringify(completedTasks));
+  };
+
+  // Fungsi untuk memuat status task dari localStorage
+  const loadCompletedTasks = (tasksArr) => {
+    const savedTasks = localStorage.getItem(getTaskKey());
+    if (savedTasks) {
+      const completedTaskIds = JSON.parse(savedTasks);
+      return tasksArr.map((task) => ({
+        ...task,
+        done: completedTaskIds.includes(task.id),
+      }));
+    }
+    return tasksArr;
   };
 
   // Fungsi fetch ulang data tasks
@@ -35,13 +55,15 @@ export default function DailyTasks({ plant }) {
       .then((res) => {
         const apiData = res.data && res.data.data ? res.data.data : {};
         const tasksRaw = Array.isArray(apiData.tasks) ? apiData.tasks : [];
-        const tasksArr = tasksRaw.map((task, idx) => ({
+        let tasksArr = tasksRaw.map((task, idx) => ({
           id: task.id || idx,
           title: task.title || "Untitled Task",
           point: task.point || 12,
           time: task.time || "9h",
           done: false,
         }));
+        // Sinkronisasi status task dengan localStorage
+        tasksArr = loadCompletedTasks(tasksArr);
         setTasks(
           tasksArr.length === 0
             ? [
@@ -109,7 +131,13 @@ export default function DailyTasks({ plant }) {
     const completedTaskIds = tasks.filter((t) => t.done).map((t) => t.id);
 
     try {
-      await axios.post(
+      console.log("Mengirim data checkin:", {
+        userId,
+        taskIds: completedTaskIds,
+        descriptionContent: description,
+      });
+
+      const response = await axios.post(
         "http://localhost:4545/checkin",
         {
           userId,
@@ -122,12 +150,27 @@ export default function DailyTasks({ plant }) {
           },
         }
       );
-      alert("Checkin berhasil!");
-      setDescription("");
+
+      console.log("Response dari server:", response.data);
+
+      if (response.data.status === "success") {
+        alert("Checkin berhasil!");
+        setDescription("");
+        // Status task tetap tersimpan di localStorage sampai plant age berubah
+        // Tidak perlu reset status task di sini
+        fetchTasks();
+      } else {
+        throw new Error(response.data.message || "Gagal melakukan checkin");
+      }
     } catch (err) {
-      alert("Gagal submit checkin.");
+      console.error("Error saat checkin:", err);
+      alert(
+        err.response?.data?.message ||
+          "Gagal submit checkin. Silakan coba lagi."
+      );
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitting(false);
   };
 
   useEffect(() => {
