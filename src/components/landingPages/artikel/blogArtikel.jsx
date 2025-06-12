@@ -18,7 +18,7 @@ function BlogArtikel() {
                         <svg className="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17a4 4 0 01-4-4V7a4 4 0 014-4h2a4 4 0 014 4v6a4 4 0 01-4 4H9zm6 0a4 4 0 01-4-4V7a4 4 0 014-4h2a4 4 0 014 4v6a4 4 0 01-4 4h-2z" />
                         </svg>
-                        <span className="text-gray-700 text-base md:text-lg font-medium italic text-left">
+                        <span className="steel-haze text-sm/7 md:text-base/7 leading-relaxed font-nunito tracking-wide font-medium italic text-left">
                             Journey through diverse climates to understand how they sculpt local flora. Learn about plants’ remarkable adaptations and uncover traditional cultivation practices shaped by the environment.
                         </span>
                     </div>
