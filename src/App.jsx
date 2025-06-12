@@ -17,6 +17,7 @@ import ArtikelDetailWatering from "@/components/landingPages/artikel/artikelDeta
 import ArtikelCardUtama from "@/components/landingPages/artikel/ArtikelCardUtama";
 import IdentifyPlant from "@/pages/landingPages/IdentifyPlant";
 import SearchInput from "@/components/common/SearchInput";
+import BlogArtikel from "@/components/landingPages/artikel/blogArtikel";
 
 // Auth Pages
 import ForgetPassword from "@/pages/auth/forgetPassword";
@@ -27,6 +28,9 @@ import Login from "@/pages/auth/login";
 // Components
 import CameraCapture from "@components/landingPages/identyPlant/cameraCapture";
 import NotificationModal from "@/components/landingPages/notifikasi/notificationModal";
+import AddPlant from "@/components/MyPlant/AddPlant";
+import CardPlant from "@/components/MyPlant/CardPlant";
+import DailyTasks from "@/components/MyPlant/DailyTasks";
 
 // Dashboard
 import Dashboard from "@/pages/dashboard/dashboard";
@@ -58,6 +62,7 @@ function App() {
           path="/plant-guide/heirloom-tomato"
           element={<HeirloomTomato />}
         />
+        <Route path="/blog-artikel" element={<BlogArtikel />} />
         <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
         <Route
           path="/plant-guide/artikel-detail-watering"
@@ -118,6 +123,30 @@ function App() {
           element={
             <ProtectedRoute>
               <MyPlantEmptyPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/AddPlant"
+          element={
+            <ProtectedRoute>
+              <AddPlant />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/CardPlant"
+          element={
+            <ProtectedRoute>
+              <CardPlant />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/DailyTasks"
+          element={
+            <ProtectedRoute>
+              <DailyTasks />
             </ProtectedRoute>
           }
         />
