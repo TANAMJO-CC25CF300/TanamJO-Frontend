@@ -21,8 +21,8 @@ export default function ResetPassword() {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-50">
-      <div className="bg-white p-8 rounded-2xl shadow-md w-[90%] max-w-md text-center">
-        <div className="text-left mb-4 text-blue-500">
+      <div className="bg-white p-8 rounded-none md:rounded-3xl shadow-none w-full md:w-1/2 max-w-md text-center border border-gray-200">
+        <div className="text-left mb-4 text-[#5B8C51] text-sm hover:text-[#4A7A3F]">
           <ArrowLeft className="cursor-pointer" onClick={() => navigate('/login')} />
         </div>
         
@@ -33,46 +33,46 @@ export default function ResetPassword() {
           </svg>
         </div>
 
-        <div className="mb-6">
-          <h2 className="text-2xl font-extrabold mb-2 bg-gradient-to-r from-[#5B8C51] to-[#0098C3] bg-clip-text text-transparent font-nunito tracking-wide leading-tight text-center">
+        <div className="mb-6 text-left sm:text-center">
+          <h2 className="text-2xl font-extrabold mb-2 bg-gradient-to-r from-[#5B8C51] to-[#0098C3] bg-clip-text text-transparent font-nunito tracking-wide leading-tight">
             Set New Password
           </h2>
 
-          <div className="flex justify-center items-center mb-0">
-            <p className="text-gray-600 text-sm font-nunito font-medium tracking-wide leading-normal text-center">
+          <div className="mb-0 flex sm:justify-center items-start sm:items-center">
+            <p className="text-gray-600 text-sm font-nunito font-medium tracking-wide leading-normal">
               Buat password baru yang aman untuk akun Anda
             </p>
           </div>
 
-          <p className="text-gray-500 text-sm font-nunito font-medium tracking-wide leading-normal text-center">
+          <p className="text-gray-500 text-sm font-nunito font-medium tracking-wide leading-normal">
             Pastikan password Anda memenuhi kriteria berikut:
           </p>
         </div>
 
-        <div className="flex justify-between mb-6">
+        <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 mb-6">
           <div className="flex flex-col items-center">
-            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">+8</span>
-            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Character</span>
+            <span className="font-bold text-base sm:text-lg text-gray-500 font-nunito tracking-wide leading-normal">+8</span>
+            <span className="text-[10px] sm:text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Character</span>
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">AA</span>
-            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Uppercase</span>
+            <span className="font-bold text-base sm:text-lg text-gray-500 font-nunito tracking-wide leading-normal">AA</span>
+            <span className="text-[10px] sm:text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Uppercase</span>
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">aa</span>
-            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Lowercase</span>
+            <span className="font-bold text-base sm:text-lg text-gray-500 font-nunito tracking-wide leading-normal">aa</span>
+            <span className="text-[10px] sm:text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Lowercase</span>
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">123</span>
-            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Number</span>
+            <span className="font-bold text-base sm:text-lg text-gray-500 font-nunito tracking-wide leading-normal">123</span>
+            <span className="text-[10px] sm:text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Number</span>
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="font-bold text-lg text-gray-500 font-nunito tracking-wide leading-normal">!@#</span>
-            <span className="text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Simbol</span>
+            <span className="font-bold text-base sm:text-lg text-gray-500 font-nunito tracking-wide leading-normal">!@#</span>
+            <span className="text-[10px] sm:text-xs text-blue-500 mt-1 font-nunito tracking-wide leading-normal">Simbol</span>
           </div>
         </div>
         
@@ -103,7 +103,7 @@ export default function ResetPassword() {
             )}
           </div>
           
-          <div className="relative group mt-5">
+          <div className="relative group mt-7">
             <FormInput
               type={showPass ? "text" : "password"}
               placeholder="Confirm Password"
