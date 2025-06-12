@@ -80,7 +80,7 @@ export default function LoginPage() {
 
         <div className="max-w-md text-left relative z-10 mr-25">
   
-          <div className="space-y-6">
+          <div className="space-y-8">
             <h1 className="text-3xl font-extrabold mb-2 text-white font-nunito tracking-wide leading-tight">
               Single Sign On
             </h1>
@@ -89,7 +89,7 @@ export default function LoginPage() {
               Hi Digiers, Sekarang akun-mu dapat digunakan untuk berbagai platform. Nikmati berbagai kemudahan akses platform dalam satu akun.
             </p>
 
-            <div className="mt-8 space-y-9">
+            <div className="mt-8 space-y-12">
               <div className="flex items-center gap-4 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -146,86 +146,92 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center relative">
-        <button className="absolute top-4 left-10 text-blue-500 text-sm/6 hover:text-gray-700 flex items-center gap-1 font-nunito font-medium tracking-wide leading-normal"
-          onClick={() => navigate('/')} >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-          </svg>
-          Beranda
-        </button>
+      <div className="w-full md:w-1/2 flex flex-col justify-between p-8 md:p-13">
+        <div className="flex-1 flex flex-col justify-center">
+          <div className="mb-8">
+            <button 
+              className="text-[#5B8C51] text-sm/6 hover:text-[#4A7A3F] flex items-center gap-1 font-nunito font-medium tracking-wide leading-normal mb-8"
+              onClick={() => navigate('/')} 
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+              Beranda
+            </button>
 
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl font-extrabold mb-3 bg-gradient-to-r from-[#5B8C51] to-[#0098C3] bg-clip-text text-transparent font-nunito tracking-wide leading-tight">
-            Welcome Back!
-          </h1>
+            <div className="text-center md:text-left">
+              <h1 className="text-4xl font-extrabold mb-3 bg-gradient-to-r from-[#5B8C51] to-[#0098C3] bg-clip-text text-transparent font-nunito tracking-wide leading-tight">
+                Welcome Back!
+              </h1>
 
-          <div className="flex items-center gap-2 mb-3">
-            <p className="text-gray-600 text-lg font-nunito font-medium tracking-wide leading-normal">
-              Hi, Selamat Datang
-            </p>
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold font-nunito tracking-wide leading-normal bg-[#5B8C51]/10 text-[#5B8C51]">
-              #TanamJo
-            </span>
-          </div>
-
-          <p className="text-gray-500 text-sm mb-8 font-nunito font-medium tracking-wide leading-normal ">
-            Masuk ke akun Anda untuk melanjutkan perjalanan bertani bersama kami
-          </p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-          <div className="flex flex-col gap-2">
-            <FormInput
-              label={
-                <span>
-                  Email
-                  <span className="text-red-500 ml-1 font-nunito font-medium tracking-wide leading-normal">*</span>
+              <div className="flex items-center gap-2 mb-3">
+                <p className="text-gray-600 text-lg font-nunito font-medium tracking-wide leading-normal">
+                  Hi, Selamat Datang
+                </p>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold font-nunito tracking-wide leading-normal bg-[#5B8C51]/10 text-[#5B8C51]">
+                  #TanamJo
                 </span>
-              }
-              name="email" type="email" value={form.email} onChange={handleChange} placeholder="Masukan Email Anda" required
-            />
-          </div>
+              </div>
 
-          <div className="flex flex-col">
-            <FormInput
-              label={
-                <span>
-                  Password
-                  <span className="text-red-500 ml-1">*</span>
-                </span>
-              }
-              name="password" type="password" value={form.password} onChange={handleChange} placeholder="********" required
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex justify-between items-center text-sm/6 font-nunito font-medium tracking-wide leading-normal">
-              <label className="flex items-center gap-2 text-gray-600 font-nunito font-semibold tracking-wide leading-normal">
-                <input type="checkbox" name="remember" checked={form.remember} onChange={handleChange} className="rounded"/>
-                Remember Me
-              </label>
-
-              <button type="button" onClick={() => navigate('/resetPassword')} className="text-[#5B8C51] hover:underline font-nunito font-bold tracking-wide leading-normal">
-                Forgot Password?
-              </button>
+              <p className="text-gray-500 text-sm font-nunito font-medium tracking-wide leading-normal">
+                Masuk ke akun Anda untuk melanjutkan perjalanan bertani bersama kami
+              </p>
             </div>
           </div>
 
-          <div className="flex justify-center mt-5">
-            <BigButton type="submit">Login</BigButton>
-          </div>
-        </form>
+          <form onSubmit={handleSubmit} className="flex flex-col">
+            <div className="flex flex-col gap-2">
+              <FormInput
+                label={
+                  <span>
+                    Email
+                    <span className="text-red-500 ml-1.5 font-nunito font-medium tracking-wide leading-normal">*</span>
+                  </span>
+                }
+                name="email" type="email" value={form.email} onChange={handleChange} placeholder="Masukan Email Anda" required className="font-nunito font-medium tracking-wide leading-normal mt-2 py-2.5"
+              />
+            </div>
 
-        <p className="text-sm/6 text-center mt-6 text-gray-600 font-nunito font-normal tracking-wide leading-normal">
-          Don't have an account?{' '}
-          <span
-            className="text-[#5B8C51] font-bold cursor-pointer underline font-nunito tracking-wide leading-normal"
-            onClick={() => navigate('/register')}
-          >
-            Sign Up
-          </span>
-        </p>
+            <div className="flex flex-col mt-3 mb-3">
+              <FormInput
+                label={
+                  <span className="font-nunito font-medium tracking-wide leading-normal">
+                    Password
+                    <span className="text-red-500 ml-1.5 font-nunito font-medium tracking-wide leading-normal">*</span>
+                  </span>
+                }
+                name="password" type="password" value={form.password} onChange={handleChange} placeholder="********" required className="font-nunito font-medium tracking-wide leading-normal mt-2 py-2.5"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <div className="flex justify-between items-center text-sm/6 font-nunito font-medium tracking-wide leading-normal">
+                <label className="flex items-center gap-2 text-gray-600 font-nunito font-semibold tracking-wide leading-normal">
+                  <input type="checkbox" name="remember" checked={form.remember} onChange={handleChange} className="rounded"/>
+                  Remember Me
+                </label>
+
+                <button type="button" onClick={() => navigate('/resetPassword')} className="text-[#5B8C51] hover:underline font-nunito font-bold tracking-wide leading-normal">
+                  Forgot Password?
+                </button>
+              </div>
+            </div>
+
+            <div className="flex justify-center mt-8">
+              <BigButton type="submit">Login</BigButton>
+            </div>
+          </form>
+
+          <p className="text-sm/6 text-center text-gray-600 mt-5 font-nunito font-normal tracking-wide leading-normal">
+            Don't have an account?{' '}
+            <span
+              className="text-[#5B8C51] font-bold cursor-pointer underline font-nunito tracking-wide leading-normal"
+              onClick={() => navigate('/register')}
+            >
+              Sign Up
+            </span>
+          </p>
+        </div>
       </div>
 
       <NotificationModal
