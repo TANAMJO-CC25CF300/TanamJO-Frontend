@@ -5,10 +5,12 @@ import NotificationModal from "@/components/landingPages/notifikasi/notification
 import ProfileHeader from "@/components/Dashboard/user/profile-header";
 import FormInput from "@/components/ui/formInput";
 import { userService } from "@/services/userService";
+import { Save, Loader2 } from "lucide-react";
 import axios from "axios";
 
 export default function ProfilePage() {
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -110,8 +112,9 @@ export default function ProfilePage() {
     }
 
     try {
+      setIsLoading(true);
       // First update the user's points(nanti di task bukan di update profile)
-      // await userService.updateUserPoints(id);
+      await userService.updateUserPoints(id);
 
       // Then update the user's profile
       await userService.updateUserProfile(id, user);
@@ -137,6 +140,8 @@ export default function ProfilePage() {
         type: "error",
         message: errorMessage,
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -220,10 +225,16 @@ export default function ProfilePage() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full md:w-auto px-8 py-4 bg-[#0098C3] text-white text-base font-medium rounded-2xl hover:bg-[#0082A7] transition-all duration-200"
+                  disabled={isLoading}
+                  className="flex items-center gap-2 px-6 py-2.5 bg-[#0098C3] text-white text-sm font-medium rounded-lg hover:bg-[#0082A7] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   onClick={handleSubmit}
                 >
-                  Save Changes
+                  {isLoading ? (
+                    <Loader2 size={18} className="animate-spin" />
+                  ) : (
+                    <Save size={18} />
+                  )}
+                  {isLoading ? "Saving..." : "Save Changes"}
                 </button>
               </div>
             </div>
