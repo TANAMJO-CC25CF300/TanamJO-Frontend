@@ -76,6 +76,7 @@ export default function ProfilePage() {
         const finished = tasks.filter((task) => task.done);
         setFinishedTasks(finished);
       } catch (err) {
+        console.error("Error fetching finished tasks:", err);
         setFinishedTasks([]);
       }
     };
@@ -112,7 +113,7 @@ export default function ProfilePage() {
       await userService.updateUserPoints(id);
 
       // Then update the user's profile
-      const response = await userService.updateUserProfile(id, user);
+      await userService.updateUserProfile(id, user);
 
       // Refresh user data to get updated points
       await fetchUserData();
