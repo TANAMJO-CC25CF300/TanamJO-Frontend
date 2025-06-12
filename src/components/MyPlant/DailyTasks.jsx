@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { PlusCircle, CheckCircle } from "lucide-react";
 import Point from "../../assets/MyPlant/Point.svg";
+import axios from "axios";
 
 export default function DailyTasks() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [description, setDescription] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleTaskClick = (taskId) => {
     setTasks(
@@ -15,18 +17,58 @@ export default function DailyTasks() {
     );
   };
 
-  useEffect(() => {
-    fetch("/api/daily-tasks") // Ganti dengan endpoint API kamu
-      .then((res) => {
-        if (!res.ok) throw new Error("Gagal mengambil data");
-        return res.json();
+  // Fungsi fetch ulang data tasks
+  const fetchTasks = () => {
+    const token = localStorage.getItem("token");
+    axios
+      .get("http://localhost:4545/checkin?userId=1", {
+        headers: {
+          Authorization: token ? `Bearer ${token}` : undefined,
+        },
       })
-      .then((data) => {
-        setTasks(data);
+      .then((res) => {
+        const apiData = res.data && res.data.data ? res.data.data : {};
+        const tasksRaw = Array.isArray(apiData.tasks) ? apiData.tasks : [];
+        const tasksArr = tasksRaw.map((task, idx) => ({
+          id: task.id || idx,
+          title: task.title || "Untitled Task",
+          point: task.point || 12,
+          time: task.time || "9h",
+          done: false,
+        }));
+        setTasks(
+          tasksArr.length === 0
+            ? [
+                {
+                  id: 1,
+                  title:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  point: 12,
+                  time: "9h",
+                  done: false,
+                },
+                {
+                  id: 2,
+                  title:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  point: 12,
+                  time: "9h",
+                  done: false,
+                },
+                {
+                  id: 3,
+                  title:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  point: 12,
+                  time: "9h",
+                  done: true,
+                },
+              ]
+            : tasksArr
+        );
         setLoading(false);
       })
       .catch(() => {
-        // Jangan set error, langsung pakai data dummy
         setTasks([
           {
             id: 1,
@@ -52,9 +94,45 @@ export default function DailyTasks() {
         ]);
         setLoading(false);
       });
+  };
+
+  const handleSubmitCheckin = async () => {
+    setSubmitting(true);
+    const token = localStorage.getItem("token");
+    const userId = 1; // Ganti dengan userId dinamis jika ada
+    const completedTaskIds = tasks.filter((t) => t.done).map((t) => t.id);
+
+    try {
+      await axios.post(
+        "http://localhost:4545/checkin",
+        {
+          userId,
+          taskIds: completedTaskIds,
+          descriptionContent: description,
+        },
+        {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : undefined,
+          },
+        }
+      );
+      alert("Checkin berhasil!");
+      setDescription("");
+    } catch (err) {
+      alert("Gagal submit checkin.");
+    }
+    setSubmitting(false);
+  };
+
+  useEffect(() => {
+    fetchTasks();
+    // eslint-disable-next-line
   }, []);
 
   if (loading) return <div>Loading...</div>;
+
+  // Log tasks before render
+  console.log("Render tasks:", tasks);
 
   return (
     <div className="rounded-2xl border border-gray-300 p-4 md:p-6 w-full max-w-full md:max-w-[579px] mx-auto bg-white">
@@ -108,6 +186,24 @@ export default function DailyTasks() {
           </div>
         ))}
       </div>
+      {/* Description Input */}
+      <div className="mt-4">
+        <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Add a note about your plant's progress..."
+          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          rows="3"
+        />
+      </div>
+      {/* Submit Button */}
+      <button
+        onClick={handleSubmitCheckin}
+        className="mt-4 w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors"
+        disabled={submitting}
+      >
+        {submitting ? "Submitting..." : "Submit Checkin"}
+      </button>
     </div>
   );
 }

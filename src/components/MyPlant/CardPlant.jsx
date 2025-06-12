@@ -1,86 +1,113 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Calendar, Droplet, Sun, Thermometer } from "lucide-react";
 import PhaseIcon from "@/assets/MyPlant/Phase.svg";
 import PlantIcon from "@/assets/MyPlant/plant.svg";
 import DescIcon from "@/assets/MyPlant/description.svg";
 import TomatoImg from "@/assets/MyPlant/persiapan,benih,transplanting,vegetatif.png";
 import BgPlant from "@/assets/MyPlant/bgPlant.png";
 
-const CardPlant = ({
-  name = "My Tomato",
-  phase = "1 Benih",
-  age = "2 DAP",
-  desc = "This is my favorite Plant",
-  image = TomatoImg,
-}) => {
+const CardPlant = ({ plants }) => {
+  if (!plants || plants.length === 0) {
+    return (
+      <div className="rounded-2xl border border-gray-300 p-4 md:p-6 w-full max-w-full md:max-w-[579px] mx-auto bg-white">
+        <p className="text-gray-500 text-center">No plants found</p>
+      </div>
+    );
+  }
+
+  const plant = plants[0]; // Get the most recent plant
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.3 },
+    },
+  };
+
+  // Helper function to format phase name
+  const formatPhaseName = (phase) => {
+    if (!phase) return "Preparation";
+    return phase.charAt(0).toUpperCase() + phase.slice(1);
+  };
+
   return (
-    <div className="w-full max-w-full md:max-w-[579px] mx-auto h-auto min-h-[400px] md:min-h-[670px] bg-white rounded-[30px] shadow-md flex flex-col p-4 md:p-8 relative overflow-x-auto border border-[#070D05]/20">
-      {/* Background kuning dekoratif */}
-      <div
-        className="absolute left-0 top-16 w-[120px] md:w-[200px] lg:w-[320px] h-[120px] md:h-[250px] lg:h-[400px] bg-yellow-200 rounded-full -z-10"
-        style={{ filter: "blur(2px)" }}
-      />
-      <img
-        src={BgPlant}
-        alt="bg plant"
-        className="absolute left-0 top-20 w-[120px] md:w-[200px] lg:w-[320px] h-[120px] md:h-[250px] lg:h-[400px] object-contain -z-0"
-        style={{ pointerEvents: "none" }}
-      />
-      {/* Judul */}
-      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-4 relative z-10">
-        {name}
-      </h2>
-      <div className="flex flex-col md:flex-row flex-1 items-center relative z-10">
-        {/* Gambar Tanaman */}
-        <img
-          src={image}
-          alt={name}
-          className="w-[120px] md:w-[200px] lg:w-[320px] h-[120px] md:h-[250px] lg:h-[400px] object-contain drop-shadow-lg relative z-10"
-        />
-        {/* Info Card */}
-        <div className="flex flex-col gap-3 md:gap-6 mt-4 md:mt-0 md:ml-8 w-full md:w-auto">
-          {/* Phase */}
-          <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 md:px-6 py-3 md:py-4 shadow-sm w-full md:min-w-[180px]">
-            <img
-              src={PhaseIcon}
-              alt="Phase"
-              className="w-6 h-6 md:w-7 md:h-7"
-            />
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="rounded-2xl border border-gray-300 p-4 md:p-6 w-full max-w-full md:max-w-[579px] mx-auto bg-white"
+    >
+      {/* Plant Header */}
+      <motion.div variants={itemVariants} className="mb-4">
+        <h2 className="text-xl md:text-2xl font-semibold text-gray-800">
+          {plant.name || "Unnamed Plant"}
+        </h2>
+        <p className="text-sm text-gray-500 mt-1">
+          Phase: {formatPhaseName(plant.phase)}
+        </p>
+      </motion.div>
+
+      {/* Plant Age */}
+      <motion.div variants={itemVariants} className="mb-6">
+        <div className="flex items-center gap-2 text-gray-700">
+          <Calendar className="w-5 h-5" />
+          <span className="text-lg font-medium">
+            {plant.plant_age || plant.ageInput || "0"} DAP
+          </span>
+        </div>
+      </motion.div>
+
+      {/* Plant Description */}
+      <motion.div variants={itemVariants} className="mb-6">
+        <h3 className="text-sm font-medium text-gray-700 mb-2">Description</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          {plant.description || "No description available"}
+        </p>
+      </motion.div>
+
+      {/* Plant Care Tips */}
+      <motion.div variants={itemVariants} className="space-y-4">
+        <h3 className="text-sm font-medium text-gray-700">Care Tips</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+            <Droplet className="w-5 h-5 text-blue-500" />
             <div>
-              <div className="font-semibold text-gray-800 text-sm md:text-base">
-                Phase
-              </div>
-              <div className="text-xs md:text-sm text-gray-500">{phase}</div>
+              <p className="text-sm font-medium text-blue-700">Watering</p>
+              <p className="text-xs text-blue-600">Keep soil moist</p>
             </div>
           </div>
-          {/* Plant Age */}
-          <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 md:px-6 py-3 md:py-4 shadow-sm w-full md:min-w-[180px]">
-            <img
-              src={PlantIcon}
-              alt="Plant Age"
-              className="w-6 h-6 md:w-7 md:h-7"
-            />
+          <div className="flex items-center gap-3 p-3 bg-yellow-50 rounded-lg">
+            <Sun className="w-5 h-5 text-yellow-500" />
             <div>
-              <div className="font-semibold text-gray-800 text-sm md:text-base">
-                Plant Age
-              </div>
-              <div className="text-xs md:text-sm text-gray-500">{age}</div>
+              <p className="text-sm font-medium text-yellow-700">Sunlight</p>
+              <p className="text-xs text-yellow-600">6-8 hours daily</p>
             </div>
           </div>
-          {/* Desc */}
-          <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 md:px-6 py-3 md:py-4 shadow-sm w-full md:min-w-[180px]">
-            <img src={DescIcon} alt="Desc" className="w-6 h-6 md:w-7 md:h-7" />
+          <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+            <Thermometer className="w-5 h-5 text-green-500" />
             <div>
-              <div className="font-semibold text-gray-800 text-sm md:text-base">
-                Desc
-              </div>
-              <div className="text-xs md:text-sm text-gray-500 max-w-[120px]">
-                {desc}
-              </div>
+              <p className="text-sm font-medium text-green-700">Temperature</p>
+              <p className="text-xs text-green-600">20-25°C ideal</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -3,8 +3,14 @@ import LittleButton from "../LittleButton";
 import NotHavePlant from "../../assets/MyPlant/notHavePlant.png";
 import FormPlant from "./FormPlant";
 
-const AddPlant = () => {
+const AddPlant = ({ onPlantAdded }) => {
   const [openModal, setOpenModal] = useState(false);
+
+  const handleFormSubmit = (result) => {
+    if (onPlantAdded) {
+      onPlantAdded(result);
+    }
+  };
 
   return (
     <div className="flex flex-col w-full max-w-[1300px] mx-auto relative md:px-0">
@@ -23,7 +29,11 @@ const AddPlant = () => {
           <p className="text-gray-500 text-center text-base md:text-lg font-medium px-4">
             You haven't planted your tomato plants yet
           </p>
-          <FormPlant open={openModal} onClose={() => setOpenModal(false)} />
+          <FormPlant
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+            onSubmit={handleFormSubmit}
+          />
         </div>
       </div>
     </div>

@@ -36,7 +36,7 @@ export default function LeftSidebar() {
     {
       name: "Disease Identify",
       icon: Stethoscope,
-      path: "/dashboard/main-identify-plant",
+      path: "/MainIdentifyPlant",
     },
   ];
 

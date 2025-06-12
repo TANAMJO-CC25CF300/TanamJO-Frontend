@@ -122,30 +122,6 @@ function App() {
           }
         />
         <Route
-          path="/AddPlant"
-          element={
-            <ProtectedRoute>
-              <AddPlant />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/CardPlant"
-          element={
-            <ProtectedRoute>
-              <CardPlant />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/DailyTasks"
-          element={
-            <ProtectedRoute>
-              <DailyTasks />
-            </ProtectedRoute>
-          }
-        />
-        <Route
           path="/MyPlantPage"
           element={
             <ProtectedRoute>
