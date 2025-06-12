@@ -57,6 +57,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     fetchUserData();
+    userService.updateUserLevel(id);
   }, [id]);
 
   useEffect(() => {
@@ -109,8 +110,8 @@ export default function ProfilePage() {
     }
 
     try {
-      // First update the user's points
-      await userService.updateUserPoints(id);
+      // First update the user's points(nanti di task bukan di update profile)
+      // await userService.updateUserPoints(id);
 
       // Then update the user's profile
       await userService.updateUserProfile(id, user);

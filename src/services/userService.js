@@ -37,6 +37,17 @@ export const userService = {
     }
   },
 
+  // Update user level
+  async updateUserLevel(userId) {
+    try {
+      const response = await axiosInstance.put(`/users/${userId}/level`);
+      return response.data;
+    } catch (error) {
+      console.error("[UPDATE Level Error]", error);
+      throw error;
+    }
+  },
+
   // Update user points
   async updateUserPoints(userId) {
     try {
