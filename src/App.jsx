@@ -27,6 +27,9 @@ import Login from "@/pages/auth/login";
 // Components
 import CameraCapture from "@components/landingPages/identyPlant/cameraCapture";
 import NotificationModal from "@/components/landingPages/notifikasi/notificationModal";
+import AddPlant from "@/components/MyPlant/AddPlant";
+import CardPlant from "@/components/MyPlant/CardPlant";
+import DailyTasks from "@/components/MyPlant/DailyTasks";
 
 // Dashboard
 import Dashboard from "@/pages/dashboard/dashboard";

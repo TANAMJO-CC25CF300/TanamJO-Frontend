@@ -165,7 +165,7 @@ function HomePage() {
                     <div className="mt-10 border border-gray-200 rounded-3xl">
                         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 p-4 sm:p-5 md:p-6 lg:p-8">
                             {cardData.map((card) => (
-                                <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px]">
+                                <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px] group">
                                 <div className="relative w-full px-3 pt-3">
                                     <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
                                         <img src={card.image} alt={card.title} className="w-full h-full object-cover rounded-2xl" />
@@ -187,11 +187,11 @@ function HomePage() {
                                             <span className="text-xs font-semibold tracking-wide uppercase font-nunito steel-haze">{card.category}</span>
                                         </div>
 
-                                        <div className="font-semibold text-lg md:text-xl steel-haze mb-2 text-left tracking-wide font-nunito">
+                                        <div className="font-semibold text-lg md:text-xl steel-haze mb-2 text-left tracking-wide font-nunito group-hover:text-emerald-600 transition-colors duration-300">
                                             {card.title}
                                         </div>
 
-                                        <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider line-clamp-3">
+                                        <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider line-clamp-3 group-hover:text-emerald-600 transition-colors duration-300">
                                             {card.description}
                                         </p>
                                     </div>
@@ -223,7 +223,7 @@ function HomePage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-0 w-full pt-5">
                         {insightCardData.map((card, index) => (
-                            <div key={index} className="relative bg-white border border-gray-200 rounded-3xl p-5 h-[200px]">
+                            <div key={index} className="relative bg-white border border-gray-200 rounded-3xl p-5 h-[200px] group hover:border-emerald-500 transition-all duration-300">
                                 <div className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 text-gray-400">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -231,11 +231,11 @@ function HomePage() {
                                 </div>
 
                                 <div className="flex flex-col h-full pt-8">
-                                    <h3 className="font-semibold text-lg md:text-xl steel-haze text-left tracking-wide font-nunito mb-2">
+                                    <h3 className="font-semibold text-lg md:text-xl steel-haze text-left tracking-wide font-nunito mb-2 group-hover:text-emerald-600 transition-colors duration-300">
                                         {card.title}
                                     </h3>
 
-                                    <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider">
+                                    <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider group-hover:text-emerald-600 transition-colors duration-300">
                                         {card.description}
                                     </p>
                                 </div>
