@@ -24,7 +24,6 @@ const harvestData = [
 ];
 
 function HarvestCardSectionHome() {
-    const [showAll, setShowAll] = useState(false);
     const [isDesktop, setIsDesktop] = useState(false);
 
     useEffect(() => {
@@ -40,11 +39,7 @@ function HarvestCardSectionHome() {
         
     }, []);
 
-    let displayData = isDesktop ? harvestData : (showAll ? harvestData : harvestData.slice(0, 4));
-
-    const handleShowMoreToggle = () => {
-        setShowAll(!showAll);
-    };
+    const displayData = isDesktop ? harvestData : harvestData.slice(0, 4);
 
     return (
         <>        
@@ -55,13 +50,7 @@ function HarvestCardSectionHome() {
                         <HarverstCardUtama image={item.image} title={item.title}/>
                     </div>
                 ))}
-            </div>
-
-            <div className="flex justify-center mt-8 xl:hidden">
-                <button onClick={handleShowMoreToggle} className="px-6 py-3 border border-gray-300 w-full rounded-full custome-deskription">
-                    {showAll ? 'Show Less' : 'Show More'}
-                </button>
-            </div>                
+            </div>               
         </>
     );
 }
