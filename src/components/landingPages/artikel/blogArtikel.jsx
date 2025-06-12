@@ -211,8 +211,8 @@ function BlogArtikel() {
 
                         <div className="mt-8">
                             <div className="border border-gray-300 rounded-3xl p-5 shadow-sm relative text-left">
-                                <div className="flex items-center mb-2 space-x-3">
-                                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-yellow-100 mr-2">
+                                <div className="flex flex-wrap items-center gap-2 mb-2">
+                                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-yellow-100">
                                         <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
                                             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#FBBF24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                             <circle cx="12" cy="12" r="5" fill="#FBBF24"/>
@@ -220,11 +220,14 @@ function BlogArtikel() {
                                     </span>
 
                                     <span className="bg-green-200 text-green-800 text-sm/6 font-semibold px-3 py-1 rounded-full font-nunito tracking-wider">Conclusion</span>
-                                    <span className="custome-deskription text-sm/6 font-nunito tracking-wider leading-normal font-medium">Last updated: March 15, 2024</span>
-                                    <span className="custome-deskription text-sm/6 font-nunito tracking-wider leading-normal font-medium">•</span>
-                                    <span className="custome-deskription text-sm/6 font-nunito tracking-wider leading-normal font-medium">5 min read</span>
-                                    <span className="custome-deskription text-sm/6 font-nunito tracking-wider leading-normal font-medium">•</span>
-                                    <span className="custome-deskription text-sm/6 font-nunito tracking-wider leading-normal font-medium">Harvest Story</span>
+                                    
+                                    <div className="flex flex-wrap items-center gap-2 text-sm/6 font-nunito tracking-wider leading-normal font-medium text-gray-600">
+                                        <span>Last updated: March 15, 2024</span>
+                                        <span>•</span>
+                                        <span>5 min read</span>
+                                        <span>•</span>
+                                        <span>Harvest Story</span>
+                                    </div>
                                 </div>
                                 
                                 <div className="mt-5 group space-y-4">
