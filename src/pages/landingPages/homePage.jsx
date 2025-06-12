@@ -298,7 +298,7 @@ function HomePage() {
                             <div 
                                 key={item.id} 
                                 className="rounded-3xl flex flex-col overflow-hidden relative w-full h-auto group cursor-pointer"
-                                onClick={() => navigate('/blog-artikel', { state: { blogData: item }})}
+                                onClick={() => navigate('/blog-artikel')}
                             >
                                 <div className="relative w-full">
                                     <div className="w-full h-[180px] sm:h-[260px] rounded-2xl flex items-start justify-center relative overflow-hidden bg-gray-200">
@@ -312,7 +312,7 @@ function HomePage() {
                                         </div>
                                     </div>
 
-                                    <div className="flex-1 flex flex-col pt-4 text-left">
+                                    <div className="flex-1 flex flex-col pt-4 text-left bg-white">
                                         <div className="flex items-center gap-3 mb-3 text-sm/6 text-gray-600 font-nunito tracking-wider">
                                             <span className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -329,11 +329,11 @@ function HomePage() {
                                             </span>
                                         </div>
 
-                                        <div className="font-semibold text-lg md:text-lg steel-haze mb-3 text-left tracking-wide font-nunito group-hover:text-emerald-600 transition-colors duration-300">
+                                        <div className="font-semibold text-lg md:text-lg steel-haze mb-1.5 text-left tracking-wide font-nunito group-hover:text-emerald-600 transition-colors duration-300">
                                             {item.title}
                                         </div>
 
-                                        <p className="text-sm/6 leading-relaxed text-gray-600 font-nunito tracking-wide line-clamp-2">
+                                        <p className="text-sm/6 leading-relaxed text-gray-600 font-nunito tracking-wide line-clamp-2 mb-3 md:mb-4 group-hover:text-emerald-600 transition-colors duration-300" style={{ background: 'rgba(255,255,255,0.95)', padding: '0.25rem 0rem', borderRadius: '0.5rem' }}>
                                             {item.description}
                                         </p>
                                     </div>
