@@ -3,7 +3,7 @@ import { PlusCircle, CheckCircle } from "lucide-react";
 import Point from "../../assets/MyPlant/Point.svg";
 import axios from "axios";
 
-export default function DailyTasks() {
+export default function DailyTasks({ plant }) {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [description, setDescription] = useState("");
@@ -20,8 +20,14 @@ export default function DailyTasks() {
   // Fungsi fetch ulang data tasks
   const fetchTasks = () => {
     const token = localStorage.getItem("token");
+    const userId = 1; // Ganti dengan userId dinamis jika ada
+    const plantAge = plant?.plant_age;
+    let url = `http://localhost:4545/checkin?userId=${userId}`;
+    if (plantAge !== undefined && plantAge !== null) {
+      url += `&plantAge=${plantAge}`;
+    }
     axios
-      .get("http://localhost:4545/checkin?userId=1", {
+      .get(url, {
         headers: {
           Authorization: token ? `Bearer ${token}` : undefined,
         },
@@ -127,19 +133,16 @@ export default function DailyTasks() {
   useEffect(() => {
     fetchTasks();
     // eslint-disable-next-line
-  }, []);
+  }, [plant]);
 
   if (loading) return <div>Loading...</div>;
-
-  // Log tasks before render
-  console.log("Render tasks:", tasks);
 
   return (
     <div className="rounded-2xl border border-gray-300 p-4 md:p-6 w-full max-w-full md:max-w-[579px] mx-auto bg-white">
       <div className="mb-2">
         <span className="text-lg md:text-xl font-semibold">Daily Tasks</span>
         <div className="text-xs md:text-sm text-gray-600 text-center mt-1 mb-2">
-          Your Plant Age is 1 DAP
+          Your Plant Age is {plant?.plant_age ?? 0} DAP
         </div>
       </div>
       <div className="flex flex-col gap-3 md:gap-4 mt-2">

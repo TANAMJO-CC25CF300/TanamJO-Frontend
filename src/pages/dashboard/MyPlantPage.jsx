@@ -117,6 +117,14 @@ export default function MyPlantPage() {
       </DashboardLayout>
     );
 
+  // Tambahkan log untuk debugging
+  console.log("Plants yang dikirim ke CardPlant:", plants);
+
+  // Ambil plant yang benar untuk DailyTasks
+  const plantForDailyTasks = Array.isArray(plants[0]?.data)
+    ? plants[0].data[0]
+    : plants[0];
+
   return (
     <DashboardLayout>
       <motion.div
@@ -142,7 +150,7 @@ export default function MyPlantPage() {
             transition={{ delay: 0.3 }}
             className="w-full order-2 lg:order-2"
           >
-            <DailyTasks />
+            <DailyTasks plant={plantForDailyTasks} />
           </motion.div>
         </div>
       </motion.div>

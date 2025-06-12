@@ -195,11 +195,11 @@ const FormPlant = ({ open, onClose, onSubmit }) => {
               className={`md:col-span-4 border rounded px-3 py-2 w-full focus:outline-none text-sm md:text-base ${
                 errors.age ? "border-red-500" : "border-gray-300"
               }`}
-              placeholder="1 DAP or 1 DAS"
+              placeholder="1 DAP or 1 DSS"
               {...register("age", {
                 required: "Umur tanaman wajib diisi",
                 pattern: {
-                  value: /^\d+\s+(DAP|DAS)$/,
+                  value: /^\d+\s+(DAP|DSS)$/,
                   message: "Format harus berupa 'angka DAP' atau 'angka DAS'",
                 },
               })}

@@ -8,7 +8,10 @@ import TomatoImg from "@/assets/MyPlant/persiapan,benih,transplanting,vegetatif.
 import BgPlant from "@/assets/MyPlant/bgPlant.png";
 
 const CardPlant = ({ plants }) => {
-  if (!plants || plants.length === 0) {
+  // Ambil array tanaman yang benar
+  const plantList = Array.isArray(plants[0]?.data) ? plants[0].data : plants;
+
+  if (!plantList || plantList.length === 0) {
     return (
       <div className="rounded-2xl border border-gray-300 p-4 md:p-6 w-full max-w-full md:max-w-[579px] mx-auto bg-white">
         <p className="text-gray-500 text-center">No plants found</p>
@@ -16,7 +19,7 @@ const CardPlant = ({ plants }) => {
     );
   }
 
-  const plant = plants[0]; // Get the most recent plant
+  const plant = plantList[0]; // Get the most recent plant
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
