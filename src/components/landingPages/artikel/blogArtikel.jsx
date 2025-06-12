@@ -30,52 +30,42 @@ function BlogArtikel() {
                     </p>
                 </div>
                 
-                <div className="w-full max-Width-auto mx-auto pt-8">
-                    <div className="relative shadow-sm rounded-3xl overflow-hidden group">
+                <div className="w-full max-Width-auto mx-auto pt-4 sm:pt-6 md:pt-8">
+                    <div className="relative shadow-sm rounded-2xl sm:rounded-3xl overflow-hidden group">
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
                         <img
                             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
                             alt="Waterfall Forest"
-                            className="w-full max-h-[450px] object-cover object-center"
+                            className="w-full h-[250px] sm:h-[350px] md:h-[450px] object-cover object-center"
                             style={{ boxShadow: '0 8px 32px 0 rgba(60, 72, 88, 0.18)' }}
                         />
                         
-                        <div className="absolute bottom-0 left-0 w-full p-6 z-20">
-                            <div className="flex items-center space-x-3 mb-3">
-                                <span className="px-3 py-1 bg-green-500/90 text-white text-xs font-medium rounded-full">
+                        <div className="absolute bottom-0 left-0 w-full p-4 sm:p-5 md:p-6 z-20">
+                            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                                <span className="px-2 sm:px-3 py-1 bg-green-500/90 text-white text-[10px] sm:text-xs font-medium rounded-full">
                                     Nature
                                 </span>
-                                <span className="px-3 py-1 bg-blue-500/90 text-white text-xs font-medium rounded-full">
+                                <span className="px-2 sm:px-3 py-1 bg-blue-500/90 text-white text-[10px] sm:text-xs font-medium rounded-full">
                                     Climate
                                 </span>
                             </div>
                             
-                            <h3 className="text-white text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight mb-3 text-left drop-shadow-lg">
+                            <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight mb-2 sm:mb-3 text-left drop-shadow-lg">
                                 Rooted in Climate: How Regional Weather Patterns Sculpt Local Flora
                             </h3>
                             
-                            <div className="flex items-center space-x-4 text-white/90 text-sm">
+                            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-white/90 text-xs sm:text-sm">
                                 <div className="flex items-center">
-                                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     <span className="font-nunito tracking-wide leading-normal font-semibold text-white">5 min read</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                     </svg>
                                     <span className="font-nunito tracking-wide leading-normal font-semibold text-white">March 15, 2024</span>
-                                </div>
-                            </div>
-                            
-                            <div className="mt-4 flex items-center">
-                                <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
-                                    <span className="text-white text-sm font-bold">HS</span>
-                                </div>
-                                <div className="text-white/90 text-left">
-                                    <p className="text-sm/6 font-nunito tracking-wide leading-tight font-semibold">Harvest Story</p>
-                                    <p className="text-xs/6 font-nunito tracking-wide ont-semibold">Content Writer</p>
                                 </div>
                             </div>
                         </div>
@@ -135,52 +125,42 @@ function BlogArtikel() {
                         </div>
                     </div>
 
-                    <div className="w-full max-Width-auto mx-auto pt-8">
-                        <div className="relative shadow-sm rounded-3xl overflow-hidden group">
+                    <div className="w-full max-Width-auto mx-auto pt-4 sm:pt-6 md:pt-8">
+                        <div className="relative shadow-sm rounded-2xl sm:rounded-3xl overflow-hidden group">
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
                             <img
                                 src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
                                 alt="Waterfall Forest"
-                                className="w-full max-h-[450px] object-cover object-center"
+                                className="w-full h-[250px] sm:h-[350px] md:h-[450px] object-cover object-center"
                                 style={{ boxShadow: '0 8px 32px 0 rgba(60, 72, 88, 0.18)' }}
                             />
                             
-                            <div className="absolute bottom-0 left-0 w-full p-6 z-20">
-                                <div className="flex items-center space-x-3 mb-3">
-                                    <span className="px-3 py-1 bg-green-500/90 text-white text-xs font-medium rounded-full">
+                            <div className="absolute bottom-0 left-0 w-full p-4 sm:p-5 md:p-6 z-20">
+                                <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                                    <span className="px-2 sm:px-3 py-1 bg-green-500/90 text-white text-[10px] sm:text-xs font-medium rounded-full">
                                         Nature
                                     </span>
-                                    <span className="px-3 py-1 bg-blue-500/90 text-white text-xs font-medium rounded-full">
+                                    <span className="px-2 sm:px-3 py-1 bg-blue-500/90 text-white text-[10px] sm:text-xs font-medium rounded-full">
                                         Climate
                                     </span>
                                 </div>
                                 
-                                <h3 className="text-white text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight mb-3 text-left drop-shadow-lg">
+                                <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold font-nunito tracking-wider leading-tight mb-2 sm:mb-3 text-left drop-shadow-lg">
                                     Rooted in Climate: How Regional Weather Patterns Sculpt Local Flora
                                 </h3>
                                 
-                                <div className="flex items-center space-x-4 text-white/90 text-sm">
+                                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-white/90 text-xs sm:text-sm">
                                     <div className="flex items-center">
-                                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         <span className="font-nunito tracking-wide leading-normal font-semibold text-white">5 min read</span>
                                     </div>
                                     <div className="flex items-center">
-                                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                         </svg>
                                         <span className="font-nunito tracking-wide leading-normal font-semibold text-white">March 15, 2024</span>
-                                    </div>
-                                </div>
-                                
-                                <div className="mt-4 flex items-center">
-                                    <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
-                                        <span className="text-white text-sm font-bold">HS</span>
-                                    </div>
-                                    <div className="text-white/90 text-left">
-                                        <p className="text-sm/6 font-nunito tracking-wide leading-tight font-semibold">Harvest Story</p>
-                                        <p className="text-xs/6 font-nunito tracking-wide ont-semibold">Content Writer</p>
                                     </div>
                                 </div>
                             </div>
