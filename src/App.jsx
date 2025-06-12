@@ -17,6 +17,7 @@ import ArtikelDetailWatering from "@/components/landingPages/artikel/artikelDeta
 import ArtikelCardUtama from "@/components/landingPages/artikel/ArtikelCardUtama";
 import IdentifyPlant from "@/pages/landingPages/IdentifyPlant";
 import SearchInput from "@/components/common/SearchInput";
+import BlogArtikel from "@/components/landingPages/artikel/blogArtikel";
 
 // Auth Pages
 import ForgetPassword from "@/pages/auth/forgetPassword";
@@ -52,28 +53,14 @@ function App() {
         <Route path="/plant-guide" element={<PlantGuide />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/plant-guide/cherry-tomato" element={<CherryTomato />} />
-        <Route
-          path="/plant-guide/beefsteak-tomato"
-          element={<BeefsteakTomato />}
-        />
+        <Route path="/plant-guide/beefsteak-tomato"element={<BeefsteakTomato />}/>
         <Route path="/plant-guide/roma-tomato" element={<RomaTomato />} />
-        <Route
-          path="/plant-guide/heirloom-tomato"
-          element={<HeirloomTomato />}
-        />
+        <Route path="/plant-guide/heirloom-tomato"element={<HeirloomTomato />}/>
+        <Route path="/blog-artikel" element={<BlogArtikel />} />
         <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
-        <Route
-          path="/plant-guide/artikel-detail-watering"
-          element={<ArtikelDetailWatering />}
-        />
-        <Route
-          path="/plant-guide/artikel-detail-plant-problems"
-          element={<ArtikelDetail />}
-        />
-        <Route
-          path="/plantguide/artikelcardutama"
-          element={<ArtikelCardUtama />}
-        />
+        <Route path="/plant-guide/artikel-detail-watering" element={<ArtikelDetailWatering />}/>
+        <Route path="/plant-guide/artikel-detail-plant-problems"element={<ArtikelDetail />}/>
+        <Route path="/plantguide/artikelcardutama"element={<ArtikelCardUtama />}/>
         <Route path="/identify-plant" element={<IdentifyPlant />} />
         <Route path="/search-input" element={<SearchInput />} />
 
@@ -84,86 +71,16 @@ function App() {
         <Route path="/resetPassword" element={<ResetPassword />} />
 
         {/* Protected Routes (Dashboard) */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profile/:id"
-          element={
-            <ProtectedRoute>
-              <ProfilePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/update-password/:id"
-          element={
-            <ProtectedRoute>
-              <UpdatePasswordPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/Sidebar"
-          element={
-            <ProtectedRoute>
-              <LeftSidebar />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/MyPlantEmptyPage"
-          element={
-            <ProtectedRoute>
-              <MyPlantEmptyPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/AddPlant"
-          element={
-            <ProtectedRoute>
-              <AddPlant />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/CardPlant"
-          element={
-            <ProtectedRoute>
-              <CardPlant />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/DailyTasks"
-          element={
-            <ProtectedRoute>
-              <DailyTasks />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/MyPlantPage"
-          element={
-            <ProtectedRoute>
-              <MyPlantPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/MainIdentifyPlant"
-          element={
-            <ProtectedRoute>
-              <MainIdentifyPlant />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
+        <Route path="/profile/:id"element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
+        <Route path="/update-password/:id"element={<ProtectedRoute><UpdatePasswordPage /></ProtectedRoute>}/>
+        <Route path="/Sidebar"element={<ProtectedRoute><LeftSidebar /></ProtectedRoute>}/>
+        <Route path="/MyPlantEmptyPage"element={<ProtectedRoute><MyPlantEmptyPage /></ProtectedRoute>}/>
+        <Route path="/AddPlant"element={<ProtectedRoute><AddPlant /></ProtectedRoute>}/>
+        <Route path="/CardPlant" element={ <ProtectedRoute><CardPlant /></ProtectedRoute>}/>
+        <Route path="/DailyTasks" element={<ProtectedRoute><DailyTasks /></ProtectedRoute>}/>
+        <Route path="/MyPlantPage" element={<ProtectedRoute><MyPlantPage /></ProtectedRoute>}/>
+        <Route path="/MainIdentifyPlant"element={<ProtectedRoute><MainIdentifyPlant /></ProtectedRoute>}/>
 
         {/* Other Components */}
         <Route path="/capture" element={<CameraCapture />} />
