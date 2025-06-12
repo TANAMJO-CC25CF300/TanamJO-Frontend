@@ -42,7 +42,7 @@ export default function DailyTasks({ plant }) {
     const token = localStorage.getItem("token");
     const userId = 1; // Ganti dengan userId dinamis jika ada
     const plantAge = plant?.plant_age;
-    let url = `http://localhost:4545/checkin?userId=${userId}`;
+    let url = `https://tanamjo-backend.onrender.com/checkin?userId=${userId}`;
     if (plantAge !== undefined && plantAge !== null) {
       url += `&plantAge=${plantAge}`;
     }

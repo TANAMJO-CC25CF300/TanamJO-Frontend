@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:4545";
+const API_URL = "https://tanamjo-backend.onrender.com";
 
 // Create axios instance with default config
 const api = axios.create({

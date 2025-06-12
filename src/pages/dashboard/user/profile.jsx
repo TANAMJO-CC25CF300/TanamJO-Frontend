@@ -64,22 +64,18 @@ export default function ProfilePage() {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          `http://localhost:4545/checkin?userId=${id}`,
+          `https://tanamjo-backend.onrender.com/checkin?userId=${id}`,
           {
             headers: {
               Authorization: token ? `Bearer ${token}` : undefined,
             },
           }
         );
-        console.log("API Response:", res.data);
 
         const tasks = res.data?.data?.tasks || [];
         const finished = tasks.filter((task) => task.done);
         setFinishedTasks(finished);
-
-        console.log("Finished Tasks:", finished);
       } catch (err) {
-        console.error("Error fetching finished tasks:", err);
         setFinishedTasks([]);
       }
     };

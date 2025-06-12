@@ -16,10 +16,13 @@ const fetchData = async (imageFile) => {
     const formData = new FormData();
     formData.append("image", imageFile);
 
-    const response = await fetch("http://localhost:4545/predicts", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://tanamjo-backend.onrender.com/predicts",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
     const data = await response.json();
     if (response.ok) {
@@ -90,7 +93,8 @@ function IdentifyPlant() {
               Plant Disease Identification <br /> & Expert Consultation
             </h1>
             <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider max-w-sm mx-auto custome-deskription">
-              Capture your plant's condition and receive instant diagnosis from our AI system
+              Capture your plant's condition and receive instant diagnosis from
+              our AI system
             </p>
           </div>
 

@@ -16,10 +16,13 @@ const fetchData = async (imageFile) => {
     const formData = new FormData();
     formData.append("image", imageFile);
 
-    const response = await fetch("http://localhost:4545/predicts", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://tanamjo-backend.onrender.com/predicts",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
     const data = await response.json();
     if (response.ok) {

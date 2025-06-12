@@ -16,8 +16,6 @@ export default function Header() {
 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  console.log(user);
-
   const handleLogout = () => {
     // Clear all auth data from localStorage
     localStorage.removeItem("token");
