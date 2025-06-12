@@ -74,7 +74,23 @@ export const blogCardData = [
         date: "11 Juni 2025",
         author: "TamanJO",
         image: blog1Image,
-        description: "Learn expert techniques for growing abundant tomatoes in limited space. Perfect for urban gardeners!"
+        description: "Learn expert techniques for growing abundant tomatoes in limited space. Perfect for urban gardeners!",
+        readTime: "5 min read",
+        authorInitials: "TJ",
+        fullContent: {
+            intro: "Urban gardening has revolutionized how we think about growing tomatoes. With limited space becoming increasingly common in cities, mastering the art of maximizing tomato yields in small gardens has become essential.",
+            sections: [
+                {
+                    title: "Smart Space Utilization",
+                    content: "Vertical gardening techniques and container optimization are key to maximizing your small garden's potential. Using trellises, hanging planters, and tiered garden beds can triple your growing space without expanding your garden's footprint."
+                },
+                {
+                    title: "Intensive Planting Methods",
+                    content: "Learn about companion planting and proper spacing techniques that allow you to grow more tomatoes in less space while maintaining plant health and productivity."
+                }
+            ],
+            conclusion: "With these space-saving techniques and careful planning, even the smallest garden can produce an abundant tomato harvest. The key is to think vertically and maximize every square inch of growing space."
+        }
     },
     {
         id: 2,
@@ -84,7 +100,23 @@ export const blogCardData = [
         date: "11 Juni 2025",
         author: "TamanJO",
         image: blog2Image,
-        description: "Discover eco-friendly methods to protect your tomatoes from common pests and diseases."
+        description: "Discover eco-friendly methods to protect your tomatoes from common pests and diseases.",
+        readTime: "5 min read",
+        authorInitials: "TJ",
+        fullContent: {
+            intro: "Protecting your tomato plants from pests doesn't have to mean using harmful chemicals. Sustainable pest management combines natural predators, companion planting, and organic deterrents to keep your plants healthy.",
+            sections: [
+                {
+                    title: "Natural Pest Control Methods",
+                    content: "Explore the world of beneficial insects and how to attract them to your garden. Learn about companion plants that naturally repel common tomato pests."
+                },
+                {
+                    title: "Organic Solutions",
+                    content: "Discover how to make and use organic pest deterrents from common household items and garden plants. These solutions are both effective and environmentally friendly."
+                }
+            ],
+            conclusion: "By implementing these sustainable pest management strategies, you can protect your tomato plants while maintaining a healthy garden ecosystem that supports beneficial insects and natural pest control."
+        }
     },
     {
         id: 3,
@@ -94,6 +126,22 @@ export const blogCardData = [
         date: "11 Juni 2025",
         author: "TamanJO",
         image: blog3Image,
-        description: "Master the art of growing tomatoes without soil using modern hydroponic techniques."
+        description: "Master the art of growing tomatoes without soil using modern hydroponic techniques.",
+        readTime: "5 min read",
+        authorInitials: "TJ",
+        fullContent: {
+            intro: "Hydroponic growing systems have revolutionized tomato cultivation, offering precise control over nutrients and growing conditions. This guide explores advanced techniques for successful soilless tomato production.",
+            sections: [
+                {
+                    title: "Setting Up Your Hydroponic System",
+                    content: "Learn about different hydroponic systems suitable for tomatoes, from deep water culture to nutrient film technique. Understand the essential components and how to maintain optimal growing conditions."
+                },
+                {
+                    title: "Nutrient Management",
+                    content: "Master the art of balancing nutrients in your hydroponic system. Learn how to monitor and adjust pH levels, EC values, and essential mineral concentrations for optimal tomato growth."
+                }
+            ],
+            conclusion: "Hydroponic tomato growing offers unprecedented control over your plants' environment. With proper system management and attention to nutrient balance, you can achieve exceptional yields and fruit quality."
+        }
     }
 ]; 

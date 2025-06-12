@@ -298,7 +298,9 @@ function HomePage() {
                             <div 
                                 key={item.id} 
                                 className="rounded-3xl flex flex-col overflow-hidden relative w-full h-auto group cursor-pointer"
-                                onClick={() => navigate('/blog-artikel')}
+                                onClick={() => navigate(`/blog-artikel?id=${item.id}`)}
+                                role="button"
+                                aria-label={`Read article: ${item.title}`}
                             >
                                 <div className="relative w-full">
                                     <div className="w-full h-[180px] sm:h-[260px] rounded-2xl flex items-start justify-center relative overflow-hidden bg-gray-200">
