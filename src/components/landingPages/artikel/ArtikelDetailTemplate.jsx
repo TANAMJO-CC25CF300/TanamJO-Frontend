@@ -56,7 +56,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                     </div>
 
                     <div className="relative mx-5 md:mx-15 mt-8">
-                        <div className="relative rounded-2xl custom-banner-artikel px-5 sm:px-8 py-7 md:py-8" style={{ marginTop: '12px', marginBottom: '12px', maxWidth: '850px', marginLeft: 'auto', marginRight: 'auto',}}>
+                        <div className="relative rounded-2xl custom-banner-artikel px-5 sm:px-8 py-7 md:py-8" style={{ marginTop: '12px', marginBottom: '12px', maxWidth: '100%', marginLeft: 'auto', marginRight: 'auto',}}>
                             <svg className="absolute top-4 left-6 sm:left-8 w-8 sm:w-10 h-8 sm:h-10 text-[#d6cbe9] opacity-80 pointer-events-none" viewBox="0 0 48 48" fill="none" >
                                 <path d="M18 8C12.477 8 8 12.477 8 18c0 4.418 3.582 8 8 8v4c-6.627 0-12-5.373-12-12S11.373 4 18 4v4zm22 0c-5.523 0-10 4.477-10 10 0 4.418 3.582 8 8 8v4c-6.627 0-12-5.373-12-12S34.373 4 41 4v4z" fill="currentColor"/>
                             </svg>
@@ -72,7 +72,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                             </svg>
                         </div>
 
-                        <div className="max-w-[850px] mx-auto mt-8">
+                        <div className="max-w-[100%] mx-auto mt-8">
                             {mainContent.map((paragraph, index) => (
                                 <p key={index} className="text-left text-sm/7 md:text-base/7 font-medium leading-relaxed font-nunito tracking-wide text-gray-500 italic mt-3">
                                     {paragraph}
@@ -85,7 +85,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                             style={{
                                 marginTop: '32px',
                                 marginBottom: '32px',
-                                maxWidth: '850px',
+                                maxWidth: '100%',
                                 marginLeft: 'auto',
                                 marginRight: 'auto',
                             }}
@@ -119,7 +119,7 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                             </div>
                         </div>
 
-                        <div className="max-w-[850px] mx-auto mt-10 mb-8">
+                        <div className="max-w-[100%] mx-auto mt-10 mb-8">
                             {benefits.map((benefit, index) => (
                                 <div key={index} className="space-y-4 text-left">
                                     <div className="flex items-center space-x-3">
