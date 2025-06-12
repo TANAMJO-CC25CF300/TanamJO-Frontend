@@ -56,24 +56,26 @@ const NotificationModal = ({
     buttonColor || colors.buttonColor || "bg-gray-800";
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-[2px] flex items-center justify-center z-50 animate-fadeIn">
       <div
-        className={`${backgroundColor} p-6 rounded-xl max-w-sm w-full text-center shadow-lg`}
+        className={`${backgroundColor} p-8 rounded-2xl max-w-sm w-full text-center shadow-xl transform transition-all duration-300 ease-out animate-modalSlide`}
       >
-        {icon !== null && (icon || fallbackIcon)}
+        <div className="mb-2">
+          {icon !== null && (icon || fallbackIcon)}
+        </div>
 
-        <h2 className={`text-lg font-bold ${appliedTitleColor} mb-2`}>
+        <h2 className={`text-xl font-bold ${appliedTitleColor} mb-3`}>
           {title}
         </h2>
 
         {children ? (
-          <div className="text-sm text-gray-700 mb-4">{children}</div>
+          <div className="text-base text-gray-600 mb-6">{children}</div>
         ) : (
-          message && <p className="text-sm text-gray-700 mb-4">{message}</p>
+          message && <p className="text-base text-gray-600 mb-6">{message}</p>
         )}
 
         <button
-          className={`${appliedButtonColor} text-white px-4 py-2 rounded-full`}
+          className={`${appliedButtonColor} text-white px-6 py-2.5 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity duration-200`}
           onClick={onClose}
         >
           {buttonText}
