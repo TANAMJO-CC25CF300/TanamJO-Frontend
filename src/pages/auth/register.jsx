@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import FormInput from '@/pages/auth/formInput';
 import NotificationModal from '@/components/landingPages/notifikasi/notificationModal';
 import BigButton from '@/components/BigButton';
+import axiosInstance from "@/utils/axios-config";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function Register() {
     isOpen: false,
     title: '',
     type: '',
-    children: null,
+    message: null,
   });
 
   const handleChange = (e) => {
@@ -37,7 +38,7 @@ export default function Register() {
         isOpen: true,
         title: 'Registrasi Gagal',
         type: 'error',
-        children: <p>Anda harus menyetujui Syarat dan Ketentuan terlebih dahulu.</p>,
+        message: <p>Anda harus menyetujui Syarat dan Ketentuan terlebih dahulu.</p>,
       });
     }
 
@@ -46,19 +47,21 @@ export default function Register() {
         isOpen: true,
         title: 'Registrasi Gagal',
         type: 'error',
-        children: <p>Konfirmasi password tidak sesuai.</p>,
+        message: <p>Konfirmasi password tidak sesuai.</p>,
       });
     }
 
     try {
-      // Simulasikan registrasi user
-      // await register({ email: form.email, password: form.password });
+      await axiosInstance.post('/signup', {
+        email: form.email,
+        password: form.password
+      });
 
       setModal({
         isOpen: true,
         title: 'Registrasi Berhasil',
         type: 'success',
-        children: <p>Selamat datang di <strong>TanamJo</strong>! Silakan login.</p>,
+        message: <p>Selamat datang di <strong>TanamJo</strong>! Silakan login.</p>,
       });
 
       setTimeout(() => navigate('/login'), 1500);
@@ -67,7 +70,7 @@ export default function Register() {
         isOpen: true,
         title: 'Registrasi Gagal',
         type: 'error',
-        children: <p>{err.message || 'Email sudah digunakan.'}</p>,
+        message: <p>{err.message || 'Email sudah digunakan.'}</p>,
       });
     }
   };
@@ -193,7 +196,7 @@ export default function Register() {
             </div>
 
             <div className="flex justify-center mt-8">
-              <BigButton type="submit">Sign Up</BigButton>
+              <BigButton type="submit" >Sign Up</BigButton>
             </div>
           </form>
 
