@@ -40,7 +40,7 @@ function IdentifyPlant() {
                     Plant Care
                   </span>
                   <h1 className="sm:text-2xl text-xl md:text-3xl font-bold font-nunito tracking-wider leading-tight steel-haze">
-                    Disease Plant Identification
+                    Plant Disease Identification <br/> & Expert Consultation
                   </h1>
                   <p className="text-sm/6 md:text-sm/6 font-medium leading-normal tracking-wider max-w-sm mx-auto custome-deskription">
                     Capture your plant's condition and receive instant diagnosis from our AI system
