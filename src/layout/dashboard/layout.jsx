@@ -8,17 +8,15 @@ export default function DashboardLayout({ children }) {
       <div className="flex min-h-screen">
         {/* Sidebar */}
         <LeftSidebar />
-        
+
         {/* Main Content */}
         <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
           {/* Header */}
           <Header />
-          
+
           {/* Main Content Area */}
-          <div className="flex-1 p-4 md:p-6 overflow-auto">
-            <div className="max-w-[1600px] mx-auto w-full">
-              {children}
-            </div>
+          <div className="flex-1 p-2 sm:p-3 md:p-4 lg:p-6 overflow-auto">
+            <div className="max-w-[1600px] mx-auto w-full">{children}</div>
           </div>
 
           {/* Footer */}

@@ -8,35 +8,28 @@ const formatDiseaseName = (disease) => {
     .replace(/\b\w/g, (char) => char.toUpperCase());
 };
 
-const DiseaseCard = ({
-  disease,
-  plant,
-  symptoms,
-  treatment,
-  image,
-  confidence,
-}) => {
+const DiseaseCard = ({ disease, plant, image, confidence }) => {
   // Penanganan khusus jika tanaman sehat
   const isHealthy = disease && disease.toLowerCase() === "healthy";
 
   return (
-    <div className="w-full max-w-5xl flex p-6 items-center max-w-3xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row p-4 md:p-6 items-center bg-white rounded-lg shadow-md">
       {/* Image or Placeholder */}
       {image ? (
         <img
           src={image}
           alt="Plant"
-          className="w-40 h-40 object-cover rounded-lg mr-6 flex-shrink-0"
+          className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-lg mb-4 md:mb-0 md:mr-6 flex-shrink-0"
         />
       ) : (
-        <div className="w-20 h-20 mr-6 flex-shrink-0" />
+        <div className="w-20 h-20 md:w-32 md:h-32 mb-4 md:mb-0 md:mr-6 flex-shrink-0" />
       )}
       {/* Info */}
-      <div className="flex-1">
+      <div className="flex-1 text-center md:text-left">
         <div className="font-semibold">
           {isHealthy ? "Tanaman anda sehat!" : "Tanaman anda terkena penyakit:"}
         </div>
-        <div className="flex items-center mt-1 mb-2">
+        <div className="flex items-center justify-center md:justify-start mt-1 mb-2">
           <span
             className={
               isHealthy ? "text-green-500 mr-2" : "text-yellow-500 mr-2"
@@ -52,15 +45,6 @@ const DiseaseCard = ({
             Tingkat keyakinan: {confidence}
           </div>
         )}
-      </div>
-      {/* Divider */}
-      <div className="border-l h-20 mx-6" />
-      {/* Details */}
-      <div>
-        <div className="font-semibold">Gejala</div>
-        <div className="text-sm mb-2">{isHealthy ? "-" : symptoms}</div>
-        <div className="font-semibold">Perawatan</div>
-        <div className="text-sm">{isHealthy ? "-" : treatment}</div>
       </div>
     </div>
   );
