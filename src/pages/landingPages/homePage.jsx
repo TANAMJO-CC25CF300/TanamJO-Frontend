@@ -18,7 +18,7 @@ function HomePage() {
             <div className="lg:mx-0 xl:mx-10 mt-0 w-auto text-center relative z-20 mb-5 shadow-md pattern-background">
                 
                 {/* area content */}
-                <div className="container mx-auto px-0 mt-8 lg:mt-12 w-full max-w-5xl">
+                <div className="container mx-auto px-0 mt-5 lg:mt-5 w-full max-w-5xl">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                         <div className="flex items-center gap-3 p-4 sm:p-3 lg:p-4">
                             <div className="w-10 h-10 lg:w-13 lg:h-13 bg-green-600 rounded-full shrink-0 flex items-center justify-center">
