@@ -1,16 +1,18 @@
 import React from 'react'
 import { FaCheck } from "react-icons/fa";
-import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandingHome';
+import { useNavigate } from 'react-router-dom';
+import HarvestLandingHome from '@components/landingPages/plantlis/HarvestLandingHome';
 import HarvestCardSectionHome from '@/components/landingPages/plantlis/HarverstCardSectionHome';
 import bannerImage from '@/assets/Banner/banner-1.png';
 import LittleButton from '@/components/LittleButton';
 import { cardData, insightCardData, blogCardData } from '@/constants/homePageData';
 
 function HomePage() {
+    const navigate = useNavigate();
     return (
         <>        
             <div>
-                <HarvestLandingAbout title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
+                <HarvestLandingHome title="Our History" breadcrumb={["Home", "Plant Care Guide"]}/>
             </div>
 
             <div className="lg:mx-0 xl:mx-10 mt-0 w-auto text-center relative z-20 mb-5 shadow-md pattern-background">
@@ -293,7 +295,11 @@ function HomePage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 pt-5">
                         {blogCardData.map((item) => (
-                            <div key={item.id} className="rounded-3xl flex flex-col overflow-hidden relative w-full h-auto group cursor-pointer">
+                            <div 
+                                key={item.id} 
+                                className="rounded-3xl flex flex-col overflow-hidden relative w-full h-auto group cursor-pointer"
+                                onClick={() => navigate('/blog-artikel')}
+                            >
                                 <div className="relative w-full">
                                     <div className="w-full h-[180px] sm:h-[260px] rounded-2xl flex items-start justify-center relative overflow-hidden bg-gray-200">
                                         <img src={item.image} alt={item.title} className="w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all duration-500" />
