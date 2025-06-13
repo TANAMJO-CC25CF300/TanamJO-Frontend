@@ -16,6 +16,7 @@ import ArtikelDetailWatering from "@/components/landingPages/artikel/artikelDeta
 import ArtikelCardUtama from "@/components/landingPages/artikel/ArtikelCardUtama";
 import IdentifyPlant from "@/pages/landingPages/IdentifyPlant";
 import BlogArtikel from "@/components/landingPages/artikel/blogArtikel";
+import Footer from "@/layout/landingPages/footer";
 
 // Auth Pages
 import ForgetPassword from "@/pages/auth/forgetPassword";
@@ -115,6 +116,7 @@ function App() {
 
       {/* Other Components */}
       <Route path="/notification" element={<NotificationModal />} />
+      <Route path="/footer" element={<Footer />} />
     </Routes>
   );
 }
