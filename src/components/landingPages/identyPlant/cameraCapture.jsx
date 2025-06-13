@@ -106,7 +106,7 @@ const CameraCapture = ({ onIdentified }) => {
   return (
     <div className="w-full px-2 sm:px-4 md:px-8 flex justify-center mt-6">
       {/* Card utama */}
-      <div className="w-full max-w-5xl bg-opacity-95 border border-gray-200 rounded-2xl p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20 shadow-lg">
+      <div className="w-full max-w-5xl bg-opacity-95 border border-gray-200 rounded-2xl p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20 shadow-sm">
         <div className="flex items-center justify-between mb-4">
           <span className="inline-block bg-green-200 text-green-800 text-xs px-3 py-1 rounded-full">
             Smart Selections
