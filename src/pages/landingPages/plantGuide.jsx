@@ -4,6 +4,7 @@ import HarvestLandingAbout from '@components/landingPages/plantlis/HarvestLandin
 import HarvestCardSection from '@/components/landingPages/plantlis/HarvestCardSection';
 import ArtikelGuide from '@/components/landingPages/artikel/ArtikelGuide';
 import bannerImage from '@/assets/Banner/banner-1.png';
+import Footer from '@/layout/landingPages/footer';
 
 function PlantGuide() {
     const navigate = useNavigate();
@@ -142,7 +143,9 @@ function PlantGuide() {
                     <div className="flex flex-col space-y-8">
                         <ArtikelGuide />
                     </div>        
-                </div>                              
+                </div>         
+
+                <Footer />                     
             </div>
         </>
         

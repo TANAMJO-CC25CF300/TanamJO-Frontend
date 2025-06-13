@@ -7,6 +7,7 @@ import image1 from '../../assets/banner/1.png';
 import image2 from '../../assets/banner/2.png';
 import image3 from '../../assets/banner/3.png';
 import image4 from '../../assets/banner/4.png';
+import Footer from '@/layout/landingPages/footer';
 
 function AboutUs() {
     return (
@@ -226,6 +227,8 @@ function AboutUs() {
                         </div>
                     </div>
                 </div>
+
+                <Footer />
             </div>
         </>
     );
