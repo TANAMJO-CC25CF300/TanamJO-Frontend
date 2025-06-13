@@ -1,6 +1,7 @@
 import React from "react";
 import HarvestLanding from '@components/landingPages/plantlis/HarvestLandingAbout';
 import TomatoGuide from '@/components/landingPages/plantlis/TomatoGuide';
+import Footer from '@/layout/landingPages/footer';
 
 function PlantGuide() {
     const cherryData = {

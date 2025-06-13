@@ -72,6 +72,7 @@ function ArtikelGuide() {
                     </div>
                 </div>      
             </div>
+            
         </main>     
     );
 }

@@ -75,6 +75,8 @@ function Artikelsection() {
                     </div>
                 ))}
             </div>
+
+            
         </>   
 
     );
