@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Droplet, Sun, Thermometer } from "lucide-react";
-import PhaseIcon from "@/assets/MyPlant/Phase.svg";
-import PlantIcon from "@/assets/MyPlant/plant.svg";
-import DescIcon from "@/assets/MyPlant/description.svg";
-import TomatoImg from "@/assets/MyPlant/persiapan,benih,transplanting,vegetatif.png";
-import BgPlant from "@/assets/MyPlant/bgPlant.png";
-import axios from "axios";
+import axiosInstance from "@/utils/axios-config";
+import { useNavigate } from "react-router-dom";
 
 const CardPlant = ({ plants }) => {
+  const navigate = useNavigate();
+  const [plantData, setPlantData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   // Ambil array tanaman yang benar
   const plantList = Array.isArray(plants[0]?.data) ? plants[0].data : plants;
 
@@ -27,24 +28,40 @@ const CardPlant = ({ plants }) => {
   const [loadingTips, setLoadingTips] = useState(true);
 
   useEffect(() => {
+    const fetchPlantData = async () => {
+      try {
+        setLoading(true);
+        const response = await axiosInstance.get(`/plants/${plant.id}`);
+        setPlantData(response.data);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching plant data:", err);
+        setError("Gagal memuat data tanaman");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (plant?.id) {
+      fetchPlantData();
+    }
+  }, [plant?.id]);
+
+  useEffect(() => {
     const fetchTips = async () => {
       setLoadingTips(true);
       try {
-        const token = localStorage.getItem("token");
         const userId = 1; // Ganti dengan userId dinamis jika ada
         const plantAge = plant?.plant_age;
-        let url = `http://localhost:4545/checkin?userId=${userId}`;
+        let url = `/checkin?userId=${userId}`;
         if (plantAge !== undefined && plantAge !== null) {
           url += `&plantAge=${plantAge}`;
         }
-        const res = await axios.get(url, {
-          headers: {
-            Authorization: token ? `Bearer ${token}` : undefined,
-          },
-        });
+        const res = await axiosInstance.get(url);
         const apiData = res.data && res.data.data ? res.data.data : {};
         setTips(apiData.tips || []);
       } catch (err) {
+        console.error("Error fetching tips:", err);
         setTips([]);
       }
       setLoadingTips(false);

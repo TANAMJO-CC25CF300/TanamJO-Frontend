@@ -9,18 +9,27 @@ export default function DashboardLayout({ children }) {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
+      if (window.innerWidth >= 1024) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+      }
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div className="min-h-screen bg-[#F7F7F7]">
       <div className="flex min-h-screen">
         {/* Sidebar */}
-        <LeftSidebar />
+        <LeftSidebar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          isMobile={isMobile}
+        />
 
         {/* Main Content */}
         <div className="flex-1 flex flex-col min-w-0 overflow-hidden">

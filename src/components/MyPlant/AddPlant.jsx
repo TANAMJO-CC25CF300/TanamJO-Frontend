@@ -1,14 +1,25 @@
 import React, { useState } from "react";
-import LittleButton from "../LittleButton";
-import NotHavePlant from "../../assets/MyPlant/notHavePlant.png";
+import NotHavePlant from "@/assets/MyPlant/NotHavePlant.png";
 import FormPlant from "./FormPlant";
+import LittleButton from "@/components/LittleButton";
 
 const AddPlant = ({ onPlantAdded }) => {
   const [openModal, setOpenModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleFormSubmit = (result) => {
-    if (onPlantAdded) {
-      onPlantAdded(result);
+  const handleFormSubmit = async (result) => {
+    if (isSubmitting) return;
+
+    try {
+      setIsSubmitting(true);
+      if (onPlantAdded) {
+        await onPlantAdded(result);
+      }
+    } catch (error) {
+      console.error("Error handling form submission:", error);
+    } finally {
+      setIsSubmitting(false);
+      setOpenModal(false);
     }
   };
 
@@ -33,6 +44,7 @@ const AddPlant = ({ onPlantAdded }) => {
             open={openModal}
             onClose={() => setOpenModal(false)}
             onSubmit={handleFormSubmit}
+            isSubmitting={isSubmitting}
           />
         </div>
       </div>

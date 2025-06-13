@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { PlusCircle, CheckCircle } from "lucide-react";
 import Point from "../../assets/MyPlant/Point.svg";
-import axios from "axios";
+import axiosInstance from "@/utils/axios-config";
 
 export default function DailyTasks({ plant }) {
   const [tasks, setTasks] = useState([]);
@@ -34,69 +34,69 @@ export default function DailyTasks({ plant }) {
         done: completedTaskIds.includes(task.id),
       }));
     }
-    return tasksArr;
+    // Jika tidak ada data di localStorage, semua task belum selesai
+    return tasksArr.map((task) => ({ ...task, done: false }));
   };
 
   // Fungsi fetch ulang data tasks
   const fetchTasks = () => {
-    const token = localStorage.getItem("token");
     const userId = 1; // Ganti dengan userId dinamis jika ada
     const plantAge = plant?.plant_age;
-    let url = `https://tanamjo-backend.onrender.com/checkin?userId=${userId}`;
+    let url = `/checkin?userId=${userId}`;
     if (plantAge !== undefined && plantAge !== null) {
       url += `&plantAge=${plantAge}`;
     }
-    axios
-      .get(url, {
-        headers: {
-          Authorization: token ? `Bearer ${token}` : undefined,
-        },
-      })
+    axiosInstance
+      .get(url)
       .then((res) => {
         const apiData = res.data && res.data.data ? res.data.data : {};
         const tasksRaw = Array.isArray(apiData.tasks) ? apiData.tasks : [];
+
+        // Inisialisasi tasks dengan done: false
         let tasksArr = tasksRaw.map((task, idx) => ({
           id: task.id || idx,
           title: task.title || "Untitled Task",
           point: task.point || 12,
           time: task.time || "9h",
-          done: false,
+          done: false, // Pastikan semua task dimulai dengan status false
         }));
-        // Sinkronisasi status task dengan localStorage
+
+        // Load status dari localStorage
         tasksArr = loadCompletedTasks(tasksArr);
-        setTasks(
-          tasksArr.length === 0
-            ? [
-                {
-                  id: 1,
-                  title:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  point: 12,
-                  time: "9h",
-                  done: false,
-                },
-                {
-                  id: 2,
-                  title:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  point: 12,
-                  time: "9h",
-                  done: false,
-                },
-                {
-                  id: 3,
-                  title:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                  point: 12,
-                  time: "9h",
-                  done: true,
-                },
-              ]
-            : tasksArr
-        );
+
+        // Jika tidak ada tasks dari API, gunakan data dummy
+        if (tasksArr.length === 0) {
+          tasksArr = [
+            {
+              id: 1,
+              title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              point: 12,
+              time: "9h",
+              done: false,
+            },
+            {
+              id: 2,
+              title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              point: 12,
+              time: "9h",
+              done: false,
+            },
+            {
+              id: 3,
+              title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              point: 12,
+              time: "9h",
+              done: false,
+            },
+          ];
+        }
+
+        setTasks(tasksArr);
         setLoading(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Error fetching tasks:", error);
+        // Gunakan data dummy dengan status false
         setTasks([
           {
             id: 1,
@@ -117,7 +117,7 @@ export default function DailyTasks({ plant }) {
             title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             point: 12,
             time: "9h",
-            done: true,
+            done: false,
           },
         ]);
         setLoading(false);
@@ -126,7 +126,6 @@ export default function DailyTasks({ plant }) {
 
   const handleSubmitCheckin = async () => {
     setSubmitting(true);
-    const token = localStorage.getItem("token");
     const userId = 1; // Ganti dengan userId dinamis jika ada
     const completedTaskIds = tasks.filter((t) => t.done).map((t) => t.id);
 
@@ -137,27 +136,17 @@ export default function DailyTasks({ plant }) {
         descriptionContent: description,
       });
 
-      const response = await axios.post(
-        "http://localhost:4545/checkin",
-        {
-          userId,
-          taskIds: completedTaskIds,
-          descriptionContent: description,
-        },
-        {
-          headers: {
-            Authorization: token ? `Bearer ${token}` : undefined,
-          },
-        }
-      );
+      const response = await axiosInstance.post("/checkin", {
+        userId,
+        taskIds: completedTaskIds,
+        descriptionContent: description,
+      });
 
       console.log("Response dari server:", response.data);
 
       if (response.data.status === "success") {
         alert("Checkin berhasil!");
         setDescription("");
-        // Status task tetap tersimpan di localStorage sampai plant age berubah
-        // Tidak perlu reset status task di sini
         fetchTasks();
       } else {
         throw new Error(response.data.message || "Gagal melakukan checkin");
@@ -174,8 +163,9 @@ export default function DailyTasks({ plant }) {
   };
 
   useEffect(() => {
+    // Hapus data localStorage saat komponen dimount
+    localStorage.removeItem(getTaskKey());
     fetchTasks();
-    // eslint-disable-next-line
   }, [plant]);
 
   if (loading) return <div>Loading...</div>;

@@ -8,27 +8,10 @@ import {
   LogOut,
   Menu,
 } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-export default function LeftSidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+export default function LeftSidebar({ isOpen, setIsOpen, isMobile }) {
   const location = useLocation();
-
-  const handleResize = useCallback(() => {
-    const mobile = window.innerWidth < 1024;
-    setIsMobile(mobile);
-    setIsOpen(!mobile);
-  }, []);
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleResize]);
 
   const mainMenus = [
     { name: "Home", icon: Home, path: "/dashboard" },
@@ -69,11 +52,7 @@ export default function LeftSidebar() {
             <div className="p-3 flex justify-between items-center border-b border-gray-100">
               <div className="flex items-center">
                 {isOpen ? (
-                  <img
-                    src={logo}
-                    alt="logo"
-                    className="w-32 object-contain"
-                  />
+                  <img src={logo} alt="logo" className="w-32 object-contain" />
                 ) : (
                   <button
                     className="p-1.5 rounded-lg"
@@ -144,17 +123,8 @@ export default function LeftSidebar() {
               } py-2 rounded-lg hover:bg-red-50 text-red-600 w-full group relative
               ${isOpen ? "" : "w-8 mx-auto"}`}
             >
-              <LogOut
-                size={18}
-                className={`${
-                  isOpen && ""
-                }`}
-              />
-              {isOpen && (
-                <span className="text-sm font-medium">
-                  Logout
-                </span>
-              )}
+              <LogOut size={18} className={`${isOpen && ""}`} />
+              {isOpen && <span className="text-sm font-medium">Logout</span>}
               {!isOpen && (
                 <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 pointer-events-none group-hover:opacity-100 z-50 whitespace-nowrap">
                   Logout

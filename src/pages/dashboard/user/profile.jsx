@@ -6,7 +6,7 @@ import ProfileHeader from "@/components/Dashboard/user/profile-header";
 import FormInput from "@/components/ui/formInput";
 import { userService } from "@/services/userService";
 import { Save, Loader2 } from "lucide-react";
-import axios from "axios";
+import axiosInstance from "@/utils/axios-config";
 
 export default function ProfilePage() {
   const { id } = useParams();
@@ -25,6 +25,9 @@ export default function ProfilePage() {
     message: "",
   });
   const [finishedTasks, setFinishedTasks] = useState([]);
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,6 +39,7 @@ export default function ProfilePage() {
 
   const fetchUserData = async () => {
     try {
+      setLoading(true);
       const response = await userService.getUserById(id);
       const data = response.data?.user;
 
@@ -46,14 +50,13 @@ export default function ProfilePage() {
         userPoints: data?.poin || 0,
         userLevel: data?.level_name || "",
       });
+      setUserData(response.data);
+      setError(null);
     } catch (error) {
       console.error("Error fetching user data:", error);
-      setModal({
-        isOpen: true,
-        title: "Error",
-        type: "error",
-        message: error.response?.data?.message || "Error fetching user data",
-      });
+      setError("Gagal memuat data pengguna");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -66,14 +69,11 @@ export default function ProfilePage() {
     const fetchFinishedTasks = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(
-          `https://tanamjo-backend.onrender.com/checkin?userId=${id}`,
-          {
-            headers: {
-              Authorization: token ? `Bearer ${token}` : undefined,
-            },
-          }
-        );
+        const res = await axiosInstance.get(`/checkin?userId=${id}`, {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : undefined,
+          },
+        });
 
         const tasks = res.data?.data?.tasks || [];
         const finished = tasks.filter((task) => task.done);

@@ -56,11 +56,15 @@ export default function MyPlantPage() {
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isChecking, setIsChecking] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const checkUserAndPlants = async () => {
+      if (isChecking) return;
+
       try {
+        setIsChecking(true);
         // Check if user is logged in
         const token = localStorage.getItem("token");
         if (!token) {
@@ -71,15 +75,15 @@ export default function MyPlantPage() {
         // Get user ID from token or your auth system
         const userId = 1; // TODO: Replace with actual user ID from your auth system
 
-        const data = await plantService.getUserPlants(userId);
+        const response = await plantService.getUserPlants(userId);
 
-        if (!data || data.length === 0) {
+        if (!response || response.length === 0) {
           // If no plants found, redirect to empty page
-          navigate("/MyPlantEmptyPage");
+          navigate("/MyPlantEmptyPage", { replace: true });
           return;
         }
 
-        setPlants(data);
+        setPlants(response);
       } catch (error) {
         console.error("Error checking user and plants:", error);
         if (error.message.includes("login")) {
@@ -89,71 +93,39 @@ export default function MyPlantPage() {
         }
       } finally {
         setLoading(false);
+        setIsChecking(false);
       }
     };
 
     checkUserAndPlants();
-  }, [navigate]);
+  }, [navigate, isChecking]);
 
-  if (loading)
+  if (loading) {
     return (
       <DashboardLayout>
         <LoadingSkeleton />
       </DashboardLayout>
     );
+  }
 
-  if (error)
+  if (error) {
     return (
       <DashboardLayout>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex-1 flex items-center justify-center"
-        >
-          <div className="text-red-500 bg-red-50 p-4 rounded-lg">
-            Error: {error}
-          </div>
-        </motion.div>
+        <div className="flex-1 flex flex-col items-center justify-center">
+          <p className="text-red-500">{error}</p>
+        </div>
       </DashboardLayout>
     );
-
-  // Tambahkan log untuk debugging
-  console.log("Plants yang dikirim ke CardPlant:", plants);
-
-  // Ambil plant yang benar untuk DailyTasks
-  const plantForDailyTasks = Array.isArray(plants[0]?.data)
-    ? plants[0].data[0]
-    : plants[0];
+  }
 
   return (
     <DashboardLayout>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="flex-1 flex flex-col"
-      >
-        {/* Main Section */}
+      <div className="flex-1 flex flex-col">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 sm:gap-4 min-h-[calc(100vh-160px)] px-2 sm:px-3 md:px-4 lg:px-6">
-          {/* Card Plant */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="w-full order-1 lg:order-1"
-          >
-            <CardPlant plants={plants} />
-          </motion.div>
-          {/* Daily Tasks */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="w-full order-2 lg:order-2"
-          >
-            <DailyTasks plant={plantForDailyTasks} />
-          </motion.div>
+          <CardPlant plants={plants} />
+          <DailyTasks plants={plants} />
         </div>
-      </motion.div>
+      </div>
     </DashboardLayout>
   );
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://tanamjo-backend.onrender.com";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 // Create axios instance with default config
 const api = axios.create({
@@ -30,24 +30,36 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    console.error("API Error:", error);
+
     if (error.code === "ERR_NETWORK") {
       throw new Error(
-        "Unable to connect to server. Please check if the server is running."
+        "Tidak dapat terhubung ke server. Mohon periksa koneksi internet Anda."
       );
     }
+
     if (error.response) {
       // Handle authentication errors
       if (error.response.status === 401) {
-        // Clear token and redirect to login if unauthorized
         localStorage.removeItem("token");
         window.location.href = "/login";
-        throw new Error("Session expired. Please login again.");
+        throw new Error("Sesi Anda telah berakhir. Silakan login kembali.");
       }
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      throw new Error(error.response.data.message || "Server error occurred");
+
+      // Handle server errors
+      if (error.response.status === 500) {
+        throw new Error(
+          "Terjadi kesalahan pada server. Mohon coba beberapa saat lagi."
+        );
+      }
+
+      // Handle other errors
+      throw new Error(
+        error.response.data?.message || "Terjadi kesalahan. Mohon coba lagi."
+      );
     }
-    throw error;
+
+    throw new Error("Terjadi kesalahan yang tidak diketahui. Mohon coba lagi.");
   }
 );
 
@@ -57,37 +69,25 @@ export const plantService = {
     try {
       const token = localStorage.getItem("token");
       if (!token) {
-        throw new Error("Please login to view your plants");
+        throw new Error("Silakan login untuk melihat tanaman Anda");
       }
 
-      // Changed endpoint to match backend
       const response = await api.get(`/plants?userId=${userId}`);
 
-      // Check if response.data is an array
-      if (!Array.isArray(response.data)) {
-        // If it's a single object, wrap it in an array
-        const plantData = response.data ? [response.data] : [];
-
-        // Transform the data to match frontend requirements
-        return plantData.map((plant) => ({
+      // Transform response data
+      if (response.data && response.data.status === "success") {
+        const plants = response.data.data || [];
+        return plants.map((plant) => ({
           ...plant,
-          plant_age: plant.ageInput || "0", // Map ageInput to plant_age for frontend
-          phase: plant.phase || "preparation", // Provide default phase if not set
+          plant_age: plant.ageInput || "0",
+          phase: plant.phase || "preparation",
         }));
       }
 
-      // If it's already an array, transform it
-      return response.data.map((plant) => ({
-        ...plant,
-        plant_age: plant.ageInput || "0",
-        phase: plant.phase || "preparation",
-      }));
+      return [];
     } catch (error) {
       console.error("[GET Plants Error]", error);
-      if (error.response?.data?.message) {
-        throw new Error(error.response.data.message);
-      }
-      throw new Error("Failed to fetch plants. Please try again.");
+      throw error;
     }
   },
 
@@ -96,13 +96,12 @@ export const plantService = {
     try {
       const token = localStorage.getItem("token");
       if (!token) {
-        throw new Error("Please login to add a plant");
+        throw new Error("Silakan login untuk menambahkan tanaman");
       }
 
-      // Transform the data to match backend requirements
       const transformedData = {
         name: plantData.name,
-        ageInput: plantData.age, // Transform 'age' to 'ageInput'
+        ageInput: plantData.age,
         description: plantData.description,
         phase: plantData.phase,
         userId: userId,
@@ -110,18 +109,18 @@ export const plantService = {
 
       const response = await api.post("/plants", transformedData);
 
-      // Transform the response data to match frontend requirements
-      return {
-        ...response.data,
-        plant_age: response.data.ageInput || "0",
-        phase: response.data.phase || "preparation",
-      };
+      if (response.data && response.data.status === "success") {
+        return {
+          ...response.data.data,
+          plant_age: response.data.data.ageInput || "0",
+          phase: response.data.data.phase || "preparation",
+        };
+      }
+
+      throw new Error("Gagal menambahkan tanaman");
     } catch (error) {
       console.error("[POST Plant Error]", error);
-      if (error.response?.data?.message) {
-        throw new Error(error.response.data.message);
-      }
-      throw new Error("Failed to add plant. Please try again.");
+      throw error;
     }
   },
 };

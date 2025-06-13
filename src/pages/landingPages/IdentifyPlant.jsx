@@ -16,17 +16,17 @@ const fetchData = async (imageFile) => {
     const formData = new FormData();
     formData.append("image", imageFile);
 
-    const response = await fetch(
-      "https://tanamjo-backend.onrender.com/predicts",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+    console.log("Sending request to server...");
+    const response = await fetch("http://localhost:3000/predicts", {
+      method: "POST",
+      body: formData,
+    });
 
+    console.log("Response status:", response.status);
     const data = await response.json();
+    console.log("Response data:", data);
+
     if (response.ok) {
-      console.log("API Response Data:", data);
       return {
         status: "success",
         message: data.message,
@@ -34,15 +34,19 @@ const fetchData = async (imageFile) => {
         confidence: data.data.confidenceScore,
       };
     } else {
+      console.error("Server error:", data);
       return {
         status: "error",
         message: data.message || "Terjadi kesalahan saat memproses gambar",
+        error: data.error || "Unknown server error",
       };
     }
   } catch (error) {
+    console.error("Fetch error:", error);
     return {
       status: "error",
       message: error.message || "Terjadi kesalahan pada server",
+      error: error.toString(),
     };
   }
 };

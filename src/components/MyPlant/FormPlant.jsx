@@ -7,7 +7,7 @@ const phases = [
   {
     value: "preparation",
     label: "Preparation",
-    description: "(-7 - 0 DAS)",
+    description: "(-7 - 0 DSS)",
   },
   {
     value: "seeding",
@@ -51,17 +51,19 @@ const FormPlant = ({ open, onClose, onSubmit }) => {
     mode: "onChange",
   });
 
-  // Check authentication when component mounts
+  // Reset form and error when modal is closed
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      setError("Please login to add a plant");
+    if (!open) {
+      reset();
+      setError(null);
     }
-  }, []);
+  }, [open, reset]);
 
   if (!open) return null;
 
   const onFormSubmit = async (data) => {
+    if (isSubmitting) return;
+
     setIsSubmitting(true);
     setError(null);
 
@@ -89,8 +91,6 @@ const FormPlant = ({ open, onClose, onSubmit }) => {
 
       reset();
       onClose();
-      // Navigate to MyPlantPage after successful submission
-      navigate("/MyPlantPage");
     } catch (error) {
       console.error("Form submission error:", error);
       if (error.message.includes("login")) {
@@ -162,31 +162,33 @@ const FormPlant = ({ open, onClose, onSubmit }) => {
               </span>
             )}
           </div>
+
           <div className="mb-4 grid grid-cols-1 md:grid-cols-5 items-start md:items-center gap-2 md:gap-4">
-            <label className="text-gray-700 text-sm md:text-base">Phase</label>
-            <div className="md:col-span-4">
-              <select
-                className={`w-full border rounded px-3 py-2 focus:outline-none text-sm md:text-base ${
-                  errors.phase ? "border-red-500" : "border-gray-300"
-                }`}
-                {...register("phase", { required: "Phase wajib dipilih" })}
-              >
-                <option value="" disabled>
-                  Select your phase
+            <label className="text-gray-700 text-sm md:text-base">
+              Plant Phase <span className="text-red-500">*</span>
+            </label>
+            <select
+              className={`md:col-span-4 border rounded px-3 py-2 w-full focus:outline-none text-sm md:text-base ${
+                errors.phase ? "border-red-500" : "border-gray-300"
+              }`}
+              {...register("phase", {
+                required: "Fase tanaman wajib dipilih",
+              })}
+            >
+              <option value="">Select Phase</option>
+              {phases.map((phase) => (
+                <option key={phase.value} value={phase.value}>
+                  {phase.label} {phase.description}
                 </option>
-                {phases.map((phase) => (
-                  <option key={phase.value} value={phase.value}>
-                    {phase.label} {phase.description}
-                  </option>
-                ))}
-              </select>
-              {errors.phase && (
-                <span className="text-red-500 text-sm">
-                  {errors.phase.message}
-                </span>
-              )}
-            </div>
+              ))}
+            </select>
+            {errors.phase && (
+              <span className="md:col-span-4 text-red-500 text-sm">
+                {errors.phase.message}
+              </span>
+            )}
           </div>
+
           <div className="mb-4 grid grid-cols-1 md:grid-cols-5 items-start md:items-center gap-2 md:gap-4">
             <label className="text-gray-700 text-sm md:text-base">
               Plant Age <span className="text-red-500">*</span>
@@ -210,16 +212,16 @@ const FormPlant = ({ open, onClose, onSubmit }) => {
               </span>
             )}
           </div>
-          <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-5 items-start md:items-center gap-2 md:gap-4">
+
+          <div className="mb-6 grid grid-cols-1 md:grid-cols-5 items-start gap-2 md:gap-4">
             <label className="text-gray-700 text-sm md:text-base">
               Description <span className="text-red-500">*</span>
             </label>
             <textarea
-              className={`md:col-span-4 border rounded px-3 py-2 w-full focus:outline-none resize-none text-sm md:text-base ${
+              className={`md:col-span-4 border rounded px-3 py-2 w-full focus:outline-none text-sm md:text-base min-h-[100px] ${
                 errors.description ? "border-red-500" : "border-gray-300"
               }`}
-              rows={3}
-              placeholder="Description"
+              placeholder="Enter plant description"
               {...register("description", {
                 required: "Deskripsi tanaman wajib diisi",
                 minLength: {
@@ -234,17 +236,25 @@ const FormPlant = ({ open, onClose, onSubmit }) => {
               </span>
             )}
           </div>
-          <div className="flex justify-center">
+
+          <div className="flex justify-end gap-3">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 text-sm md:text-base text-gray-600 hover:text-gray-800"
+            >
+              Cancel
+            </button>
             <button
               type="submit"
-              disabled={isSubmitting || !!error}
-              className={`bg-[#5B8C51] text-white rounded-[8px] px-6 md:px-8 py-2 text-sm md:text-base font-semibold transition ${
-                isSubmitting || !!error
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-[#4a7342]"
+              disabled={isSubmitting}
+              className={`px-4 py-2 text-sm md:text-base text-white rounded-lg ${
+                isSubmitting
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-green-600 hover:bg-green-700"
               }`}
             >
-              {isSubmitting ? "Adding Plant..." : "Add Plant"}
+              {isSubmitting ? "Adding..." : "Add Plant"}
             </button>
           </div>
         </form>
