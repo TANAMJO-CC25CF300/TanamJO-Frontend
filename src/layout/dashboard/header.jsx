@@ -27,7 +27,7 @@ export default function Header({ setIsOpen, isOpen, isMobile }) {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 py-4 px-4 lg:px-8 flex items-center justify-between sticky top-0 z-40">
+    <header className="bg-white border-b border-gray-200 py-4 px-4 lg:px-8 flex items-center justify-between sticky top-0 z-40 w-full">
     {/* Tombol Menu di sisi kiri */}
       {isMobile && !isOpen && (
         <button
