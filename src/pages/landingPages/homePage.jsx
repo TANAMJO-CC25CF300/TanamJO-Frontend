@@ -168,12 +168,11 @@ function HomePage() {
                     <div className="mt-10 border border-gray-200 rounded-3xl">
                         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 p-4 sm:p-5 md:p-6 lg:p-8">
                             {cardData.map((card) => (
-                                <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px] group">
-                                <div className="relative w-full px-3 pt-3">
-                                    <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
-                                        <img src={card.image} alt={card.title} className="w-full h-full object-cover rounded-2xl" />
-                                        
-                                        <div className="absolute inset-0 bg-black opacity-18 rounded-xl"></div>
+                                <div key={card.id} className="rounded-3xl border border-gray-200 flex flex-col relative w-full h-auto sm:h-[380px] group cursor-pointer" onClick={() => navigate('/plant-guide/artikel-card-blog', { state: { cardData: card } })} role="button" aria-label={`Buka artikel: ${card.title}`}>
+                                    <div className="relative w-full px-3 pt-3">
+                                        <div className="w-full h-[180px] sm:h-[190px] flex items-start justify-center relative">
+                                            <img src={card.image} alt={card.title} className="w-full h-full object-cover rounded-2xl" />
+                                            <div className="absolute inset-0 bg-black opacity-18 rounded-xl"></div>
                                             <div className="absolute -top-1 right-[-0.2rem] w-11 h-11 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-white rounded-bl-3xl rounded-tr-3xl z-20 flex items-center justify-center">
                                                 <span className="custom-banner rounded-full w-7 h-7 flex items-center justify-center shadow-sm">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-3 h-3 text-white">
@@ -193,7 +192,7 @@ function HomePage() {
                                         <div className="font-semibold text-lg md:text-xl steel-haze mb-2 text-left tracking-wide font-nunito group-hover:text-emerald-600 transition-colors duration-300">
                                             {card.title}
                                         </div>
-
+                                        
                                         <p className="text-sm/6 leading-normal text-left border-t border-gray-200 pt-3 custome-deskription font-medium tracking-wider line-clamp-3 group-hover:text-emerald-600 transition-colors duration-300">
                                             {card.description}
                                         </p>
@@ -203,7 +202,6 @@ function HomePage() {
                         </div>
                     </div>
                 </div>
-
                 
                 <div className="mt-15 mx-5 md:mx-15 rounded-3xl text-left space-y-4">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-3 md:space-y-0 md:space-x-8 lg:space-x-12 xl:space-x-50">
