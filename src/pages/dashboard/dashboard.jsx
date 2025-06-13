@@ -33,14 +33,13 @@ export default function DashboardPage() {
 
   return (
     <DashboardLayout>
-      <div className="mx-auto w-full ">
+      <div className="mx-auto w-full">
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-6">
           {stats.map((stat, index) => (
             <StatCard key={index} {...stat} />
           ))}
         </div>
-        
       </div>
     </DashboardLayout>
   );
