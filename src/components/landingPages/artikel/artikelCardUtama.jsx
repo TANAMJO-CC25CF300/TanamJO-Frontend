@@ -38,6 +38,7 @@ function ArtikelCardUtama() {
       </div>
 
       <div className="lg:mx-0 xl:mx-10 -mt-6 w-auto rounded-3xl text-center relative z-20 mb-5 shadow-md pattern-background">
+        
         <div className="flex flex-col lg:flex-row items-start mx-5 md:mx-15 py-6 md:py-8 gap-4 md:gap-8 rounded-3xl mt-13 md:mt-13">
           <div className="w-full lg:w-[320px] h-[280px] lg:h-[320px] relative overflow-hidden rounded-3xl group">
             <div className="absolute inset-0 bg-black opacity-20 z-10"></div>
