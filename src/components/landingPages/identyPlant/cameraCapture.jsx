@@ -106,7 +106,7 @@ const CameraCapture = ({ onIdentified }) => {
   return (
     <div className="w-full px-0 sm:px-0 md:px-0 flex justify-center mt-6">
       
-      <div className="w-full max-w-7xl bg-opacity-95 border border-gray-200 rounded-2xl p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20 shadow-sm">
+      <div className="w-full max-w-7xl bg-opacity-95 border border-gray-200 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
         <div className="flex items-center justify-between mb-4">
           <span className="inline-block bg-green-200 text-green-800 text-xs px-3 py-1 rounded-full">
             Smart Selections
