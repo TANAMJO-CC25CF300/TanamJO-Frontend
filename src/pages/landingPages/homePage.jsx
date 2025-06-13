@@ -6,6 +6,7 @@ import HarvestCardSectionHome from '@/components/landingPages/plantlis/HarverstC
 import bannerImage from '@/assets/Banner/banner-1.png';
 import LittleButton from '@/components/LittleButton';
 import { cardData, insightCardData, blogCardData } from '@/constants/homePageData';
+import Footer from '@/layout/landingPages/footer';
 
 function HomePage() {
     const navigate = useNavigate();
@@ -343,8 +344,9 @@ function HomePage() {
                             </div>
                         ))}
                     </div>
-
                 </div>
+
+                <Footer />
                 
             </div>
         </>
