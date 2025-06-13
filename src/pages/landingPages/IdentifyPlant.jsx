@@ -3,6 +3,7 @@ import CameraCapture from "../../components/landingPages/identyPlant/cameraCaptu
 import DiseaseCard from "../../components/landingPages/identyPlant/diseaseCard";
 import HarvestLandingAbout from "@components/landingPages/plantlis/HarvestLandingAbout";
 import mockRecommendations from "../../services/recomendation";
+import Footer from '@/layout/landingPages/footer';
 
 const fetchData = async (imageFile) => {
   try {
@@ -88,6 +89,7 @@ function IdentifyPlant() {
       </div>
 
       <div className="lg:mx-0 xl:mx-10 -mt-6 w-auto rounded-4xl text-center relative z-20 mb-5 shadow-md pattern-background">
+        
         <div className="mx-5 md:mx-15 rounded-3xl text-left space-y-4 pt-15 sm:pt-15 md:pt-16 lg:pt-18">
           <div className="text-center space-y-4 mb-8">
             <span className="inline-block text-sm font-semibold tracking-wider text-white px-3 sm:px-4 rounded-full whitespace-nowrap overflow-hidden overflow-ellipsis w-[160px] h-8 leading-8 text-center custom-banner">
@@ -109,7 +111,7 @@ function IdentifyPlant() {
           {/* Hasil Identifikasi */}
           {showResult && identifiedCard && (
             <div className="w-full max-w-5xl mx-auto mt-10 space-y-6">
-              <div className="p-6 transform transition-all duration-300 hover:scale-[1.02]">
+              <div className="p-6 ">
                 <DiseaseCard
                   disease={identifiedCard.disease}
                   plant={identifiedCard.plant}
@@ -155,6 +157,9 @@ function IdentifyPlant() {
             </div>
           )}
         </div>
+
+
+        <Footer />
       </div>
     </>
   );

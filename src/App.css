@@ -43,12 +43,14 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
   }
 
   .pattern-background::after {
     content: "";
     display: block;
-    height: 50px;
+    height: 30px;
   }
 
   .custom-banner {

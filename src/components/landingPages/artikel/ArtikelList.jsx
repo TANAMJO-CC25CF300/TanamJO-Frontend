@@ -60,6 +60,8 @@ const ArtikelList = () => (
                 </div>
             </div>
         </div>        
+
+        
     </>
 
 );

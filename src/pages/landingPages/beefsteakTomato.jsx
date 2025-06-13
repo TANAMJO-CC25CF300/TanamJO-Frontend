@@ -314,6 +314,7 @@ function BeefsteakTomato() {
                 <HarvestLanding title="Our History" breadcrumb={["Home", "Beefsteak Tomato"]}/>
             </div>
             <TomatoGuide {...beefsteakData} />
+
         </>
     );
 }

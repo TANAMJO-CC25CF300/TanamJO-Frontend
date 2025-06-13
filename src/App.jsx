@@ -16,6 +16,7 @@ import ArtikelDetailWatering from "@/components/landingPages/artikel/artikelDeta
 import ArtikelCardUtama from "@/components/landingPages/artikel/ArtikelCardUtama";
 import IdentifyPlant from "@/pages/landingPages/IdentifyPlant";
 import BlogArtikel from "@/components/landingPages/artikel/blogArtikel";
+import ArtikelCardBlog from "@/components/landingPages/artikel/artikelCardBlog";
 import Footer from "@/layout/landingPages/footer";
 
 // Auth Pages
@@ -54,6 +55,7 @@ function App() {
         <Route path="/plant-guide/artikel-detail" element={<ArtikelDetail />} />
         <Route path="/plant-guide/artikel-detail-watering" element={<ArtikelDetailWatering />} />
         <Route path="/plant-guide/artikel-detail-plant-problems" element={<ArtikelDetail />} />
+        <Route path="/plant-guide/artikel-card-blog" element={<ArtikelCardBlog />} />
         <Route path="/plantguide/artikelcardutama" element={<ArtikelCardUtama />} />
         <Route path="/identify-plant" element={<IdentifyPlant />} />
       </Route>

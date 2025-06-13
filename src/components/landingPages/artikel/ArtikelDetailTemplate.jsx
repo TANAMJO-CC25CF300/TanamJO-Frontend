@@ -1,5 +1,6 @@
 import React from "react";
 import HarvestLanding from '@components/landingPages/plantlis/HarvestLandingAbout';
+import Footer from '@/layout/landingPages/footer';
 
 function ArtikelDetailTemplate({  title, date, readTime, category, tags, description, quote, mainContent, features, benefits}) {
     return (
@@ -147,6 +148,8 @@ function ArtikelDetailTemplate({  title, date, readTime, category, tags, descrip
                             ))}
                         </div>
                     </div>
+                    
+                    <Footer />
                 </div>
             </div>
         </>
