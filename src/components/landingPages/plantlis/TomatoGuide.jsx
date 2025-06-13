@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from '@/layout/landingPages/footer';
 
 function TomatoGuide({ title, description, varieties, growingConditions, plantingGuide, careTips, problems, harvesting, propagation, nutrition, culinary, companion, seasonal, references }) {
     return (
@@ -411,6 +412,9 @@ function TomatoGuide({ title, description, varieties, growingConditions, plantin
                         </div>
                     </div>
                 </div>
+
+                
+                <Footer />
             </div>
         </>
     );
